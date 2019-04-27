@@ -1,0 +1,3 @@
+KLEE: Using STP solver backend
+KLEE: ERROR: /home/klee/dockermount/klee/mjs/mjs.c:14089: external call with symbolic argument: __isnan
+KLEE: NOTE: now ignoring this error at this location

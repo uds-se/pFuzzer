@@ -1,0 +1,7 @@
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: memchr
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 72892224) at /home/klee/klee_src/runtime/POSIX/fd.c:980
+KLEE: WARNING ONCE: Alignment of memory from call "malloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: calling external: printf(65558384) at /home/klee/klee_build/klee-uclibc/libc/string/strlen.c:22
+KLEE: WARNING ONCE: calling external: __ctype_b_loc() at /home/klee/dockermount/klee/ini/ini.c:38
+KLEE: WARNING ONCE: calling external: memchr(57186144, 0, 3) at /home/klee/dockermount/klee/ini/ini.c:152

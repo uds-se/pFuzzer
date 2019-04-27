@@ -1,0 +1,21 @@
+Time used until input was generated: 58.170298
+'(5\n<b+h);'
+
+Time used until input was generated: 113.052807
+'{;;}'
+
+Time used until input was generated: 265.098257
+'{;;w;}'
+
+Time used until input was generated: 312.160804
+'{;;if (5);}'
+
+Time used until input was generated: 354.964175
+'{;;w=5;}'
+
+Time used until input was generated: 393.448986
+'{;;w-5;}'
+
+Time used until input was generated: 2698.612419
+'{;;while (0);}'
+

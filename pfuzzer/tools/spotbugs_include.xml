@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FindBugsFilter>
+    <Match>
+        <!-- Match all correctness and multithreaded correctness bugs -->
+        <Bug category="CORRECTNESS,MT_CORRECTNESS"/>
+        <Not>
+          <Bug code="HES"/>
+        </Not>
+    </Match>
+
+    <Match>
+        <!-- Match select bad practice bugs in non-test code -->
+        <Bug category="BAD_PRACTICICE" code="BC,BIT,CN,Co,DE,DMI,Dm,ES,Eq,FI,FS,GC,HE,IC,IMSE,ISC,It,ME,NP,Nm,OS,PZ,RC,RR,RV,SI,SW,Se,SnVI,UI"/>
+    </Match>
+
+    <Match>
+        <!-- Match select dodgy style bugs in non-test code -->
+        <Bug category="STYLE" code="BC,BSHIFT,CI,DB,DMI,Dm,Eq,FE,FS,IC,ICAST,IM,INT,NP,NS,PZLA,QF,RCN,REC,RI,RV,SA,ST,Se,TQ,UC,UrF,UuF,UwF,UwF"/>
+        <Not>
+            <Bug pattern="RV_RETURN_VALUE_IGNORED_INFERRED"/>
+        </Not>
+    </Match>
+
+    <Match>
+        <!-- Do not explicitly call the gc -->
+        <Bug category="PERFORMANCE" pattern="DM_GC"/>
+    </Match>
+
+    <Match>
+        <Bug category="SECURITY"/>
+        <Not>
+          <Bug pattern="PREDICTABLE_RANDOM"/>
+        </Not>
+    </Match>
+</FindBugsFilter>

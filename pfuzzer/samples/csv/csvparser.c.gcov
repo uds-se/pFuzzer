@@ -1,0 +1,447 @@
+        -:    0:Source:/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.c
+        -:    0:Graph:/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno
+        -:    0:Data:/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda
+        -:    0:Runs:8
+        -:    0:Programs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include <string.h>
+        -:    3:#include <stdio.h>
+        -:    4:#include <errno.h>
+        -:    5:
+        -:    6:#include "csvparser.h"
+        -:    7:
+        -:    8:#ifdef __cplusplus
+        -:    9:extern "C" {
+        -:   10:#endif
+        -:   11:
+function CsvParser_new called 8 returned 100% blocks executed 73%
+        8:   12:CsvParser *CsvParser_new(const char *filePath, const char *delimiter, int firstLineIsHeader) {
+        8:   13:    CsvParser *csvParser = (CsvParser*)malloc(sizeof(CsvParser));
+        8:   14:    if (filePath == NULL) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+        8:   15:        csvParser->filePath_ = NULL;
+        -:   16:    } else {
+    #####:   17:        int filePathLen = strlen(filePath);
+    #####:   18:        csvParser->filePath_ = (char*)malloc((filePathLen + 1));
+    #####:   19:        strcpy(csvParser->filePath_, filePath);
+        -:   20:    }
+        8:   21:    csvParser->firstLineIsHeader_ = firstLineIsHeader;
+        8:   22:    csvParser->errMsg_ = NULL;
+        8:   23:    if (delimiter == NULL) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:   24:        csvParser->delimiter_ = ',';
+        8:   25:    } else if (_CsvParser_delimiterIsAccepted(delimiter)) {
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0
+        8:   26:        csvParser->delimiter_ = *delimiter;
+        -:   27:    } else {
+    #####:   28:        csvParser->delimiter_ = '\0';
+        -:   29:    }
+        8:   30:    csvParser->header_ = NULL;
+        8:   31:    csvParser->fileHandler_ = NULL;
+        8:   32:	csvParser->fromString_ = 0;
+        8:   33:	csvParser->csvString_ = NULL;
+        8:   34:	csvParser->csvStringIter_ = 0;
+        -:   35:
+        8:   36:    return csvParser;
+        -:   37:}
+        -:   38:
+function CsvParser_new_from_string called 8 returned 100% blocks executed 100%
+        8:   39:CsvParser *CsvParser_new_from_string(const char *csvString, const char *delimiter, int firstLineIsHeader) {
+        8:   40:	CsvParser *csvParser = CsvParser_new(NULL, delimiter, firstLineIsHeader);
+call    0 returned 8
+        8:   41:	csvParser->fromString_ = 1;	
+        8:   42:	if (csvString != NULL) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+        8:   43:		int csvStringLen = strlen(csvString);
+        8:   44:		csvParser->csvString_ = (char*)malloc(csvStringLen + 1);
+        8:   45:		strcpy(csvParser->csvString_, csvString);
+        -:   46:	}	
+        8:   47:	return csvParser;
+        -:   48:}
+        -:   49:
+function CsvParser_destroy called 8 returned 100% blocks executed 79%
+        8:   50:void CsvParser_destroy(CsvParser *csvParser) {
+        8:   51:    if (csvParser == NULL) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:   52:        return;
+        -:   53:    }
+        8:   54:    if (csvParser->filePath_ != NULL) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:   55:        free(csvParser->filePath_);
+        -:   56:    }
+        8:   57:    if (csvParser->errMsg_ != NULL) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+        8:   58:        free(csvParser->errMsg_);
+        -:   59:    }
+        8:   60:    if (csvParser->fileHandler_ != NULL) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:   61:        fclose(csvParser->fileHandler_);
+call    0 never executed
+        -:   62:    }
+        8:   63:    if (csvParser->header_ != NULL) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+        8:   64:        CsvParser_destroy_row(csvParser->header_);
+call    0 returned 8
+        -:   65:    }
+        8:   66:	if (csvParser->csvString_ != NULL) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+        8:   67:		free(csvParser->csvString_);
+        -:   68:	}
+        8:   69:    free(csvParser);
+        -:   70:}
+        -:   71:
+function CsvParser_destroy_row called 8 returned 100% blocks executed 100%
+        8:   72:void CsvParser_destroy_row(CsvRow *csvRow) {
+        -:   73:    int i;
+       18:   74:    for (i = 0 ; i < csvRow->numOfFields_ ; i++) {
+branch  0 taken 10
+branch  1 taken 8 (fallthrough)
+       10:   75:        free(csvRow->fields_[i]);
+        -:   76:    }
+        8:   77:    free(csvRow);
+        8:   78:}
+        -:   79:
+function CsvParser_getHeader called 8 returned 100% blocks executed 75%
+        8:   80:CsvRow *CsvParser_getHeader(CsvParser *csvParser) {
+        8:   81:    if (! csvParser->firstLineIsHeader_) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:   82:        _CsvParser_setErrorMessage(csvParser, "Cannot supply header, as current CsvParser object does not support header");
+call    0 never executed
+    #####:   83:        return NULL;
+        -:   84:    }
+        8:   85:    if (csvParser->header_ == NULL) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+        8:   86:        csvParser->header_ = _CsvParser_getRow(csvParser);
+call    0 returned 8
+        -:   87:    }
+        8:   88:    return csvParser->header_;
+        -:   89:}
+        -:   90:
+function CsvParser_getRow called 8 returned 100% blocks executed 67%
+        8:   91:CsvRow *CsvParser_getRow(CsvParser *csvParser) {
+        8:   92:    if (csvParser->firstLineIsHeader_ && csvParser->header_ == NULL) {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 8
+    #####:   93:        csvParser->header_ = _CsvParser_getRow(csvParser);
+call    0 never executed
+        -:   94:    }
+        8:   95:    return _CsvParser_getRow(csvParser);
+call    0 returned 8
+        -:   96:}
+        -:   97:
+function CsvParser_getNumFields called 18 returned 100% blocks executed 100%
+       18:   98:int CsvParser_getNumFields(CsvRow *csvRow) {
+       18:   99:    return csvRow->numOfFields_;
+        -:  100:}
+        -:  101:
+function CsvParser_getFields called 8 returned 100% blocks executed 100%
+        8:  102:char **CsvParser_getFields(CsvRow *csvRow) {
+        8:  103:    return csvRow->fields_;
+        -:  104:}
+        -:  105:
+function _CsvParser_getRow called 16 returned 100% blocks executed 70%
+       16:  106:CsvRow *_CsvParser_getRow(CsvParser *csvParser) {
+       16:  107:    int numRowRealloc = 0;
+       16:  108:    int acceptedFields = 64;
+       16:  109:    int acceptedCharsInField = 64;
+       16:  110:    if (csvParser->filePath_ == NULL && (! csvParser->fromString_)) {
+branch  0 taken 16 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 16
+    #####:  111:        _CsvParser_setErrorMessage(csvParser, "Supplied CSV file path is NULL");
+call    0 never executed
+    #####:  112:        return NULL;
+        -:  113:    }
+       16:  114:    if (csvParser->csvString_ == NULL && csvParser->fromString_) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 16
+branch  2 never executed
+branch  3 never executed
+    #####:  115:        _CsvParser_setErrorMessage(csvParser, "Supplied CSV string is NULL");
+call    0 never executed
+    #####:  116:        return NULL;
+        -:  117:    }
+       16:  118:    if (csvParser->delimiter_ == '\0') {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 16
+    #####:  119:        _CsvParser_setErrorMessage(csvParser, "Supplied delimiter is not supported");
+call    0 never executed
+    #####:  120:        return NULL;
+        -:  121:    }
+       16:  122:    if (! csvParser->fromString_) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 16
+    #####:  123:        if (csvParser->fileHandler_ == NULL) {
+branch  0 never executed
+branch  1 never executed
+    #####:  124:            csvParser->fileHandler_ = fopen(csvParser->filePath_, "r");
+call    0 never executed
+    #####:  125:            if (csvParser->fileHandler_ == NULL) {
+branch  0 never executed
+branch  1 never executed
+    #####:  126:                int errorNum = errno;
+call    0 never executed
+    #####:  127:                const char *errStr = strerror(errorNum);
+call    0 never executed
+    #####:  128:                char *errMsg = (char*)malloc(1024 + strlen(errStr));
+    #####:  129:                strcpy(errMsg, "");
+    #####:  130:                sprintf(errMsg, "Error opening CSV file for reading: %s : %s", csvParser->filePath_, errStr);
+    #####:  131:                _CsvParser_setErrorMessage(csvParser, errMsg);
+call    0 never executed
+    #####:  132:                free(errMsg);
+    #####:  133:                return NULL;
+        -:  134:            }
+        -:  135:        }
+        -:  136:    }
+       16:  137:    CsvRow *csvRow = (CsvRow*)malloc(sizeof(CsvRow));
+       16:  138:    csvRow->fields_ = (char**)malloc(acceptedFields * sizeof(char*));
+       16:  139:    csvRow->numOfFields_ = 0;
+       16:  140:    int fieldIter = 0;
+       16:  141:    char *currField = (char*)malloc(acceptedCharsInField);
+       16:  142:    int inside_complex_field = 0;
+       16:  143:    int currFieldCharIter = 0;
+       16:  144:    int seriesOfQuotesLength = 0;
+       16:  145:    int lastCharIsQuote = 0;
+       16:  146:    int isEndOfFile = 0;
+        -:  147:    while (1) {
+       35:  148:        char currChar = (csvParser->fromString_) ? csvParser->csvString_[csvParser->csvStringIter_] : fgetc(csvParser->fileHandler_);
+branch  0 taken 35 (fallthrough)
+branch  1 taken 0
+call    2 never executed
+       35:  149:        csvParser->csvStringIter_++;
+        -:  150:        int endOfFileIndicator;
+       35:  151:        if (csvParser->fromString_) {
+branch  0 taken 35 (fallthrough)
+branch  1 taken 0
+       35:  152:            endOfFileIndicator = (currChar == '\0');
+        -:  153:        } else {
+    #####:  154:            endOfFileIndicator = feof(csvParser->fileHandler_);
+call    0 never executed
+        -:  155:        }
+       35:  156:        if (endOfFileIndicator) {
+branch  0 taken 15 (fallthrough)
+branch  1 taken 20
+       15:  157:            if (currFieldCharIter == 0 && fieldIter == 0) {
+branch  0 taken 10 (fallthrough)
+branch  1 taken 5
+branch  2 taken 8 (fallthrough)
+branch  3 taken 2
+        8:  158:                _CsvParser_setErrorMessage(csvParser, "Reached EOF");
+call    0 returned 8
+        8:  159:                return NULL;
+        -:  160:            }
+        7:  161:            currChar = '\n';
+        7:  162:            isEndOfFile = 1;
+        -:  163:        }
+       27:  164:        if (currChar == '\r') {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 26
+        1:  165:            continue;
+        -:  166:        }
+       26:  167:        if (currFieldCharIter == 0  && ! lastCharIsQuote) {
+branch  0 taken 14 (fallthrough)
+branch  1 taken 12
+branch  2 taken 10 (fallthrough)
+branch  3 taken 4
+       16:  168:            if (currChar == '\"') {
+branch  0 taken 4 (fallthrough)
+branch  1 taken 6
+        4:  169:                inside_complex_field = 1;
+        4:  170:                lastCharIsQuote = 1;
+        4:  171:                continue;
+        -:  172:            }
+       16:  173:        } else if (currChar == '\"') {
+branch  0 taken 3 (fallthrough)
+branch  1 taken 13
+        3:  174:            seriesOfQuotesLength++;
+        3:  175:            inside_complex_field = (seriesOfQuotesLength % 2 == 0);
+        3:  176:            if (inside_complex_field) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  177:                currFieldCharIter--;
+        -:  178:            }
+        -:  179:        } else {
+       13:  180:            seriesOfQuotesLength = 0;
+        -:  181:        }
+       22:  182:        if (isEndOfFile || ((currChar == csvParser->delimiter_ || currChar == '\n') && ! inside_complex_field) ){
+branch  0 taken 15 (fallthrough)
+branch  1 taken 7
+branch  2 taken 11 (fallthrough)
+branch  3 taken 4
+branch  4 taken 2 (fallthrough)
+branch  5 taken 9
+branch  6 taken 3 (fallthrough)
+branch  7 taken 3
+       10:  183:            currField[lastCharIsQuote ? currFieldCharIter - 1 : currFieldCharIter] = '\0';
+branch  0 taken 3 (fallthrough)
+branch  1 taken 7
+       10:  184:            csvRow->fields_[fieldIter] = (char*)malloc(currFieldCharIter + 1);
+       10:  185:            strcpy(csvRow->fields_[fieldIter], currField);
+       10:  186:            free(currField);
+       10:  187:            csvRow->numOfFields_++;
+       10:  188:            if (currChar == '\n') {
+branch  0 taken 8 (fallthrough)
+branch  1 taken 2
+        8:  189:                return csvRow;
+        -:  190:            }
+        2:  191:            if (csvRow->numOfFields_ != 0 && csvRow->numOfFields_ % acceptedFields == 0) {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 2
+    #####:  192:                csvRow->fields_ = (char**)realloc(csvRow->fields_, ((numRowRealloc + 2) * acceptedFields) * sizeof(char*));
+    #####:  193:                numRowRealloc++;
+        -:  194:            }
+        2:  195:            acceptedCharsInField = 64;
+        2:  196:            currField = (char*)malloc(acceptedCharsInField);
+        2:  197:            currFieldCharIter = 0;
+        2:  198:            fieldIter++;
+        2:  199:            inside_complex_field = 0;
+        -:  200:        } else {
+       12:  201:            currField[currFieldCharIter] = currChar;
+       12:  202:            currFieldCharIter++;
+       12:  203:            if (currFieldCharIter == acceptedCharsInField - 1) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 12
+    #####:  204:                acceptedCharsInField *= 2;
+    #####:  205:                currField = (char*)realloc(currField, acceptedCharsInField);
+        -:  206:            }
+        -:  207:        }
+       14:  208:        lastCharIsQuote = (currChar == '\"') ? 1 : 0;
+       19:  209:    }
+        -:  210:}
+        -:  211:
+function _CsvParser_delimiterIsAccepted called 8 returned 100% blocks executed 86%
+        8:  212:int _CsvParser_delimiterIsAccepted(const char *delimiter) {
+        8:  213:    char actualDelimiter = *delimiter;
+        8:  214:    if (actualDelimiter == '\n' || actualDelimiter == '\r' || actualDelimiter == '\0' ||
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0
+branch  4 taken 8 (fallthrough)
+branch  5 taken 0
+branch  6 taken 0 (fallthrough)
+branch  7 taken 8
+        -:  215:            actualDelimiter == '\"') {
+    #####:  216:        return 0;
+        -:  217:    }
+        8:  218:    return 1;
+        -:  219:}
+        -:  220:
+function _CsvParser_setErrorMessage called 8 returned 100% blocks executed 67%
+        8:  221:void _CsvParser_setErrorMessage(CsvParser *csvParser, const char *errorMessage) {
+        8:  222:    if (csvParser->errMsg_ != NULL) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:  223:        free(csvParser->errMsg_);
+        -:  224:    }
+        8:  225:    int errMsgLen = strlen(errorMessage);
+        8:  226:    csvParser->errMsg_ = (char*)malloc(errMsgLen + 1);
+        8:  227:    strcpy(csvParser->errMsg_, errorMessage);
+        8:  228:}
+        -:  229:
+function CsvParser_getErrorMessage called 0 returned 0% blocks executed 0%
+    #####:  230:const char *CsvParser_getErrorMessage(CsvParser *csvParser) {
+    #####:  231:    return csvParser->errMsg_;
+        -:  232:}
+        -:  233:
+        -:  234:
+        -:  235:// newly added for running the code
+function read_input called 8 returned 100% blocks executed 88%
+        8:  236:char* read_input() {
+        8:  237:    int counter = 0;
+        8:  238:    char* chars = malloc(sizeof(char) * 1000);
+        8:  239:    char c = 0;
+       36:  240:    while((c = fgetc(stdin)) != EOF){
+call    0 returned 28
+branch  1 taken 20
+branch  2 taken 8 (fallthrough)
+       20:  241:        if (counter == 1000) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 20
+    #####:  242:            exit(1);
+call    0 never executed
+        -:  243:        }
+       20:  244:        chars[counter++] = c;
+        -:  245:    }
+        8:  246:    chars[counter] = '\0';
+        8:  247:    return chars;
+        -:  248:}
+        -:  249:
+        -:  250:
+function main called 8 returned 100% blocks executed 61%
+        8:  251:int main(int argc, char** argv) {
+        8:  252:    char* string = read_input();
+call    0 returned 8
+        8:  253:    printf(string);
+call    0 returned 8
+        8:  254:    int i =  0;
+        -:  255:    //                                   file, delimiter, first_line_is_header?
+        8:  256:    CsvParser *csvparser = CsvParser_new_from_string(string, ",", 1);
+call    0 returned 8
+        -:  257:    CsvRow *header;
+        -:  258:    CsvRow *row;
+        -:  259:
+        8:  260:    header = CsvParser_getHeader(csvparser);
+call    0 returned 8
+        8:  261:    if (header == NULL) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:  262:        printf("%s\n", CsvParser_getErrorMessage(csvparser));
+call    0 never executed
+call    1 never executed
+    #####:  263:        return 1;
+        -:  264:    }
+        8:  265:    char **headerFields = CsvParser_getFields(header);
+call    0 returned 8
+       18:  266:    for (i = 0 ; i < CsvParser_getNumFields(header) ; i++) {
+call    0 returned 18
+branch  1 taken 10
+branch  2 taken 8 (fallthrough)
+       10:  267:        printf("TITLE: %s\n", headerFields[i]);
+call    0 returned 10
+        -:  268:    }
+        -:  269:    // CsvParser_destroy_row(header); -> causes error in current version
+       16:  270:    while ((row = CsvParser_getRow(csvparser)) ) {
+call    0 returned 8
+branch  1 taken 0
+branch  2 taken 8 (fallthrough)
+    #####:  271:        printf("NEW LINE:\n");
+call    0 never executed
+    #####:  272:        char **rowFields = CsvParser_getFields(row);
+call    0 never executed
+    #####:  273:        for (i = 0 ; i < CsvParser_getNumFields(row) ; i++) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  274:            printf("FIELD: %s\n", rowFields[i]);
+call    0 never executed
+        -:  275:        }
+    #####:  276:        CsvParser_destroy_row(row);
+call    0 never executed
+        -:  277:    }
+        8:  278:    CsvParser_destroy(csvparser);
+call    0 returned 8
+        8:  279:    return 0;
+        -:  280:}
+        -:  281:
+        -:  282:#ifdef __cplusplus
+        -:  283:}
+        -:  284:#endif

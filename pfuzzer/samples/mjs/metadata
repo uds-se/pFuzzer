@@ -1,0 +1,914 @@
+{"sn":"mjs","s":3776,"el":[{"e":"bcode_gen"},{"e":"bcode_parts"},{"e":"bcode_len"},{"e":"stack"},{"e":"call_stack"},{"e":"arg_stack"},{"e":"scopes"},{"e":"loop_addresses"},{"e":"owned_strings"},{"e":"foreign_strings"},{"e":"owned_values"},{"e":"json_visited_stack"},{"e":"vals"},{"e":"error_msg"},{"e":"stack_trace"},{"e":"error"},{"e":"dlsym"},{"e":"ffi_cb_args"},{"e":"cur_bcode_offset"},{"e":"object_arena"},{"e":"property_arena"},{"e":"ffi_sig_arena"},{"e":"inhibit_gc"},{"e":"need_gc"},{"e":"generate_jsc"}]}
+{"sn":"mbuf","s":192,"el":[{"e":"buf"},{"e":"len"},{"e":"size"}]}
+{"sn":"mjs_vals","s":192,"el":[{"e":"this_obj"},{"e":"dataview_proto"},{"e":"last_getprop_obj"}]}
+{"sn":"mjs_ffi_cb_args","s":512,"el":[{"e":"next"},{"e":"mjs"},{"e":"sig"},{"e":"func"},{"e":"userdata"}]}
+{"sn":"mjs_ffi_sig","s":256,"el":[{"e":"cb_sig"},{"e":"val_types"},{"e":"fn"},{"e":"args_cnt"},{"e":"is_callback"},{"e":"is_valid"}]}
+{"sn":"gc_arena","s":320,"el":[{"e":"blocks"},{"e":"size_increment"},{"e":"free"},{"e":"cell_size"},{"e":"destructor"}]}
+{"sn":"gc_block","s":192,"el":[{"e":"next"},{"e":"base"},{"e":"size"}]}
+{"sn":"gc_cell","s":64,"el":[{"e":"head"}]}
+{"sn":"mjs_property","s":192,"el":[{"e":"next"},{"e":"name"},{"e":"value"}]}
+{"sn":"mg_str","s":128,"el":[{"e":"p"},{"e":"len"}]}
+{"sn":"scan_array_info","s":2176,"el":[{"e":"found"},{"e":"path"},{"e":"token"}]}
+{"sn":"json_token","s":128,"el":[{"e":"ptr"},{"e":"len"},{"e":"type"}]}
+{"sn":"json_scanf_info","s":384,"el":[{"e":"num_conversions"},{"e":"path"},{"e":"fmt"},{"e":"target"},{"e":"user_data"},{"e":"type"}]}
+{"sn":"json_setf_data","s":256,"el":[{"e":"json_path"},{"e":"base"},{"e":"matched"},{"e":"pos"},{"e":"end"},{"e":"prev"}]}
+{"sn":"prettify_data","s":128,"el":[{"e":"out"},{"e":"level"},{"e":"last_token"}]}
+{"sn":"json_out","s":256,"el":[{"e":"printer"},{"e":"u"}]}
+{"sn":"_IO_FILE","s":1728,"el":[{"e":"_flags"},{"e":"_IO_read_ptr"},{"e":"_IO_read_end"},{"e":"_IO_read_base"},{"e":"_IO_write_base"},{"e":"_IO_write_ptr"},{"e":"_IO_write_end"},{"e":"_IO_buf_base"},{"e":"_IO_buf_end"},{"e":"_IO_save_base"},{"e":"_IO_backup_base"},{"e":"_IO_save_end"},{"e":"_markers"},{"e":"_chain"},{"e":"_fileno"},{"e":"_flags2"},{"e":"_old_offset"},{"e":"_cur_column"},{"e":"_vtable_offset"},{"e":"_shortbuf"},{"e":"_lock"},{"e":"_offset"},{"e":"__pad1"},{"e":"__pad2"},{"e":"__pad3"},{"e":"__pad4"},{"e":"__pad5"},{"e":"_mode"},{"e":"_unused2"}]}
+{"sn":"_IO_marker","s":192,"el":[{"e":"_next"},{"e":"_sbuf"},{"e":"_pos"}]}
+{"sn":"next_data","s":384,"el":[{"e":"handle"},{"e":"path"},{"e":"path_len"},{"e":"found"},{"e":"key"},{"e":"val"},{"e":"idx"}]}
+{"sn":"mjs_c_struct_member","s":192,"el":[{"e":"name"},{"e":"offset"},{"e":"type"}]}
+{"sn":"mjs_bcode_part","s":256,"el":[{"e":"start_idx"},{"e":"data"},{"e":"exec_res"},{"e":"in_rom"}]}
+{"sn":"json_parse_ctx","s":256,"el":[{"e":"mjs"},{"e":"result"},{"e":"frame"},{"e":"rcode"}]}
+{"sn":"json_parse_frame","s":128,"el":[{"e":"val"},{"e":"up"}]}
+{"sn":"mjs_object","s":64,"el":[{"e":"properties"}]}
+{"sn":"__va_list_tag","s":192,"el":[{"e":"gp_offset"},{"e":"fp_offset"},{"e":"overflow_arg_area"},{"e":"reg_save_area"}]}
+{"sn":"frozen","s":2496,"el":[{"e":"end"},{"e":"cur"},{"e":"cur_name"},{"e":"cur_name_len"},{"e":"path"},{"e":"path_len"},{"e":"callback_data"},{"e":"callback"}]}
+{"sn":"ffi_arg","s":128,"el":[{"e":"ctype"},{"e":"v"}]}
+{"sn":"cbdata","s":192,"el":[{"e":"func"},{"e":"userdata"},{"e":"func_idx"},{"e":"userdata_idx"}]}
+{"sn":"fstate","s":128,"el":[{"e":"ptr"},{"e":"path_len"}]}
+{"sn":"pstate","s":832,"el":[{"e":"file_name"},{"e":"buf"},{"e":"pos"},{"e":"line_no"},{"e":"last_emitted_line_no"},{"e":"offset_lineno_map"},{"e":"prev_tok"},{"e":"tok"},{"e":"mjs"},{"e":"start_bcode_idx"},{"e":"cur_idx"},{"e":"depth"}]}
+{"sn":"tok","s":128,"el":[{"e":"tok"},{"e":"len"},{"e":"ptr"}]}
+{"sn":"ffi_cb_data","s":384,"el":[{"e":"args"}]}
+{"un":"ffi_cb_data_val","s":64}
+{"sn":"anon","s":192,"el":[{"e":"anonElement0"},{"e":"anonElement1"},{"e":"anonElement2"}]}
+{"un":"anon.0","s":64}
+{"un":"anon.6","s":64}
+{"un":"anon.1","s":64}
+{"un":"anon.2","s":64}
+{"un":"anon.5","s":64}
+{"sn":"anon.3","s":128,"el":[{"e":"anon.3Element0"},{"e":"anon.3Element1"}]}
+{"un":"anon.4","s":64}
+{"un":"anon.7","s":64}
+{"un":"anon.8","s":64}
+{"un":"anon","s":192}
+{"f":"cs_log_set_filter","ar":[{"a":"pattern", "t":"i8*"}]}
+{"f":"cs_log_print_prefix","ar":[{"a":"level", "t":"i32"},{"a":"func", "t":"i8*"},{"a":"filename", "t":"i8*"}]}
+{"f":"mg_match_prefix","ar":[{"a":"pattern", "t":"i8*"},{"a":"pattern_len", "t":"i32"},{"a":"str", "t":"i8*"}]}
+{"f":"cs_log_printf","ar":[{"a":"fmt", "t":"i8*"}]}
+{"f":"cs_log_set_file","ar":[{"a":"file", "t":"_IO_FILE*"}]}
+{"f":"cs_log_set_level","ar":[{"a":"level", "t":"i32"}]}
+{"f":"cs_read_file","ar":[{"a":"path", "t":"i8*"},{"a":"size", "t":"i64*"}]}
+{"f":"cs_varint_llen","ar":[{"a":"num", "t":"i64"}]}
+{"f":"cs_varint_encode","ar":[{"a":"num", "t":"i64"},{"a":"buf", "t":"i8*"},{"a":"buf_size", "t":"i64"}]}
+{"f":"cs_varint_decode","ar":[{"a":"buf", "t":"i8*"},{"a":"buf_size", "t":"i64"},{"a":"num", "t":"i64*"},{"a":"llen", "t":"i64*"}]}
+{"f":"cs_varint_decode_unsafe","ar":[{"a":"buf", "t":"i8*"},{"a":"llen", "t":"i32*"}]}
+{"f":"mbuf_init","ar":[{"a":"mbuf", "t":"mbuf*"},{"a":"initial_size", "t":"i64"}]}
+{"f":"mbuf_resize","ar":[{"a":"a", "t":"mbuf*"},{"a":"new_size", "t":"i64"}]}
+{"f":"mbuf_free","ar":[{"a":"mbuf", "t":"mbuf*"}]}
+{"f":"mbuf_trim","ar":[{"a":"mbuf", "t":"mbuf*"}]}
+{"f":"mbuf_insert","ar":[{"a":"a", "t":"mbuf*"},{"a":"off", "t":"i64"},{"a":"buf", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mbuf_append","ar":[{"a":"a", "t":"mbuf*"},{"a":"buf", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mbuf_remove","ar":[{"a":"mb", "t":"mbuf*"},{"a":"n", "t":"i64"}]}
+{"f":"mg_mk_str","ar":[{"a":"s", "t":"i8*"}]}
+{"f":"mg_mk_str_n","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mg_vcmp","ar":[{"a":"str1", "t":"mg_str*"},{"a":"str2", "t":"i8*"}]}
+{"f":"mg_vcasecmp","ar":[{"a":"str1", "t":"mg_str*"},{"a":"str2", "t":"i8*"}]}
+{"f":"mg_ncasecmp","ar":[{"a":"s1", "t":"i8*"},{"a":"s2", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mg_strdup","ar":[{"a":"s.coerce0", "t":"i8*"},{"a":"s.coerce1", "t":"i64"}]}
+{"f":"mg_strdup_common","ar":[{"a":"s.coerce0", "t":"i8*"},{"a":"s.coerce1", "t":"i64"},{"a":"nul_terminate", "t":"i32"}]}
+{"f":"mg_strdup_nul","ar":[{"a":"s.coerce0", "t":"i8*"},{"a":"s.coerce1", "t":"i64"}]}
+{"f":"mg_strchr","ar":[{"a":"s.coerce0", "t":"i8*"},{"a":"s.coerce1", "t":"i64"},{"a":"c", "t":"i32"}]}
+{"f":"mg_strcmp","ar":[{"a":"str1.coerce0", "t":"i8*"},{"a":"str1.coerce1", "t":"i64"},{"a":"str2.coerce0", "t":"i8*"},{"a":"str2.coerce1", "t":"i64"}]}
+{"f":"mg_strncmp","ar":[{"a":"str1.coerce0", "t":"i8*"},{"a":"str1.coerce1", "t":"i64"},{"a":"str2.coerce0", "t":"i8*"},{"a":"str2.coerce1", "t":"i64"},{"a":"n", "t":"i64"}]}
+{"f":"mg_strstr","ar":[{"a":"haystack.coerce0", "t":"i8*"},{"a":"haystack.coerce1", "t":"i64"},{"a":"needle.coerce0", "t":"i8*"},{"a":"needle.coerce1", "t":"i64"}]}
+{"f":"c_strnlen","ar":[{"a":"s", "t":"i8*"},{"a":"maxlen", "t":"i64"}]}
+{"f":"c_vsnprintf","ar":[{"a":"buf", "t":"i8*"},{"a":"buf_size", "t":"i64"},{"a":"fmt", "t":"i8*"},{"a":"ap", "t":"__va_list_tag*"}]}
+{"f":"c_itoa","ar":[{"a":"buf", "t":"i8*"},{"a":"buf_size", "t":"i64"},{"a":"num", "t":"i64"},{"a":"base", "t":"i32"},{"a":"flags", "t":"i32"},{"a":"field_width", "t":"i32"}]}
+{"f":"c_snprintf","ar":[{"a":"buf", "t":"i8*"},{"a":"buf_size", "t":"i64"},{"a":"fmt", "t":"i8*"}]}
+{"f":"c_strnstr","ar":[{"a":"s", "t":"i8*"},{"a":"find", "t":"i8*"},{"a":"slen", "t":"i64"}]}
+{"f":"cs_to_hex","ar":[{"a":"to", "t":"i8*"},{"a":"p", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"cs_from_hex","ar":[{"a":"to", "t":"i8*"},{"a":"p", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"fourbit","ar":[{"a":"ch", "t":"i32"}]}
+{"f":"str_util_lowercase","ar":[{"a":"s", "t":"i8*"}]}
+{"f":"mg_casecmp","ar":[{"a":"s1", "t":"i8*"},{"a":"s2", "t":"i8*"}]}
+{"f":"mg_asprintf","ar":[{"a":"buf", "t":"i8**"},{"a":"size", "t":"i64"},{"a":"fmt", "t":"i8*"}]}
+{"f":"mg_avprintf","ar":[{"a":"buf", "t":"i8**"},{"a":"size", "t":"i64"},{"a":"fmt", "t":"i8*"},{"a":"ap", "t":"__va_list_tag*"}]}
+{"f":"mg_next_comma_list_entry","ar":[{"a":"list", "t":"i8*"},{"a":"val", "t":"mg_str*"},{"a":"eq_val", "t":"mg_str*"}]}
+{"f":"mg_next_comma_list_entry_n","ar":[{"a":"list.coerce0", "t":"i8*"},{"a":"list.coerce1", "t":"i64"},{"a":"val", "t":"mg_str*"},{"a":"eq_val", "t":"mg_str*"}]}
+{"f":"mg_match_prefix_n","ar":[{"a":"pattern.coerce0", "t":"i8*"},{"a":"pattern.coerce1", "t":"i64"},{"a":"str.coerce0", "t":"i8*"},{"a":"str.coerce1", "t":"i64"}]}
+{"f":"json_escape","ar":[{"a":"out", "t":"json_out*"},{"a":"p", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"get_utf8_char_len","ar":[{"a":"eroext", "t":"i8"}]}
+{"f":"json_printer_buf","ar":[{"a":"out", "t":"json_out*"},{"a":"buf", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"json_printer_file","ar":[{"a":"out", "t":"json_out*"},{"a":"buf", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"json_vprintf","ar":[{"a":"out", "t":"json_out*"},{"a":"fmt", "t":"i8*"},{"a":"xap", "t":"__va_list_tag*"}]}
+{"f":"b64enc","ar":[{"a":"out", "t":"json_out*"},{"a":"p", "t":"i8*"},{"a":"n", "t":"i32"}]}
+{"f":"is_alpha","ar":[{"a":"ch", "t":"i32"}]}
+{"f":"is_digit","ar":[{"a":"ch", "t":"i32"}]}
+{"f":"json_printf","ar":[{"a":"out", "t":"json_out*"},{"a":"fmt", "t":"i8*"}]}
+{"f":"json_printf_array","ar":[{"a":"out", "t":"json_out*"},{"a":"", "t":"[1"}]}
+{"f":"json_walk","ar":[{"a":"json_string", "t":"i8*"},{"a":"json_string_length", "t":"i32"},{"a":"callback", "t":"i32*"},{"a":"callback_data", "t":"i8*"}]}
+{"f":"doit","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"json_scanf_array_elem","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"path", "t":"i8*"},{"a":"idx", "t":"i32"},{"a":"token", "t":"json_token*"}]}
+{"f":"json_scanf_array_elem_cb","ar":[{"a":"callback_data", "t":"i8*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"path", "t":"i8*"},{"a":"token", "t":"json_token*"}]}
+{"f":"json_unescape","ar":[{"a":"src", "t":"i8*"},{"a":"slen", "t":"i32"},{"a":"dst", "t":"i8*"},{"a":"dlen", "t":"i32"}]}
+{"f":"json_vscanf","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"fmt", "t":"i8*"},{"a":"ap", "t":"__va_list_tag*"}]}
+{"f":"json_scanf_cb","ar":[{"a":"callback_data", "t":"i8*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"path", "t":"i8*"},{"a":"token", "t":"json_token*"}]}
+{"f":"json_scanf","ar":[{"a":"str", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"fmt", "t":"i8*"}]}
+{"f":"json_vfprintf","ar":[{"a":"file_name", "t":"i8*"},{"a":"fmt", "t":"i8*"},{"a":"ap", "t":"__va_list_tag*"}]}
+{"f":"json_fprintf","ar":[{"a":"file_name", "t":"i8*"},{"a":"fmt", "t":"i8*"}]}
+{"f":"json_fread","ar":[{"a":"path", "t":"i8*"}]}
+{"f":"json_vsetf","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"out", "t":"json_out*"},{"a":"json_path", "t":"i8*"},{"a":"json_fmt", "t":"i8*"},{"a":"ap", "t":"__va_list_tag*"}]}
+{"f":"json_vsetf_cb","ar":[{"a":"userdata", "t":"i8*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"path", "t":"i8*"},{"a":"t", "t":"json_token*"}]}
+{"f":"is_space","ar":[{"a":"ch", "t":"i32"}]}
+{"f":"json_setf","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"out", "t":"json_out*"},{"a":"json_path", "t":"i8*"},{"a":"json_fmt", "t":"i8*"}]}
+{"f":"json_prettify","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"out", "t":"json_out*"}]}
+{"f":"prettify_cb","ar":[{"a":"userdata", "t":"i8*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"path", "t":"i8*"},{"a":"t", "t":"json_token*"}]}
+{"f":"json_prettify_file","ar":[{"a":"file_name", "t":"i8*"}]}
+{"f":"json_next_key","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"handle", "t":"i8*"},{"a":"path", "t":"i8*"},{"a":"key", "t":"json_token*"},{"a":"val", "t":"json_token*"}]}
+{"f":"json_next","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"handle", "t":"i8*"},{"a":"path", "t":"i8*"},{"a":"key", "t":"json_token*"},{"a":"val", "t":"json_token*"},{"a":"i", "t":"i32*"}]}
+{"f":"json_next_elem","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"handle", "t":"i8*"},{"a":"path", "t":"i8*"},{"a":"idx", "t":"i32*"},{"a":"val", "t":"json_token*"}]}
+{"f":"json_vasprintf","ar":[{"a":"fmt", "t":"i8*"},{"a":"ap", "t":"__va_list_tag*"}]}
+{"f":"json_sprinter","ar":[{"a":"out", "t":"json_out*"},{"a":"str", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"json_asprintf","ar":[{"a":"fmt", "t":"i8*"}]}
+{"f":"ffi_set_word","ar":[{"a":"arg", "t":"ffi_arg*"},{"a":"v", "t":"i64"}]}
+{"f":"ffi_set_bool","ar":[{"a":"arg", "t":"ffi_arg*"},{"a":"eroext", "t":"i1"}]}
+{"f":"ffi_set_ptr","ar":[{"a":"arg", "t":"ffi_arg*"},{"a":"v", "t":"i8*"}]}
+{"f":"ffi_set_double","ar":[{"a":"arg", "t":"ffi_arg*"},{"a":"v", "t":"double"}]}
+{"f":"ffi_set_float","ar":[{"a":"arg", "t":"ffi_arg*"},{"a":"v", "t":"float"}]}
+{"f":"ffi_call","ar":[{"a":")*", "t":"i32*"},{"a":"nargs", "t":"i32"},{"a":"res", "t":"ffi_arg*"},{"a":"args", "t":"ffi_arg*"}]}
+{"f":"mjs_mk_array","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_mk_object","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_is_array","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_array_get","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arr", "t":"i64"},{"a":"index", "t":"i64"}]}
+{"f":"mjs_array_get2","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arr", "t":"i64"},{"a":"index", "t":"i64"},{"a":"has", "t":"i32*"}]}
+{"f":"mjs_array_length","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_is_object","ar":[{"a":"v", "t":"i64"}]}
+{"f":"get_object_struct","ar":[{"a":"v", "t":"i64"}]}
+{"f":"str_to_ulong","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"},{"a":"ok", "t":"i32*"},{"a":"res", "t":"i64*"}]}
+{"f":"mjs_array_set","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arr", "t":"i64"},{"a":"index", "t":"i64"},{"a":"v", "t":"i64"}]}
+{"f":"v_sprintf_s","ar":[{"a":"buf", "t":"i8*"},{"a":"size", "t":"i64"},{"a":"fmt", "t":"i8*"}]}
+{"f":"mjs_set","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"val", "t":"i64"}]}
+{"f":"mjs_array_del","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arr", "t":"i64"},{"a":"index", "t":"i64"}]}
+{"f":"mjs_del","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mjs_array_push","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arr", "t":"i64"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_init_builtin","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"}]}
+{"f":"mjs_mk_foreign_func","ar":[{"a":"mjs", "t":"mjs*"},{"a":")*", "t":"i32*"}]}
+{"f":"mjs_load","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_print","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_ffi_call","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_ffi_cb_free","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_mkstr","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_get_mjs","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_die","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_do_gc","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_chr","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_s2o","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_op_json_stringify","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_op_json_parse","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_op_create_object","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_op_isnan","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_destroy","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_bcode_parts_cnt","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_bcode_part_get","ar":[{"a":"mjs", "t":"mjs*"},{"a":"num", "t":"i32"}]}
+{"f":"mjs_ffi_args_free_list","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"gc_arena_destroy","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"gc_arena*"}]}
+{"f":"mjs_create","ar":[]}
+{"f":"gc_arena_init","ar":[{"a":"a", "t":"gc_arena*"},{"a":"cell_size", "t":"i64"},{"a":"initial_size", "t":"i64"},{"a":"size_increment", "t":"i64"}]}
+{"f":"mjs_ffi_sig_destructor","ar":[{"a":"mjs", "t":"mjs*"},{"a":"psig", "t":"i8*"}]}
+{"f":"mjs_set_ffi_resolver","ar":[{"a":"mjs", "t":"mjs*"},{"a":"dlsym", "t":"i32*"}]}
+{"f":"push_mjs_val","ar":[{"a":"m", "t":"mbuf*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_set_errorf","ar":[{"a":"mjs", "t":"mjs*"},{"a":"err", "t":"i32"},{"a":"fmt", "t":"i8*"}]}
+{"f":"mjs_prepend_errorf","ar":[{"a":"mjs", "t":"mjs*"},{"a":"err", "t":"i32"},{"a":"fmt", "t":"i8*"}]}
+{"f":"mjs_print_error","ar":[{"a":"mjs", "t":"mjs*"},{"a":"fp", "t":"_IO_FILE*"},{"a":"msg", "t":"i8*"},{"a":"print_stack_trace", "t":"i32"}]}
+{"f":"mjs_strerror","ar":[{"a":"mjs", "t":"mjs*"},{"a":"err", "t":"i32"}]}
+{"f":"mjs_get_global","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"vptr","ar":[{"a":"m", "t":"mbuf*"},{"a":"idx", "t":"i32"}]}
+{"f":"mjs_own","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"}]}
+{"f":"mjs_disown","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"}]}
+{"f":"mjs_nargs","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_stack_size","ar":[{"a":"m", "t":"mbuf*"}]}
+{"f":"mjs_getretvalpos","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_arg","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arg_index", "t":"i32"}]}
+{"f":"mjs_return","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_push","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_set_generate_jsc","ar":[{"a":"mjs", "t":"mjs*"},{"a":"generate_jsc", "t":"i32"}]}
+{"f":"mjs_mem_to_ptr","ar":[{"a":"val", "t":"i32"}]}
+{"f":"mjs_mem_get_ptr","ar":[{"a":"base", "t":"i8*"},{"a":"offset", "t":"i32"}]}
+{"f":"mjs_mem_set_ptr","ar":[{"a":"ptr", "t":"i8*"},{"a":"val", "t":"i8*"}]}
+{"f":"mjs_mem_get_dbl","ar":[{"a":"ptr", "t":"i8*"}]}
+{"f":"mjs_mem_set_dbl","ar":[{"a":"ptr", "t":"i8*"},{"a":"val", "t":"double"}]}
+{"f":"mjs_mem_get_uint","ar":[{"a":"ptr", "t":"i8*"},{"a":"size", "t":"i32"},{"a":"bigendian", "t":"i32"}]}
+{"f":"mjs_mem_get_int","ar":[{"a":"ptr", "t":"i8*"},{"a":"size", "t":"i32"},{"a":"bigendian", "t":"i32"}]}
+{"f":"mjs_mem_set_uint","ar":[{"a":"ptr", "t":"i8*"},{"a":"val", "t":"i32"},{"a":"size", "t":"i32"},{"a":"bigendian", "t":"i32"}]}
+{"f":"mjs_mem_set_int","ar":[{"a":"ptr", "t":"i8*"},{"a":"val", "t":"i32"},{"a":"size", "t":"i32"},{"a":"bigendian", "t":"i32"}]}
+{"f":"mjs_get_this","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_exec","ar":[{"a":"mjs", "t":"mjs*"},{"a":"src", "t":"i8*"},{"a":"res", "t":"i64*"}]}
+{"f":"mjs_exec_internal","ar":[{"a":"mjs", "t":"mjs*"},{"a":"path", "t":"i8*"},{"a":"src", "t":"i8*"},{"a":"generate_jsc", "t":"i32"},{"a":"res", "t":"i64*"}]}
+{"f":"mjs_exec_file","ar":[{"a":"mjs", "t":"mjs*"},{"a":"path", "t":"i8*"},{"a":"res", "t":"i64*"}]}
+{"f":"mjs_call","ar":[{"a":"mjs", "t":"mjs*"},{"a":"res", "t":"i64*"},{"a":"func", "t":"i64"},{"a":"this_val", "t":"i64"},{"a":"nargs", "t":"i32"}]}
+{"f":"mjs_apply","ar":[{"a":"mjs", "t":"mjs*"},{"a":"res", "t":"i64*"},{"a":"func", "t":"i64"},{"a":"this_val", "t":"i64"},{"a":"nargs", "t":"i32"},{"a":"args", "t":"i64*"}]}
+{"f":"mjs_is_function","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_is_foreign","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_is_ffi_sig","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_get_func_addr","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_mk_number","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"double"}]}
+{"f":"call_stack_push_frame","ar":[{"a":"mjs", "t":"mjs*"},{"a":"offset", "t":"i64"},{"a":"retval_stack_idx", "t":"i64"}]}
+{"f":"mjs_get_ptr","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_ffi_call2","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_execute","ar":[{"a":"mjs", "t":"mjs*"},{"a":"off", "t":"i64"},{"a":"res", "t":"i64*"}]}
+{"f":"call_stack_restore_frame","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_pop","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"gc_compact_strings","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"gc_string_val_from_offset","ar":[{"a":"s", "t":"i64"}]}
+{"f":"mjs_gc","ar":[{"a":"mjs", "t":"mjs*"},{"a":"full", "t":"i32"}]}
+{"f":"gc_mark_val_array","ar":[{"a":"mjs", "t":"mjs*"},{"a":"vals", "t":"i64*"},{"a":"len", "t":"i64"}]}
+{"f":"gc_mark_mbuf_pt","ar":[{"a":"mjs", "t":"mjs*"},{"a":"mbuf", "t":"mbuf*"}]}
+{"f":"gc_mark_mbuf_val","ar":[{"a":"mjs", "t":"mjs*"},{"a":"mbuf", "t":"mbuf*"}]}
+{"f":"gc_mark_ffi_cbargs_list","ar":[{"a":"mjs", "t":"mjs*"},{"a":"cbargs", "t":"mjs_ffi_cb_args*"}]}
+{"f":"gc_sweep","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"gc_arena*"},{"a":"start", "t":"i64"}]}
+{"f":"read_input","ar":[]}
+{"f":"main","ar":[{"a":"argc", "t":"i32"},{"a":"argv", "t":"i8**"}]}
+{"f":"mjs_fprintf","ar":[{"a":"v", "t":"i64"},{"a":"mjs", "t":"mjs*"},{"a":"fp", "t":"_IO_FILE*"}]}
+{"f":"new_object","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_object_to_value","ar":[{"a":"o", "t":"mjs_object*"}]}
+{"f":"mjs_get","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"}]}
+{"f":"mjs_get_own_property","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mjs_get_v","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"name", "t":"i64"}]}
+{"f":"mjs_to_string","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"},{"a":"p", "t":"i8**"},{"a":"sizep", "t":"i64*"},{"a":"need_free", "t":"i32*"}]}
+{"f":"mjs_get_v_proto","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"key", "t":"i64"}]}
+{"f":"mjs_mk_string","ar":[{"a":"mjs", "t":"mjs*"},{"a":"p", "t":"i8*"},{"a":"len", "t":"i64"},{"a":"copy", "t":"i32"}]}
+{"f":"mjs_get_own_property_v","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"key", "t":"i64"}]}
+{"f":"mjs_set_internal","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"name_v", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"val", "t":"i64"}]}
+{"f":"mjs_set_v","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"name", "t":"i64"},{"a":"val", "t":"i64"}]}
+{"f":"mjs_get_string","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"},{"a":"sizep", "t":"i64*"}]}
+{"f":"mjs_destroy_property","ar":[{"a":"p", "t":"mjs_property**"}]}
+{"f":"mjs_next","ar":[{"a":"mjs", "t":"mjs*"},{"a":"obj", "t":"i64"},{"a":"iterator", "t":"i64*"}]}
+{"f":"get_ptr","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_mk_foreign","ar":[{"a":"mjs", "t":"mjs*"},{"a":"p", "t":"i8*"}]}
+{"f":"mjs_struct_to_obj","ar":[{"a":"mjs", "t":"mjs*"},{"a":"base", "t":"i8*"},{"a":"def", "t":"mjs_c_struct_member*"}]}
+{"f":"mjs_mk_boolean","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i32"}]}
+{"f":"mjs_mk_null","ar":[]}
+{"f":"mjs_is_null","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_mk_undefined","ar":[]}
+{"f":"mjs_is_undefined","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_get_double","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"get_double","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_get_int","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_get_int32","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_is_number","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_get_bool","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_is_boolean","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_pointer_to_value","ar":[{"a":"mjs", "t":"mjs*"},{"a":"p", "t":"i8*"}]}
+{"f":"mjs_mk_function","ar":[{"a":"mjs", "t":"mjs*"},{"a":"off", "t":"i64"}]}
+{"f":"mjs_is_string","ar":[{"a":"v", "t":"i64"}]}
+{"f":"gc_strings_is_gc_needed","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"embed_string","ar":[{"a":"m", "t":"mbuf*"},{"a":"offset", "t":"i64"},{"a":"p", "t":"i8*"},{"a":"len", "t":"i64"},{"a":"eroext", "t":"i8"}]}
+{"f":"gc_string_mjs_val_to_offset","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_get_cstring","ar":[{"a":"mjs", "t":"mjs*"},{"a":"value", "t":"i64*"}]}
+{"f":"mjs_strcmp","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"i64*"},{"a":"b", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mjs_typeof","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_stringify_type","ar":[{"a":"t", "t":"i32"}]}
+{"f":"mjs_get_type","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_jprintf","ar":[{"a":"v", "t":"i64"},{"a":"mjs", "t":"mjs*"},{"a":"out", "t":"json_out*"}]}
+{"f":"mjs_sprintf","ar":[{"a":"v", "t":"i64"},{"a":"mjs", "t":"mjs*"},{"a":"buf", "t":"i8*"},{"a":"n", "t":"i64"}]}
+{"f":"mjs_disasm","ar":[{"a":"code", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"mjs_disasm_single","ar":[{"a":"code", "t":"i8*"},{"a":"i", "t":"i64"}]}
+{"f":"mjs_dump","ar":[{"a":"mjs", "t":"mjs*"},{"a":"do_disasm", "t":"i32"}]}
+{"f":"mjs_dump_obj_stack","ar":[{"a":"name", "t":"i8*"},{"a":"m", "t":"mbuf*"},{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_get_bcode_filename_by_offset","ar":[{"a":"mjs", "t":"mjs*"},{"a":"offset", "t":"i32"}]}
+{"f":"mjs_bcode_part_get_by_offset","ar":[{"a":"mjs", "t":"mjs*"},{"a":"offset", "t":"i64"}]}
+{"f":"mjs_get_bcode_filename","ar":[{"a":"mjs", "t":"mjs*"},{"a":"bp", "t":"mjs_bcode_part*"}]}
+{"f":"mjs_get_lineno_by_offset","ar":[{"a":"mjs", "t":"mjs*"},{"a":"offset", "t":"i32"}]}
+{"f":"mjs_get_offset_by_call_frame_num","ar":[{"a":"mjs", "t":"mjs*"},{"a":"cf_num", "t":"i32"}]}
+{"f":"b64idx","ar":[{"a":"c", "t":"i32"}]}
+{"f":"parse_value","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"cur","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"parse_string","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"parse_object","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"parse_array","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"expect","ar":[{"a":"f", "t":"frozen*"},{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"tok_type", "t":"i32"}]}
+{"f":"parse_number","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"skip_whitespaces","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"test_and_skip","ar":[{"a":"f", "t":"frozen*"},{"a":"expected", "t":"i32"}]}
+{"f":"append_to_path","ar":[{"a":"f", "t":"frozen*"},{"a":"str", "t":"i8*"},{"a":"size", "t":"i32"}]}
+{"f":"left","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"get_escape_len","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"}]}
+{"f":"truncate_path","ar":[{"a":"f", "t":"frozen*"},{"a":"len", "t":"i64"}]}
+{"f":"is_hex_digit","ar":[{"a":"ch", "t":"i32"}]}
+{"f":"parse_pair","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"parse_key","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"parse_identifier","ar":[{"a":"f", "t":"frozen*"}]}
+{"f":"hexdec","ar":[{"a":"s", "t":"i8*"}]}
+{"f":"b64dec","ar":[{"a":"src", "t":"i8*"},{"a":"n", "t":"i32"},{"a":"dst", "t":"i8*"}]}
+{"f":"b64rev","ar":[{"a":"c", "t":"i32"}]}
+{"f":"get_matched_prefix_len","ar":[{"a":"s1", "t":"i8*"},{"a":"s2", "t":"i8*"}]}
+{"f":"print_key","ar":[{"a":"pd", "t":"prettify_data*"},{"a":"path", "t":"i8*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i32"}]}
+{"f":"indent","ar":[{"a":"out", "t":"json_out*"},{"a":"level", "t":"i32"}]}
+{"f":"next_cb","ar":[{"a":"userdata", "t":"i8*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"path", "t":"i8*"},{"a":"t", "t":"json_token*"}]}
+{"f":"next_set_key","ar":[{"a":"d", "t":"next_data*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i32"},{"a":"is_array", "t":"i32"}]}
+{"f":"mjs_get_loaded_file_bcode","ar":[{"a":"mjs", "t":"mjs*"},{"a":"filename", "t":"i8*"}]}
+{"f":"mjs_pop_val","ar":[{"a":"m", "t":"mbuf*"}]}
+{"f":"mjs_check_arg","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arg_num", "t":"i32"},{"a":"arg_name", "t":"i8*"},{"a":"expected_type", "t":"i32"},{"a":"parg", "t":"i64*"}]}
+{"f":"mjs_parse","ar":[{"a":"path", "t":"i8*"},{"a":"buf", "t":"i8*"},{"a":"mjs", "t":"mjs*"}]}
+{"f":"pinit","ar":[{"a":"file_name", "t":"i8*"},{"a":"buf", "t":"i8*"},{"a":"p", "t":"pstate*"}]}
+{"f":"emit_byte","ar":[{"a":"pstate", "t":"pstate*"},{"a":"eroext", "t":"i8"}]}
+{"f":"parse_statement_list","ar":[{"a":"p", "t":"pstate*"},{"a":"et", "t":"i32"}]}
+{"f":"mjs_bcode_commit","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"add_lineno_map_item","ar":[{"a":"pstate", "t":"pstate*"}]}
+{"f":"pnext","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_statement","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"skip_spaces_and_comments","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"mjs_is_digit","ar":[{"a":"c", "t":"i32"}]}
+{"f":"getnum","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"getstr","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"mjs_is_ident","ar":[{"a":"c", "t":"i32"}]}
+{"f":"getident","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"is_reserved_word_token","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i32"}]}
+{"f":"longtok3","ar":[{"a":"p", "t":"pstate*"},{"a":"ignext", "t":"i8"},{"a":"ignext", "t":"i8"},{"a":"ignext", "t":"i8"}]}
+{"f":"longtok4","ar":[{"a":"p", "t":"pstate*"},{"a":"ignext", "t":"i8"},{"a":"ignext", "t":"i8"},{"a":"ignext", "t":"i8"},{"a":"ignext", "t":"i8"}]}
+{"f":"longtok","ar":[{"a":"p", "t":"pstate*"},{"a":"first_chars", "t":"i8*"},{"a":"second_chars", "t":"i8*"}]}
+{"f":"ptranslate","ar":[{"a":"tok", "t":"i32"}]}
+{"f":"mjs_is_space","ar":[{"a":"c", "t":"i32"}]}
+{"f":"mjs_is_alpha","ar":[{"a":"c", "t":"i32"}]}
+{"f":"parse_let","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_block","ar":[{"a":"p", "t":"pstate*"},{"a":"mkscope", "t":"i32"}]}
+{"f":"parse_return","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_for","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_while","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_if","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_expr","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"emit_str","ar":[{"a":"pstate", "t":"pstate*"},{"a":"ptr", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"emit_op","ar":[{"a":"pstate", "t":"pstate*"},{"a":"tok", "t":"i32"}]}
+{"f":"pstate_revert","ar":[{"a":"p", "t":"pstate*"},{"a":"old", "t":"pstate*"},{"a":"old_bcode_gen_len", "t":"i32"}]}
+{"f":"check_for_in","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_for_in","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"emit_init_offset","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"mjs_bcode_insert_offset","ar":[{"a":"p", "t":"pstate*"},{"a":"mjs", "t":"mjs*"},{"a":"offset", "t":"i64"},{"a":"v", "t":"i64"}]}
+{"f":"parse_block_or_stmt","ar":[{"a":"p", "t":"pstate*"},{"a":"cs", "t":"i32"}]}
+{"f":"ptest","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_assignment","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_ternary","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"findtok","ar":[{"a":"toks", "t":"i32*"},{"a":"tok", "t":"i32"}]}
+{"f":"parse_logical_or","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_logical_and","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_bitwise_or","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_bitwise_xor","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_bitwise_and","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_equality","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_comparison","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_shifts","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_plus_minus","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_mul_div_rem","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_unary","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_postfix","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_call_dot_mem","ar":[{"a":"p", "t":"pstate*"},{"a":"prev_op", "t":"i32"}]}
+{"f":"parse_literal","ar":[{"a":"p", "t":"pstate*"},{"a":"t", "t":"tok*"}]}
+{"f":"emit_int","ar":[{"a":"pstate", "t":"pstate*"},{"a":"n", "t":"i64"}]}
+{"f":"parse_array_literal","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_object_literal","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"parse_function","ar":[{"a":"p", "t":"pstate*"}]}
+{"f":"mjs_bcode_part_add","ar":[{"a":"mjs", "t":"mjs*"},{"a":"bp", "t":"mjs_bcode_part*"}]}
+{"f":"maybe_gc","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_is_truthy","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"vtop","ar":[{"a":"m", "t":"mbuf*"}]}
+{"f":"mjs_find_scope","ar":[{"a":"mjs", "t":"mjs*"},{"a":"key", "t":"i64"}]}
+{"f":"getprop_builtin","ar":[{"a":"mjs", "t":"mjs*"},{"a":"val", "t":"i64"},{"a":"name", "t":"i64"},{"a":"res", "t":"i64*"}]}
+{"f":"exec_expr","ar":[{"a":"mjs", "t":"mjs*"},{"a":"op", "t":"i32"}]}
+{"f":"mjs_gen_stack_trace","ar":[{"a":"mjs", "t":"mjs*"},{"a":"offset", "t":"i64"}]}
+{"f":"mjs_to_boolean_v","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"getprop_builtin_string","ar":[{"a":"mjs", "t":"mjs*"},{"a":"val", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"res", "t":"i64*"}]}
+{"f":"mjs_apply_","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"getprop_builtin_array","ar":[{"a":"mjs", "t":"mjs*"},{"a":"val", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"res", "t":"i64*"}]}
+{"f":"getprop_builtin_foreign","ar":[{"a":"mjs", "t":"mjs*"},{"a":"val", "t":"i64"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"res", "t":"i64*"}]}
+{"f":"cstr_to_ulong","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i64"},{"a":"ok", "t":"i32*"}]}
+{"f":"mjs_string_char_code_at","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_string_index_of","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_string_slice","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_normalize_idx","ar":[{"a":"idx", "t":"i32"},{"a":"size", "t":"i32"}]}
+{"f":"mjs_array_splice","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_array_push_internal","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"move_item","ar":[{"a":"mjs", "t":"mjs*"},{"a":"arr", "t":"i64"},{"a":"from", "t":"i64"},{"a":"to", "t":"i64"}]}
+{"f":"do_op","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"i64"},{"a":"b", "t":"i64"},{"a":"op", "t":"i32"}]}
+{"f":"check_equal","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"i64"},{"a":"b", "t":"i64"}]}
+{"f":"op_assign","ar":[{"a":"mjs", "t":"mjs*"},{"a":"op", "t":"i32"}]}
+{"f":"do_arith_op","ar":[{"a":"da", "t":"double"},{"a":"db", "t":"double"},{"a":"op", "t":"i32"},{"a":"resnan", "t":"i8*"}]}
+{"f":"s_concat","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"i64"},{"a":"b", "t":"i64"}]}
+{"f":"set_no_autoconversion_error","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"s_cmp","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"i64"},{"a":"b", "t":"i64"}]}
+{"f":"mjs_append_stack_trace_line","ar":[{"a":"mjs", "t":"mjs*"},{"a":"offset", "t":"i64"}]}
+{"f":"mjs_ffi_sig_free","ar":[{"a":"sig", "t":"mjs_ffi_sig*"}]}
+{"f":"mjs_get_ffi_sig_struct","ar":[{"a":"v", "t":"i64"}]}
+{"f":"mjs_mk_ffi_sig","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_parse_ffi_signature","ar":[{"a":"mjs", "t":"mjs*"},{"a":"s", "t":"i8*"},{"a":"sig_len", "t":"i32"},{"a":"sig", "t":"mjs_ffi_sig*"},{"a":"sig_type", "t":"i32"}]}
+{"f":"mjs_ffi_sig_to_value","ar":[{"a":"psig", "t":"mjs_ffi_sig*"}]}
+{"f":"new_ffi_sig","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"mjs_ffi_sig_init","ar":[{"a":"sig", "t":"mjs_ffi_sig*"}]}
+{"f":"gc_alloc_cell","ar":[{"a":"mjs", "t":"mjs*"},{"a":"a", "t":"gc_arena*"}]}
+{"f":"gc_new_block","ar":[{"a":"a", "t":"gc_arena*"},{"a":"size", "t":"i64"}]}
+{"f":"gc_arena_is_gc_needed","ar":[{"a":"a", "t":"gc_arena*"}]}
+{"f":"find_paren","ar":[{"a":"s", "t":"i8*"},{"a":"e", "t":"i8*"}]}
+{"f":"find_closing_paren","ar":[{"a":"s", "t":"i8*"},{"a":"e", "t":"i8*"}]}
+{"f":"parse_cval_type","ar":[{"a":"mjs", "t":"mjs*"},{"a":"s", "t":"i8*"},{"a":"e", "t":"i8*"}]}
+{"f":"mjs_ffi_sig_set_val_type","ar":[{"a":"sig", "t":"mjs_ffi_sig*"},{"a":"idx", "t":"i32"},{"a":"eroext", "t":"i8"}]}
+{"f":"mjs_ffi_sig_validate","ar":[{"a":"mjs", "t":"mjs*"},{"a":"sig", "t":"mjs_ffi_sig*"},{"a":"sig_type", "t":"i32"}]}
+{"f":"get_cb_impl_by_signature","ar":[{"a":"get_cb_impl_by_signature(%struct.mjs_ffi_sig*", "t":"i32*"}]}
+{"f":"mjs_ffi_is_regular_word_or_void","ar":[{"a":"eroext", "t":"i8"}]}
+{"f":"ffi_cb_impl_wpwwwww","ar":[{"a":"w0", "t":"i64"},{"a":"w1", "t":"i64"},{"a":"w2", "t":"i64"},{"a":"w3", "t":"i64"},{"a":"w4", "t":"i64"},{"a":"w5", "t":"i64"}]}
+{"f":"ffi_cb_impl_wwpwwww","ar":[{"a":"w0", "t":"i64"},{"a":"w1", "t":"i64"},{"a":"w2", "t":"i64"},{"a":"w3", "t":"i64"},{"a":"w4", "t":"i64"},{"a":"w5", "t":"i64"}]}
+{"f":"ffi_cb_impl_wwwpwww","ar":[{"a":"w0", "t":"i64"},{"a":"w1", "t":"i64"},{"a":"w2", "t":"i64"},{"a":"w3", "t":"i64"},{"a":"w4", "t":"i64"},{"a":"w5", "t":"i64"}]}
+{"f":"ffi_cb_impl_wwwwpww","ar":[{"a":"w0", "t":"i64"},{"a":"w1", "t":"i64"},{"a":"w2", "t":"i64"},{"a":"w3", "t":"i64"},{"a":"w4", "t":"i64"},{"a":"w5", "t":"i64"}]}
+{"f":"ffi_cb_impl_wwwwwpw","ar":[{"a":"w0", "t":"i64"},{"a":"w1", "t":"i64"},{"a":"w2", "t":"i64"},{"a":"w3", "t":"i64"},{"a":"w4", "t":"i64"},{"a":"w5", "t":"i64"}]}
+{"f":"ffi_cb_impl_wwwwwwp","ar":[{"a":"w0", "t":"i64"},{"a":"w1", "t":"i64"},{"a":"w2", "t":"i64"},{"a":"w3", "t":"i64"},{"a":"w4", "t":"i64"},{"a":"w5", "t":"i64"}]}
+{"f":"ffi_cb_impl_wpd","ar":[{"a":"w0", "t":"i64"},{"a":"d1", "t":"double"}]}
+{"f":"ffi_cb_impl_wdp","ar":[{"a":"d0", "t":"double"},{"a":"w1", "t":"i64"}]}
+{"f":"mjs_ffi_is_regular_word","ar":[{"a":"eroext", "t":"i8"}]}
+{"f":"ffi_init_cb_data_wwww","ar":[{"a":"data", "t":"ffi_cb_data*"},{"a":"w0", "t":"i64"},{"a":"w1", "t":"i64"},{"a":"w2", "t":"i64"},{"a":"w3", "t":"i64"},{"a":"w4", "t":"i64"},{"a":"w5", "t":"i64"}]}
+{"f":"ffi_cb_impl_generic","ar":[{"a":"param", "t":"i8*"},{"a":"data", "t":"ffi_cb_data*"}]}
+{"f":"mjs_legit_pointer_to_value","ar":[{"a":"p", "t":"i8*"}]}
+{"f":"ffi_get_matching","ar":[{"a":"plist", "t":"mjs_ffi_cb_args**"},{"a":"func", "t":"i64"},{"a":"userdata", "t":"i64"}]}
+{"f":"mjs_ffi_sig_copy","ar":[{"a":"to", "t":"mjs_ffi_sig*"},{"a":"from", "t":"mjs_ffi_sig*"}]}
+{"f":"gc_free_block","ar":[{"a":"b", "t":"gc_block*"}]}
+{"f":"gc_mark","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"}]}
+{"f":"gc_mark_object","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"}]}
+{"f":"gc_mark_ffi_sig","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"}]}
+{"f":"gc_mark_string","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64*"}]}
+{"f":"gc_check_val","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"}]}
+{"f":"gc_check_ptr","ar":[{"a":"a", "t":"gc_arena*"},{"a":"ptr", "t":"i8*"}]}
+{"f":"mjs_json_stringify","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"},{"a":"buf", "t":"i8*"},{"a":"size", "t":"i64"},{"a":"res", "t":"i8**"}]}
+{"f":"to_json_or_debug","ar":[{"a":"mjs", "t":"mjs*"},{"a":"v", "t":"i64"},{"a":"buf", "t":"i8*"},{"a":"size", "t":"i64"},{"a":"res_len", "t":"i64*"},{"a":"eroext", "t":"i8"}]}
+{"f":"should_skip_for_json","ar":[{"a":"type", "t":"i32"}]}
+{"f":"snquote","ar":[{"a":"buf", "t":"i8*"},{"a":"size", "t":"i64"},{"a":"s", "t":"i8*"},{"a":"len", "t":"i64"}]}
+{"f":"append_hex","ar":[{"a":"buf", "t":"i8*"},{"a":"limit", "t":"i8*"},{"a":"eroext", "t":"i8"}]}
+{"f":"mjs_json_parse","ar":[{"a":"mjs", "t":"mjs*"},{"a":"str", "t":"i8*"},{"a":"len", "t":"i64"},{"a":"res", "t":"i64*"}]}
+{"f":"frozen_cb","ar":[{"a":"data", "t":"i8*"},{"a":"name", "t":"i8*"},{"a":"name_len", "t":"i64"},{"a":"path", "t":"i8*"},{"a":"token", "t":"json_token*"}]}
+{"f":"free_json_frame","ar":[{"a":"ctx", "t":"json_parse_ctx*"},{"a":"frame", "t":"json_parse_frame*"}]}
+{"f":"alloc_json_frame","ar":[{"a":"ctx", "t":"json_parse_ctx*"},{"a":"v", "t":"i64"}]}
+{"f":"mjs_mk_property","ar":[{"a":"mjs", "t":"mjs*"},{"a":"name", "t":"i64"},{"a":"value", "t":"i64"}]}
+{"f":"new_property","ar":[{"a":"mjs", "t":"mjs*"}]}
+{"f":"unescape","ar":[{"a":"s", "t":"i8*"},{"a":"len", "t":"i64"},{"a":"to", "t":"i8*"}]}
+{"f":"chartorune","ar":[{"a":"rune", "t":"i16*"},{"a":"str", "t":"i8*"}]}
+{"f":"nextesc","ar":[{"a":"p", "t":"i8**"}]}
+{"f":"runetochar","ar":[{"a":"str", "t":"i8*"},{"a":"rune", "t":"i16*"}]}
+{"f":"hex","ar":[{"a":"c", "t":"i32"}]}
+{"f":"opcodetostr","ar":[{"a":"eroext", "t":"i8"}]}
+{"gv":"cs_log_threshold","t":"i32 "}
+{"gv":"cs_log_file","t":"%struct._IO_FILE* "}
+{"gv":"cs_log_cur_msg_level","t":"i32 "}
+{"gv":"s_filter_pattern","t":"i8* "}
+{"gv":"s_filter_pattern_len","t":"i64 "}
+{"gv":"stderr","t":"%struct._IO_FILE*, "}
+{"gv":".str","t":"[7 x i8]"}
+{"gv":".str.1","t":"[3 x i8]"}
+{"gv":".str.2","t":"[16 x i8]"}
+{"gv":".str.3","t":"[57 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mbuf_insert","t":"[64 x i8]"}
+{"gv":".str.4","t":"[18 x i8]"}
+{"gv":".str.5","t":"[14 x i8]"}
+{"gv":"cs_to_hex.hex","t":"i8* "}
+{"gv":".str.6","t":"[17 x i8]"}
+{"gv":".str.7","t":"[7 x i8]"}
+{"gv":".str.8","t":"[2 x i8]"}
+{"gv":".str.9","t":"[5 x i8]"}
+{"gv":".str.10","t":"[2 x i8]"}
+{"gv":".str.11","t":"[5 x i8]"}
+{"gv":".str.12","t":"[12 x i8]"}
+{"gv":".str.13","t":"[4 x i8]"}
+{"gv":".str.14","t":"[4 x i8]"}
+{"gv":".str.15","t":"[5 x i8]"}
+{"gv":".str.16","t":"[6 x i8]"}
+{"gv":".str.17","t":"[26 x i8]"}
+{"gv":".str.18","t":"[5 x i8]"}
+{"gv":".str.19","t":"[2 x i8]"}
+{"gv":".str.20","t":"[3 x i8]"}
+{"gv":".str.21","t":"[2 x i8]"}
+{"gv":".str.22","t":"[7 x i8]"}
+{"gv":".str.23","t":"[9 x i8]"}
+{"gv":".str.24","t":"[9 x i8]"}
+{"gv":".str.25","t":"[2 x i8]"}
+{"gv":".str.26","t":"[8 x i8]"}
+{"gv":".str.27","t":"[6 x i8]"}
+{"gv":".str.28","t":"[3 x i8]"}
+{"gv":".str.29","t":"[3 x i8]"}
+{"gv":".str.30","t":"[2 x i8]"}
+{"gv":".str.31","t":"[6 x i8]"}
+{"gv":".str.32","t":"[3 x i8]"}
+{"gv":".str.33","t":"[2 x i8]"}
+{"gv":".str.34","t":"[1 x i8]"}
+{"gv":".str.35","t":"[3 x i8]"}
+{"gv":".str.36","t":"[7 x i8]"}
+{"gv":".str.37","t":"[5 x i8]"}
+{"gv":".str.38","t":"[6 x i8]"}
+{"gv":".str.39","t":"[4 x i8]"}
+{"gv":".str.40","t":"[12 x i8]"}
+{"gv":".str.41","t":"[6 x i8]"}
+{"gv":".str.42","t":"[7 x i8]"}
+{"gv":".str.43","t":"[4 x i8]"}
+{"gv":".str.44","t":"[3 x i8]"}
+{"gv":".str.45","t":"[4 x i8]"}
+{"gv":".str.46","t":"[4 x i8]"}
+{"gv":".str.47","t":"[10 x i8]"}
+{"gv":".str.48","t":"[6 x i8]"}
+{"gv":".str.49","t":"[5 x i8]"}
+{"gv":".str.50","t":"[7 x i8]"}
+{"gv":".str.51","t":"[7 x i8]"}
+{"gv":".str.52","t":"[4 x i8]"}
+{"gv":".str.53","t":"[6 x i8]"}
+{"gv":".str.54","t":"[14 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_prepend_errorf","t":"[73 x i8]"}
+{"gv":".str.55","t":"[7 x i8]"}
+{"gv":".str.56","t":"[10 x i8]"}
+{"gv":".str.57","t":"[8 x i8]"}
+{"gv":".str.58","t":"[9 x i8]"}
+{"gv":".str.59","t":"[13 x i8]"}
+{"gv":".str.60","t":"[16 x i8]"}
+{"gv":".str.61","t":"[11 x i8]"}
+{"gv":".str.62","t":"[14 x i8]"}
+{"gv":".str.63","t":"[15 x i8]"}
+{"gv":".str.64","t":"[16 x i8]"}
+{"gv":".str.65","t":"[16 x i8]"}
+{"gv":".str.66","t":"[14 x i8]"}
+{"gv":"mjs_strerror.err_names","t":"[9 x i8*]"}
+{"gv":".str.67","t":"[8 x i8]"}
+{"gv":".str.68","t":"[25 x i8]"}
+{"gv":".str.69","t":"[21 x i8]"}
+{"gv":"__func__.mjs_apply","t":"[10 x i8]"}
+{"gv":".str.70","t":"[17 x i8]"}
+{"gv":"stdin","t":"%struct._IO_FILE*, "}
+{"gv":".str.71","t":"[3 x i8]"}
+{"gv":".str.72","t":"[3 x i8]"}
+{"gv":".str.73","t":"[3 x i8]"}
+{"gv":".str.74","t":"[3 x i8]"}
+{"gv":".str.75","t":"[3 x i8]"}
+{"gv":".str.76","t":"[7 x i8]"}
+{"gv":".str.77","t":"[37 x i8]"}
+{"gv":".str.78","t":"[8 x i8]"}
+{"gv":".str.79","t":"[28 x i8]"}
+{"gv":".str.80","t":"[10 x i8]"}
+{"gv":".str.81","t":"[48 x i8]"}
+{"gv":".str.82","t":"[57 x i8]"}
+{"gv":".str.83","t":"[56 x i8]"}
+{"gv":".str.84","t":"[47 x i8]"}
+{"gv":".str.85","t":"[20 x i8]"}
+{"gv":"stdout","t":"%struct._IO_FILE*, "}
+{"gv":".str.86","t":"[4 x i8]"}
+{"gv":".str.87","t":"[2 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_get_string","t":"[64 x i8]"}
+{"gv":".str.88","t":"[3 x i8]"}
+{"gv":".str.89","t":"[7 x i8]"}
+{"gv":".str.90","t":"[3 x i8]"}
+{"gv":".str.91","t":"[8 x i8]"}
+{"gv":".str.92","t":"[9 x i8]"}
+{"gv":".str.93","t":"[8 x i8]"}
+{"gv":".str.94","t":"[14 x i8]"}
+{"gv":".str.95","t":"[2 x i8]"}
+{"gv":".str.96","t":"[7 x i8]"}
+{"gv":".str.97","t":"[11 x i8]"}
+{"gv":".str.98","t":"[10 x i8]"}
+{"gv":".str.99","t":"[8 x i8]"}
+{"gv":".str.100","t":"[5 x i8]"}
+{"gv":"__func__.mjs_dump","t":"[9 x i8]"}
+{"gv":".str.101","t":"[26 x i8]"}
+{"gv":".str.102","t":"[11 x i8]"}
+{"gv":".str.103","t":"[11 x i8]"}
+{"gv":".str.104","t":"[7 x i8]"}
+{"gv":".str.105","t":"[13 x i8]"}
+{"gv":".str.106","t":"[10 x i8]"}
+{"gv":".str.107","t":"[5 x i8]"}
+{"gv":".str.108","t":"[6 x i8]"}
+{"gv":".str.109","t":"[24 x i8]"}
+{"gv":"parse_object.t","t":"%struct.json_token "}
+{"gv":"parse_array.t","t":"%struct.json_token "}
+{"gv":".str.110","t":"[5 x i8]"}
+{"gv":".str.111","t":"[2 x i8]"}
+{"gv":".str.112","t":"[2 x i8]"}
+{"gv":".str.113","t":"[3 x i8]"}
+{"gv":".str.114","t":"[3 x i8]"}
+{"gv":".str.115","t":"[25 x i8]"}
+{"gv":".str.116","t":"[20 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_pop_val","t":"[37 x i8]"}
+{"gv":".str.117","t":"[31 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_bcode_part_get","t":"[61 x i8]"}
+{"gv":".str.118","t":"[4 x i8]"}
+{"gv":".str.119","t":"[20 x i8]"}
+{"gv":".str.120","t":"[28 x i8]"}
+{"gv":".str.121","t":"[43 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_getretvalpos","t":"[35 x i8]"}
+{"gv":".str.122","t":"[40 x i8]"}
+{"gv":"__func__.parse_statement_list","t":"[21 x i8]"}
+{"gv":".str.123","t":"[11 x i8]"}
+{"gv":".str.124","t":"[12 x i8]"}
+{"gv":".str.125","t":"[2 x i8]"}
+{"gv":".str.126","t":"[3 x i8]"}
+{"gv":".str.127","t":"[2 x i8]"}
+{"gv":".str.128","t":"[3 x i8]"}
+{"gv":".str.129","t":"[2 x i8]"}
+{"gv":".str.130","t":"[3 x i8]"}
+{"gv":".str.131","t":"[3 x i8]"}
+{"gv":".str.132","t":"[2 x i8]"}
+{"gv":".str.133","t":"[3 x i8]"}
+{"gv":".str.134","t":"[2 x i8]"}
+{"gv":".str.135","t":"[3 x i8]"}
+{"gv":".str.136","t":"[14 x i8]"}
+{"gv":".str.137","t":"[2 x i8]"}
+{"gv":"__func__.pnext","t":"[6 x i8]"}
+{"gv":".str.138","t":"[16 x i8]"}
+{"gv":".str.139","t":"[8 x i8]"}
+{"gv":".str.140","t":"[6 x i8]"}
+{"gv":".str.141","t":"[5 x i8]"}
+{"gv":".str.142","t":"[6 x i8]"}
+{"gv":".str.143","t":"[9 x i8]"}
+{"gv":".str.144","t":"[9 x i8]"}
+{"gv":".str.145","t":"[8 x i8]"}
+{"gv":".str.146","t":"[7 x i8]"}
+{"gv":".str.147","t":"[3 x i8]"}
+{"gv":".str.148","t":"[5 x i8]"}
+{"gv":".str.149","t":"[8 x i8]"}
+{"gv":".str.150","t":"[4 x i8]"}
+{"gv":".str.151","t":"[9 x i8]"}
+{"gv":".str.152","t":"[3 x i8]"}
+{"gv":".str.153","t":"[3 x i8]"}
+{"gv":".str.154","t":"[11 x i8]"}
+{"gv":".str.155","t":"[4 x i8]"}
+{"gv":".str.156","t":"[7 x i8]"}
+{"gv":".str.157","t":"[7 x i8]"}
+{"gv":".str.158","t":"[5 x i8]"}
+{"gv":".str.159","t":"[6 x i8]"}
+{"gv":".str.160","t":"[4 x i8]"}
+{"gv":".str.161","t":"[7 x i8]"}
+{"gv":".str.162","t":"[4 x i8]"}
+{"gv":".str.163","t":"[5 x i8]"}
+{"gv":".str.164","t":"[6 x i8]"}
+{"gv":".str.165","t":"[5 x i8]"}
+{"gv":".str.166","t":"[4 x i8]"}
+{"gv":"is_reserved_word_token.reserved","t":"[32 x i8*]"}
+{"gv":"__func__.parse_statement","t":"[16 x i8]"}
+{"gv":".str.167","t":"[7 x i8]"}
+{"gv":".str.168","t":"[26 x i8]"}
+{"gv":"__func__.parse_let","t":"[10 x i8]"}
+{"gv":".str.169","t":"[31 x i8]"}
+{"gv":".str.170","t":"[23 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.emit_op","t":"[35 x i8]"}
+{"gv":".str.171","t":"[22 x i8]"}
+{"gv":"__func__.parse_block","t":"[12 x i8]"}
+{"gv":"__func__.parse_return","t":"[13 x i8]"}
+{"gv":"__func__.parse_for","t":"[10 x i8]"}
+{"gv":"__func__.check_for_in","t":"[13 x i8]"}
+{"gv":"__func__.parse_for_in","t":"[13 x i8]"}
+{"gv":".str.172","t":"[28 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_bcode_insert_offset","t":"[75 x i8]"}
+{"gv":"__func__.parse_while","t":"[12 x i8]"}
+{"gv":"__func__.parse_if","t":"[9 x i8]"}
+{"gv":"s_assign_ops","t":"[13 x i32]"}
+{"gv":"__func__.parse_assignment","t":"[17 x i8]"}
+{"gv":"__func__.parse_ternary","t":"[14 x i8]"}
+{"gv":"parse_logical_or.ops","t":"[2 x i32]"}
+{"gv":"__func__.parse_logical_or","t":"[17 x i8]"}
+{"gv":"parse_logical_and.ops","t":"[2 x i32]"}
+{"gv":"__func__.parse_logical_and","t":"[18 x i8]"}
+{"gv":"parse_bitwise_or.ops","t":"[2 x i32]"}
+{"gv":"__func__.parse_bitwise_or","t":"[17 x i8]"}
+{"gv":"parse_bitwise_xor.ops","t":"[2 x i32]"}
+{"gv":"__func__.parse_bitwise_xor","t":"[18 x i8]"}
+{"gv":"parse_bitwise_and.ops","t":"[2 x i32]"}
+{"gv":"__func__.parse_bitwise_and","t":"[18 x i8]"}
+{"gv":"s_equality_ops","t":"[5 x i32]"}
+{"gv":"__func__.parse_equality","t":"[15 x i8]"}
+{"gv":"s_comparison_ops","t":"[5 x i32]"}
+{"gv":"__func__.parse_comparison","t":"[17 x i8]"}
+{"gv":"parse_shifts.ops","t":"[4 x i32]"}
+{"gv":"__func__.parse_shifts","t":"[13 x i8]"}
+{"gv":"parse_plus_minus.ops","t":"[3 x i32]"}
+{"gv":"__func__.parse_plus_minus","t":"[17 x i8]"}
+{"gv":"parse_mul_div_rem.ops","t":"[4 x i32]"}
+{"gv":"__func__.parse_mul_div_rem","t":"[18 x i8]"}
+{"gv":"s_unary_ops","t":"[8 x i32]"}
+{"gv":"__func__.parse_unary","t":"[12 x i8]"}
+{"gv":"__func__.parse_postfix","t":"[14 x i8]"}
+{"gv":"parse_call_dot_mem.ops","t":"[4 x i32]"}
+{"gv":"__func__.parse_call_dot_mem","t":"[19 x i8]"}
+{"gv":"s_postfix_ops","t":"[3 x i32]"}
+{"gv":"__func__.parse_literal","t":"[14 x i8]"}
+{"gv":".str.173","t":"[10 x i8]"}
+{"gv":"__func__.parse_array_literal","t":"[20 x i8]"}
+{"gv":"__func__.parse_object_literal","t":"[21 x i8]"}
+{"gv":"__func__.parse_function","t":"[15 x i8]"}
+{"gv":".str.174","t":"[20 x i8]"}
+{"gv":".str.175","t":"[11 x i8]"}
+{"gv":".str.176","t":"[17 x i8]"}
+{"gv":".str.177","t":"[33 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_execute","t":"[57 x i8]"}
+{"gv":".str.178","t":"[36 x i8]"}
+{"gv":"__func__.mjs_execute","t":"[12 x i8]"}
+{"gv":".str.179","t":"[16 x i8]"}
+{"gv":".str.180","t":"[14 x i8]"}
+{"gv":".str.181","t":"[43 x i8]"}
+{"gv":".str.182","t":"[21 x i8]"}
+{"gv":".str.183","t":"[15 x i8]"}
+{"gv":".str.184","t":"[18 x i8]"}
+{"gv":".str.185","t":"[30 x i8]"}
+{"gv":".str.186","t":"[20 x i8]"}
+{"gv":".str.187","t":"[6 x i8]"}
+{"gv":".str.188","t":"[7 x i8]"}
+{"gv":".str.189","t":"[3 x i8]"}
+{"gv":".str.190","t":"[11 x i8]"}
+{"gv":".str.191","t":"[8 x i8]"}
+{"gv":".str.192","t":"[6 x i8]"}
+{"gv":".str.193","t":"[6 x i8]"}
+{"gv":".str.194","t":"[12 x i8]"}
+{"gv":".str.195","t":"[10 x i8]"}
+{"gv":".str.196","t":"[11 x i8]"}
+{"gv":".str.197","t":"[9 x i8]"}
+{"gv":".str.198","t":"[7 x i8]"}
+{"gv":".str.199","t":"[5 x i8]"}
+{"gv":".str.200","t":"[6 x i8]"}
+{"gv":".str.201","t":"[12 x i8]"}
+{"gv":".str.202","t":"[23 x i8]"}
+{"gv":".str.203","t":"[16 x i8]"}
+{"gv":".str.204","t":"[16 x i8]"}
+{"gv":".str.205","t":"[37 x i8]"}
+{"gv":".str.206","t":"[24 x i8]"}
+{"gv":".str.207","t":"[23 x i8]"}
+{"gv":".str.208","t":"[23 x i8]"}
+{"gv":"__func__.exec_expr","t":"[10 x i8]"}
+{"gv":".str.209","t":"[17 x i8]"}
+{"gv":".str.210","t":"[17 x i8]"}
+{"gv":".str.211","t":"[39 x i8]"}
+{"gv":".str.212","t":"[16 x i8]"}
+{"gv":".str.213","t":"[12 x i8]"}
+{"gv":".str.214","t":"[60 x i8]"}
+{"gv":".str.215","t":"[19 x i8]"}
+{"gv":".str.216","t":"[5 x i8]"}
+{"gv":".str.217","t":"[63 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.call_stack_restore_frame","t":"[46 x i8]"}
+{"gv":".str.218","t":"[16 x i8]"}
+{"gv":".str.219","t":"[18 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_get_ffi_sig_struct","t":"[54 x i8]"}
+{"gv":".str.220","t":"[2 x i8]"}
+{"gv":".str.221","t":"[2 x i8]"}
+{"gv":".str.222","t":"[2 x i8]"}
+{"gv":".str.223","t":"[47 x i8]"}
+{"gv":".str.224","t":"[19 x i8]"}
+{"gv":".str.225","t":"[29 x i8]"}
+{"gv":".str.226","t":"[23 x i8]"}
+{"gv":".str.227","t":"[88 x i8]"}
+{"gv":".str.228","t":"[26 x i8]"}
+{"gv":".str.229","t":"[9 x i8]"}
+{"gv":".str.230","t":"[4 x i8]"}
+{"gv":".str.231","t":"[5 x i8]"}
+{"gv":".str.232","t":"[7 x i8]"}
+{"gv":".str.233","t":"[6 x i8]"}
+{"gv":".str.234","t":"[6 x i8]"}
+{"gv":".str.235","t":"[7 x i8]"}
+{"gv":".str.236","t":"[6 x i8]"}
+{"gv":".str.237","t":"[7 x i8]"}
+{"gv":".str.238","t":"[14 x i8]"}
+{"gv":".str.239","t":"[16 x i8]"}
+{"gv":".str.240","t":"[15 x i8]"}
+{"gv":".str.241","t":"[32 x i8]"}
+{"gv":".str.242","t":"[26 x i8]"}
+{"gv":".str.243","t":"[40 x i8]"}
+{"gv":".str.244","t":"[37 x i8]"}
+{"gv":".str.245","t":"[22 x i8]"}
+{"gv":".str.246","t":"[67 x i8]"}
+{"gv":".str.247","t":"[16 x i8]"}
+{"gv":".str.248","t":"[18 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.get_cb_impl_by_signature","t":"[58 x i8]"}
+{"gv":".str.249","t":"[17 x i8]"}
+{"gv":".str.250","t":"[25 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.ffi_cb_impl_generic","t":"[72 x i8]"}
+{"gv":"__func__.ffi_cb_impl_generic","t":"[20 x i8]"}
+{"gv":".str.251","t":"[37 x i8]"}
+{"gv":".str.252","t":"[40 x i8]"}
+{"gv":".str.253","t":"[19 x i8]"}
+{"gv":".str.254","t":"[31 x i8]"}
+{"gv":".str.255","t":"[247 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_legit_pointer_to_value","t":"[45 x i8]"}
+{"gv":".str.256","t":"[23 x i8]"}
+{"gv":".str.257","t":"[22 x i8]"}
+{"gv":".str.258","t":"[43 x i8]"}
+{"gv":".str.259","t":"[35 x i8]"}
+{"gv":".str.260","t":"[29 x i8]"}
+{"gv":".str.261","t":"[38 x i8]"}
+{"gv":".str.262","t":"[51 x i8]"}
+{"gv":".str.263","t":"[53 x i8]"}
+{"gv":".str.264","t":"[51 x i8]"}
+{"gv":".str.265","t":"[28 x i8]"}
+{"gv":".str.266","t":"[41 x i8]"}
+{"gv":".str.267","t":"[15 x i8]"}
+{"gv":".str.268","t":"[30 x i8]"}
+{"gv":".str.269","t":"[24 x i8]"}
+{"gv":".str.270","t":"[31 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.gc_arena_init","t":"[62 x i8]"}
+{"gv":".str.271","t":"[18 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.gc_mark_object","t":"[47 x i8]"}
+{"gv":".str.272","t":"[19 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.gc_mark_ffi_sig","t":"[48 x i8]"}
+{"gv":".str.273","t":"[151 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.gc_mark_string","t":"[47 x i8]"}
+{"gv":".str.274","t":"[52 x i8]"}
+{"gv":".str.275","t":"[29 x i8]"}
+{"gv":".str.276","t":"[10 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_json_stringify","t":"[79 x i8]"}
+{"gv":".str.277","t":"[11 x i8]"}
+{"gv":".str.278","t":"[8 x i8]"}
+{"gv":"hex_digits","t":"i8* "}
+{"gv":".str.279","t":"[25 x i8]"}
+{"gv":".str.280","t":"[20 x i8]"}
+{"gv":".str.281","t":"[25 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_json_parse","t":"[74 x i8]"}
+{"gv":"__func__.frozen_cb","t":"[10 x i8]"}
+{"gv":".str.282","t":"[21 x i8]"}
+{"gv":".str.283","t":"[43 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.frozen_cb","t":"[86 x i8]"}
+{"gv":".str.284","t":"[17 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.get_object_struct","t":"[48 x i8]"}
+{"gv":".str.285","t":"[50 x i8]"}
+{"gv":".str.286","t":"[13 x i8]"}
+{"gv":".str.287","t":"[34 x i8]"}
+{"gv":".str.288","t":"[6 x i8]"}
+{"gv":".str.289","t":"[26 x i8]"}
+{"gv":".str.290","t":"[92 x i8]"}
+{"gv":".str.291","t":"[32 x i8]"}
+{"gv":".str.292","t":"[26 x i8]"}
+{"gv":".str.293","t":"[23 x i8]"}
+{"gv":".str.294","t":"[7 x i8]"}
+{"gv":".str.295","t":"[8 x i8]"}
+{"gv":".str.296","t":"[7 x i8]"}
+{"gv":".str.297","t":"[6 x i8]"}
+{"gv":".str.298","t":"[7 x i8]"}
+{"gv":".str.299","t":"[12 x i8]"}
+{"gv":".str.300","t":"[4 x i8]"}
+{"gv":".str.301","t":"[11 x i8]"}
+{"gv":"__func__.mjs_disasm_single","t":"[18 x i8]"}
+{"gv":".str.302","t":"[8 x i8]"}
+{"gv":".str.303","t":"[7 x i8]"}
+{"gv":".str.304","t":"[13 x i8]"}
+{"gv":".str.305","t":"[10 x i8]"}
+{"gv":".str.306","t":"[6 x i8]"}
+{"gv":".str.307","t":"[20 x i8]"}
+{"gv":".str.308","t":"[2 x i8]"}
+{"gv":".str.309","t":"[2 x i8]"}
+{"gv":".str.310","t":"[2 x i8]"}
+{"gv":".str.311","t":"[2 x i8]"}
+{"gv":".str.312","t":"[3 x i8]"}
+{"gv":".str.313","t":"[3 x i8]"}
+{"gv":".str.314","t":"[4 x i8]"}
+{"gv":".str.315","t":"[10 x i8]"}
+{"gv":".str.316","t":"[10 x i8]"}
+{"gv":".str.317","t":"[2 x i8]"}
+{"gv":".str.318","t":"[2 x i8]"}
+{"gv":".str.319","t":"[3 x i8]"}
+{"gv":".str.320","t":"[3 x i8]"}
+{"gv":".str.321","t":"[4 x i8]"}
+{"gv":".str.322","t":"[4 x i8]"}
+{"gv":".str.323","t":"[13 x i8]"}
+{"gv":".str.324","t":"[13 x i8]"}
+{"gv":".str.325","t":"[3 x i8]"}
+{"gv":".str.326","t":"[3 x i8]"}
+{"gv":".str.327","t":"[3 x i8]"}
+{"gv":".str.328","t":"[3 x i8]"}
+{"gv":".str.329","t":"[3 x i8]"}
+{"gv":".str.330","t":"[3 x i8]"}
+{"gv":".str.331","t":"[3 x i8]"}
+{"gv":".str.332","t":"[3 x i8]"}
+{"gv":".str.333","t":"[4 x i8]"}
+{"gv":".str.334","t":"[4 x i8]"}
+{"gv":".str.335","t":"[5 x i8]"}
+{"gv":".str.336","t":"[6 x i8]"}
+{"gv":".str.337","t":"[32 x i8]"}
+{"gv":"opcodetostr.names","t":"[39 x i8*]"}
+{"gv":".str.338","t":"[4 x i8]"}
+{"gv":".str.339","t":"[5 x i8]"}
+{"gv":".str.340","t":"[4 x i8]"}
+{"gv":".str.341","t":"[5 x i8]"}
+{"gv":".str.342","t":"[4 x i8]"}
+{"gv":".str.343","t":"[9 x i8]"}
+{"gv":".str.344","t":"[17 x i8]"}
+{"gv":".str.345","t":"[10 x i8]"}
+{"gv":".str.346","t":"[18 x i8]"}
+{"gv":".str.347","t":"[11 x i8]"}
+{"gv":".str.348","t":"[11 x i8]"}
+{"gv":".str.349","t":"[9 x i8]"}
+{"gv":".str.350","t":"[10 x i8]"}
+{"gv":".str.351","t":"[11 x i8]"}
+{"gv":".str.352","t":"[9 x i8]"}
+{"gv":".str.353","t":"[9 x i8]"}
+{"gv":".str.354","t":"[10 x i8]"}
+{"gv":".str.355","t":"[11 x i8]"}
+{"gv":".str.356","t":"[9 x i8]"}
+{"gv":".str.357","t":"[11 x i8]"}
+{"gv":".str.358","t":"[10 x i8]"}
+{"gv":".str.359","t":"[10 x i8]"}
+{"gv":".str.360","t":"[4 x i8]"}
+{"gv":".str.361","t":"[7 x i8]"}
+{"gv":".str.362","t":"[5 x i8]"}
+{"gv":".str.363","t":"[7 x i8]"}
+{"gv":".str.364","t":"[8 x i8]"}
+{"gv":".str.365","t":"[10 x i8]"}
+{"gv":".str.366","t":"[10 x i8]"}
+{"gv":".str.367","t":"[5 x i8]"}
+{"gv":".str.368","t":"[7 x i8]"}
+{"gv":".str.369","t":"[5 x i8]"}
+{"gv":".str.370","t":"[6 x i8]"}
+{"gv":".str.371","t":"[9 x i8]"}
+{"gv":".str.372","t":"[10 x i8]"}
+{"gv":".str.373","t":"[5 x i8]"}
+{"gv":".str.374","t":"[10 x i8]"}
+{"gv":".str.375","t":"[5 x i8]"}
+{"gv":".str.376","t":"[12 x i8]"}
+{"gv":"__func__.mjs_dump_obj_stack","t":"[19 x i8]"}
+{"gv":".str.377","t":"[18 x i8]"}
+{"gv":".str.378","t":"[5 x i8]"}
+{"gv":".str.379","t":"[14 x i8]"}
+{"gv":"__PRETTY_FUNCTION__.mjs_bcode_part_get_by_offset","t":"[74 x i8]"}

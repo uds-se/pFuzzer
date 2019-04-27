@@ -1,0 +1,32 @@
+/home/klee/dockermount/checksum-repair/samples/csv/csvparser.c:253:12: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+    printf(string);
+           ^~~~~~
+/home/klee/dockermount/checksum-repair/samples/csv/csvparser.c:253:12: note: treat the string as an argument to avoid this
+    printf(string);
+           ^
+           "%s", 
+1 warning generated.
+/home/klee/dockermount/checksum-repair/samples/csv/csvparser.c:253:12: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+    printf(string);
+           ^~~~~~
+/home/klee/dockermount/checksum-repair/samples/csv/csvparser.c:253:12: note: treat the string as an argument to avoid this
+    printf(string);
+           ^
+           "%s", 
+1 warning generated.
+[INFO] reading excluded functions from file: ../excluded_functions
+[INFO] number of threads: 432
+[INFO] in thread 139820925777664: instrumenting function: CsvParser_new
+[INFO] in thread 139820917384960: instrumenting function: _CsvParser_delimiterIsAccepted
+[INFO] in thread 139820892206848: instrumenting function: CsvParser_getHeader
+[INFO] in thread 139820774774528: instrumenting function: CsvParser_new_from_string
+[INFO] in thread 139820883814144: instrumenting function: _CsvParser_setErrorMessage
+[INFO] in thread 139820908992256: instrumenting function: CsvParser_destroy
+[INFO] in thread 139820900599552: instrumenting function: CsvParser_destroy_row
+[INFO] in thread 139820858636032: instrumenting function: CsvParser_getNumFields
+[INFO] in thread 139820766381824: instrumenting function: CsvParser_getFields
+[INFO] in thread 139820867028736: instrumenting function: CsvParser_getRow
+[INFO] in thread 139820741203712: instrumenting function: _real_program_main
+[INFO] in thread 139820749596416: instrumenting function: read_input
+[INFO] in thread 139820757989120: instrumenting function: CsvParser_getErrorMessage
+[INFO] in thread 139820875421440: instrumenting function: _CsvParser_getRow

@@ -1,0 +1,7 @@
+Error: external call with symbolic argument: memchr
+File: /home/klee/dockermount/klee/ini/ini.c
+Line: 59
+assembly.ll line: 1474
+Stack: 
+	#000001474 in __user_main (argc=3, argv=64432800) at /home/klee/dockermount/klee/ini/ini.c:59
+	#100002414 in main (=3, =64432800) at /home/klee/klee_build/klee-uclibc/libc/misc/internals/__uClibc_main.c:401

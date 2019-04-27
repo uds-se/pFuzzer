@@ -1,0 +1,8 @@
+Error: external call with symbolic argument: __isnan
+File: /home/klee/dockermount/klee/mjs/mjs.c
+Line: 14089
+assembly.ll line: 18542
+Stack: 
+	#000018542 in mjs_jprintf (v, mjs=81823296, out=81726960) at /home/klee/dockermount/klee/mjs/mjs.c:14089
+	#100016724 in __user_main (argc=3, argv=62203168) at /home/klee/dockermount/klee/mjs/mjs.c:15128
+	#200042429 in main (=3, =62203168) at /home/klee/klee_build/klee-uclibc/libc/misc/internals/__uClibc_main.c:401

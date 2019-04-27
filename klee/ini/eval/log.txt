@@ -1,0 +1,296 @@
+ï»¿ÿÿ
+ÿï»ÿï»ÿï»=ÿÿï»=ÿï»=ÿï»=ÿï»=ÿï»:ÿ
+File 0 of 14
+
+test000007.ktest
+
+'ï»¿ÿ'
+
+File 1 of 14
+
+test000004.ktest
+
+'\x01ÿ'
+
+File 2 of 14
+
+test000003.ktest
+
+'\nÿ'
+
+File 3 of 14
+
+test000006.ktest
+
+'ï»ÿ'
+
+File 4 of 14
+
+test000011.ktest
+
+'ï»\x0b\x01ÿ'
+
+File 5 of 14
+
+test000002.ktest
+
+''
+
+File 6 of 14
+
+test000012.ktest
+
+'ï»\x0b=ÿ'
+
+File 7 of 14
+
+test000001.ktest
+
+'ÿ'
+
+File 8 of 14
+
+test000008.ktest
+
+'ï»=ÿ'
+
+File 9 of 14
+
+test000005.ktest
+
+''
+
+File 10 of 14
+
+test000010.ktest
+
+'ï»=\x01ÿ'
+
+File 11 of 14
+
+test000014.ktest
+
+'ï»=\x01\x01ÿ'
+
+File 12 of 14
+
+test000013.ktest
+
+'ï»=\x0c\x01ÿ'
+
+File 13 of 14
+
+test000009.ktest
+
+'ï»:ÿ'
+
+-1541867872.012831
+##############Coverage###########
+rm: cannot remove '*.gcda': No such file or directory
+rm: cannot remove '*.gcno': No such file or directory
+rm: cannot remove '*.cov': No such file or directory
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:cannot open data file, assuming not executed
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+ï»=ÿ/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+ï»=ÿ/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+ï»=ÿ/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+ï»=ÿ/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+ï»=ÿ/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+ï»:ÿ/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda:version '505*', prefer version '408*'
+
+
+
+''
+
+
+Taken at least once:3.85% of 78
+
+
+Taken at least once:3.85% of 78
+
+
+Taken at least once:3.85% of 78
+
+
+Taken at least once:3.85% of 78
+
+'ï»\x0b=ÿ'
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+'ï»=ÿ'
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+''
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+'ï»=\x01ÿ'
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+'ï»=\x01\x01ÿ'
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+
+Taken at least once:43.59% of 78
+
+'ï»=\x0c\x01ÿ'
+
+
+Taken at least once:47.44% of 78
+
+
+Taken at least once:47.44% of 78
+
+
+Taken at least once:47.44% of 78
+
+
+Taken at least once:47.44% of 78
+
+'ï»:ÿ'
+
+
+Taken at least once:50.00% of 78
+
+
+Taken at least once:50.00% of 78
+
+
+Taken at least once:50.00% of 78
+
+
+Valid inputs that increase coverage: 5
+
+#################
+Tokenlist:
+
+	=
+
+	:
+
+	ident
+
+
+Toklength: 1
+TokCount: 3
+
+Two token size: 5
+######################
+
+
+	ident ident : 10
+
+	ident = : 5
+
+	= ident : 5
+
+	ident : : 1
+
+	: ident : 1

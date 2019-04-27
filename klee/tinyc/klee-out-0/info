@@ -1,0 +1,3 @@
+klee --optimize --only-output-states-covering-new --libc=uclibc -posix-runtime tiny.bc -sym-stdin 200
+PID: 110392
+Started: 2018-11-04 14:34:57

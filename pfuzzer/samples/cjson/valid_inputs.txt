@@ -1,0 +1,45 @@
+Time used until input was generated: 1.942969
+'{}'
+
+Time used until input was generated: 2.642901
+'5'
+
+Time used until input was generated: 6.980793
+'true'
+
+Time used until input was generated: 7.622337
+'null'
+
+Time used until input was generated: 9.081327
+'false'
+
+Time used until input was generated: 28.673759
+'["" ,503]'
+
+Time used until input was generated: 31.009791
+'8'
+
+Time used until input was generated: 37.166791
+'"H"'
+
+Time used until input was generated: 114.300206
+'[[42167.]]'
+
+Time used until input was generated: 120.963924
+'[[42167.9]]'
+
+Time used until input was generated: 186.624059
+'{ "":5}'
+
+Time used until input was generated: 246.193618
+'[-4.5e29]'
+
+Time used until input was generated: 264.328421
+'[-3.0E2]'
+
+Time used until input was generated: 7495.841214
+'{"":[]}'
+
+Time used until input was generated: 7551.508083
+'[4.5e24]'
+

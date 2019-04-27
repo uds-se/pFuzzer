@@ -1,0 +1,24 @@
+Time used until input was generated: 1.160533
+'\n'
+
+Time used until input was generated: 1.759626
+'='
+
+Time used until input was generated: 3.751802
+'H='
+
+Time used until input was generated: 5.593725
+'[]'
+
+Time used until input was generated: 8.111960
+':'
+
+Time used until input was generated: 10.845564
+'H:R'
+
+Time used until input was generated: 834.998281
+' ='
+
+Time used until input was generated: 844.992282
+' \n[]'
+

@@ -1,0 +1,426 @@
+        -:    0:Source:/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.c
+        -:    0:Graph:/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcno
+        -:    0:Data:/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/ini/eval/ini.gcda
+        -:    0:Runs:8
+        -:    0:Programs:1
+        -:    1:/* inih -- simple .INI file parser
+        -:    2:
+        -:    3:inih is released under the New BSD license (see LICENSE.txt). Go to the project
+        -:    4:home page for more info:
+        -:    5:
+        -:    6:https://github.com/benhoyt/inih
+        -:    7:
+        -:    8:*/
+        -:    9:
+        -:   10:#if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)
+        -:   11:#define _CRT_SECURE_NO_WARNINGS
+        -:   12:#endif
+        -:   13:
+        -:   14:#include <stdio.h>
+        -:   15:#include <ctype.h>
+        -:   16:#include <string.h>
+        -:   17:#include <stdlib.h>
+        -:   18:
+        -:   19:#include "ini.h"
+        -:   20:
+        -:   21:#if !INI_USE_STACK
+        -:   22:#include <stdlib.h>
+        -:   23:#endif
+        -:   24:
+        -:   25:#define MAX_SECTION 50
+        -:   26:#define MAX_NAME 50
+        -:   27:
+        -:   28:/* Used by ini_parse_string() to keep track of string parsing state. */
+        -:   29:typedef struct {
+        -:   30:    const char* ptr;
+        -:   31:    size_t num_left;
+        -:   32:} ini_parse_string_ctx;
+        -:   33:
+        -:   34:/* Strip whitespace chars off end of given string, in place. Return s. */
+function rstrip called 18 returned 100% blocks executed 100%
+       18:   35:static char* rstrip(char* s)
+        -:   36:{
+       18:   37:    char* p = s + strlen(s);
+       37:   38:    while (p > s && isspace((unsigned char)(*--p)))
+branch  0 taken 19 (fallthrough)
+branch  1 taken 0
+call    2 returned 19
+branch  3 taken 1
+branch  4 taken 18 (fallthrough)
+        1:   39:        *p = '\0';
+       18:   40:    return s;
+        -:   41:}
+        -:   42:
+        -:   43:/* Return pointer to first non-whitespace char in given string. */
+function lskip called 12 returned 100% blocks executed 100%
+       12:   44:static char* lskip(const char* s)
+        -:   45:{
+       25:   46:    while (*s && isspace((unsigned char)(*s)))
+branch  0 taken 13 (fallthrough)
+branch  1 taken 0
+call    2 returned 13
+branch  3 taken 1
+branch  4 taken 12 (fallthrough)
+        1:   47:        s++;
+       12:   48:    return (char*)s;
+        -:   49:}
+        -:   50:
+        -:   51:/* Return pointer to first char (of chars) or inline comment in given string,
+        -:   52:   or pointer to null at end of string if neither found. Inline comment must
+        -:   53:   be prefixed by a whitespace character to register as a comment. */
+function find_chars_or_comment called 12 returned 100% blocks executed 100%
+       12:   54:static char* find_chars_or_comment(const char* s, const char* chars)
+        -:   55:{
+        -:   56:#if INI_ALLOW_INLINE_COMMENTS
+       12:   57:    int was_space = 0;
+       66:   58:    while (*s && (!chars || !strchr(chars, *s)) &&
+branch  0 taken 48 (fallthrough)
+branch  1 taken 6
+branch  2 taken 31 (fallthrough)
+branch  3 taken 17
+branch  4 taken 25 (fallthrough)
+branch  5 taken 6
+branch  6 taken 41
+branch  7 taken 1 (fallthrough)
+        1:   59:           !(was_space && strchr(INI_INLINE_COMMENT_PREFIXES, *s))) {
+branch  0 taken 1
+branch  1 taken 0 (fallthrough)
+       42:   60:        was_space = isspace((unsigned char)(*s));
+call    0 returned 42
+       42:   61:        s++;
+        -:   62:    }
+        -:   63:#else
+        -:   64:    while (*s && (!chars || !strchr(chars, *s))) {
+        -:   65:        s++;
+        -:   66:    }
+        -:   67:#endif
+       12:   68:    return (char*)s;
+        -:   69:}
+        -:   70:
+        -:   71:/* Version of strncpy that ensures dest (size bytes) is null-terminated. */
+function strncpy0 called 6 returned 100% blocks executed 100%
+        6:   72:static char* strncpy0(char* dest, const char* src, size_t size)
+        -:   73:{
+        6:   74:    strncpy(dest, src, size - 1);
+        6:   75:    dest[size - 1] = '\0';
+        6:   76:    return dest;
+        -:   77:}
+        -:   78:
+        -:   79:/* See documentation in header file. */
+function ini_parse_stream called 8 returned 100% blocks executed 53%
+        8:   80:int ini_parse_stream(ini_reader reader, void* stream, ini_handler handler,
+        -:   81:                     void* user)
+        -:   82:{
+        -:   83:    /* Uses a fair bit of stack (use heap instead if you need to) */
+        -:   84:#if INI_USE_STACK
+        -:   85:    char line[INI_MAX_LINE];
+        8:   86:    int max_line = INI_MAX_LINE;
+        -:   87:#else
+        -:   88:    char* line;
+        -:   89:    int max_line = INI_INITIAL_ALLOC;
+        -:   90:#endif
+        -:   91:#if INI_ALLOW_REALLOC && !INI_USE_STACK
+        -:   92:    char* new_line;
+        -:   93:    int offset;
+        -:   94:#endif
+        8:   95:    char section[MAX_SECTION] = "";
+        8:   96:    char prev_name[MAX_NAME] = "";
+        -:   97:
+        -:   98:    char* start;
+        -:   99:    char* end;
+        -:  100:    char* name;
+        -:  101:    char* value;
+        8:  102:    int lineno = 0;
+        8:  103:    int error = 0;
+        -:  104:
+        -:  105:#if !INI_USE_STACK
+        -:  106:    line = (char*)malloc(INI_INITIAL_ALLOC);
+        -:  107:    if (!line) {
+        -:  108:        return -2;
+        -:  109:    }
+        -:  110:#endif
+        -:  111:
+        -:  112:#if INI_HANDLER_LINENO
+        -:  113:#define HANDLER(u, s, n, v) handler(u, s, n, v, lineno)
+        -:  114:#else
+        -:  115:#define HANDLER(u, s, n, v) handler(u, s, n, v)
+        -:  116:#endif
+        -:  117:
+        -:  118:    /* Scan through stream line by line */
+       22:  119:    while (reader(line, max_line, stream) != NULL) {
+call    0 returned 14
+branch  1 taken 6
+branch  2 taken 8 (fallthrough)
+        -:  120:#if INI_ALLOW_REALLOC && !INI_USE_STACK
+        -:  121:        offset = strlen(line);
+        -:  122:        while (offset == max_line - 1 && line[offset - 1] != '\n') {
+        -:  123:            max_line *= 2;
+        -:  124:            if (max_line > INI_MAX_LINE)
+        -:  125:                max_line = INI_MAX_LINE;
+        -:  126:            new_line = realloc(line, max_line);
+        -:  127:            if (!new_line) {
+        -:  128:                free(line);
+        -:  129:                return -2;
+        -:  130:            }
+        -:  131:            line = new_line;
+        -:  132:            if (reader(line + offset, max_line - offset, stream) == NULL)
+        -:  133:                break;
+        -:  134:            if (max_line >= INI_MAX_LINE)
+        -:  135:                break;
+        -:  136:            offset += strlen(line + offset);
+        -:  137:        }
+        -:  138:#endif
+        -:  139:
+        6:  140:        lineno++;
+        -:  141:
+        6:  142:        start = line;
+        -:  143:#if INI_ALLOW_BOM
+        6:  144:        if (lineno == 1 && (unsigned char)start[0] == 0xEF &&
+branch  0 taken 6 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 6
+branch  4 never executed
+branch  5 never executed
+    #####:  145:                           (unsigned char)start[1] == 0xBB &&
+branch  0 never executed
+branch  1 never executed
+    #####:  146:                           (unsigned char)start[2] == 0xBF) {
+    #####:  147:            start += 3;
+        -:  148:        }
+        -:  149:#endif
+        6:  150:        start = lskip(rstrip(start));
+call    0 returned 6
+call    1 returned 6
+        -:  151:
+        6:  152:        if (strchr(INI_START_COMMENT_PREFIXES, *start)) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 0
+        -:  153:            /* Start-of-line comment */
+        -:  154:        }
+        -:  155:#if INI_ALLOW_MULTILINE
+        6:  156:        else if (*prev_name && *start && start > line) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  157:            /* Non-blank line with leading whitespace, treat as continuation
+        -:  158:               of previous name's value (as per Python configparser). */
+    #####:  159:            if (!HANDLER(user, section, prev_name, start) && !error)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  160:                error = lineno;
+        -:  161:        }
+        -:  162:#endif
+        6:  163:        else if (*start == '[') {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+        -:  164:            /* A "[section]" line */
+    #####:  165:            end = find_chars_or_comment(start + 1, "]");
+call    0 never executed
+    #####:  166:            if (*end == ']') {
+branch  0 never executed
+branch  1 never executed
+    #####:  167:                *end = '\0';
+    #####:  168:                strncpy0(section, start + 1, sizeof(section));
+call    0 never executed
+    #####:  169:                *prev_name = '\0';
+        -:  170:            }
+    #####:  171:            else if (!error) {
+branch  0 never executed
+branch  1 never executed
+        -:  172:                /* No ']' found on section line */
+    #####:  173:                error = lineno;
+        -:  174:            }
+        -:  175:        }
+        6:  176:        else if (*start) {
+branch  0 taken 6 (fallthrough)
+branch  1 taken 0
+        -:  177:            /* Not a comment, must be a name[=:]value pair */
+        6:  178:            end = find_chars_or_comment(start, "=:");
+call    0 returned 6
+        6:  179:            if (*end == '=' || *end == ':') {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 5
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        6:  180:                *end = '\0';
+        6:  181:                name = rstrip(start);
+call    0 returned 6
+        6:  182:                value = end + 1;
+        -:  183:#if INI_ALLOW_INLINE_COMMENTS
+        6:  184:                end = find_chars_or_comment(value, NULL);
+call    0 returned 6
+        6:  185:                if (*end)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  186:                    *end = '\0';
+        -:  187:#endif
+        6:  188:                value = lskip(value);
+call    0 returned 6
+        6:  189:                rstrip(value);
+call    0 returned 6
+        -:  190:
+        -:  191:                /* Valid name[=:]value pair found, call handler */
+        6:  192:                strncpy0(prev_name, name, sizeof(prev_name));
+call    0 returned 6
+       12:  193:                if (!HANDLER(user, section, name, value) && !error)
+call    0 returned 6
+branch  1 taken 0 (fallthrough)
+branch  2 taken 6
+branch  3 never executed
+branch  4 never executed
+    #####:  194:                    error = lineno;
+        -:  195:            }
+    #####:  196:            else if (!error) {
+branch  0 never executed
+branch  1 never executed
+        -:  197:                /* No '=' or ':' found on name[=:]value line */
+    #####:  198:                error = lineno;
+        -:  199:            }
+        -:  200:        }
+        -:  201:
+        -:  202:#if INI_STOP_ON_FIRST_ERROR
+        6:  203:        if (error)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  204:            break;
+        -:  205:#endif
+        -:  206:    }
+        -:  207:
+        -:  208:#if !INI_USE_STACK
+        -:  209:    free(line);
+        -:  210:#endif
+        -:  211:
+        8:  212:    return error;
+        -:  213:}
+        -:  214:
+        -:  215:/* See documentation in header file. */
+function ini_parse_file called 0 returned 0% blocks executed 0%
+    #####:  216:int ini_parse_file(FILE* file, ini_handler handler, void* user)
+        -:  217:{
+    #####:  218:    return ini_parse_stream((ini_reader)fgets, file, handler, user);
+call    0 never executed
+        -:  219:}
+        -:  220:
+        -:  221:/* See documentation in header file. */
+function ini_parse called 0 returned 0% blocks executed 0%
+    #####:  222:int ini_parse(const char* filename, ini_handler handler, void* user)
+        -:  223:{
+        -:  224:    FILE* file;
+        -:  225:    int error;
+        -:  226:
+    #####:  227:    file = fopen(filename, "r");
+call    0 never executed
+    #####:  228:    if (!file)
+branch  0 never executed
+branch  1 never executed
+    #####:  229:        return -1;
+    #####:  230:    error = ini_parse_file(file, handler, user);
+call    0 never executed
+    #####:  231:    fclose(file);
+call    0 never executed
+    #####:  232:    return error;
+        -:  233:}
+        -:  234:
+        -:  235:/* An ini_reader function to read the next line from a string buffer. This
+        -:  236:   is the fgets() equivalent used by ini_parse_string(). */
+function ini_reader_string called 14 returned 100% blocks executed 91%
+       14:  237:static char* ini_reader_string(char* str, int num, void* stream) {
+       14:  238:    ini_parse_string_ctx* ctx = (ini_parse_string_ctx*)stream;
+       14:  239:    const char* ctx_ptr = ctx->ptr;
+       14:  240:    size_t ctx_num_left = ctx->num_left;
+       14:  241:    char* strp = str;
+        -:  242:    char c;
+        -:  243:
+       14:  244:    if (ctx_num_left == 0 || num < 2)
+branch  0 taken 6 (fallthrough)
+branch  1 taken 8
+branch  2 taken 0 (fallthrough)
+branch  3 taken 6
+        8:  245:        return NULL;
+        -:  246:
+       60:  247:    while (num > 1 && ctx_num_left != 0) {
+branch  0 taken 54 (fallthrough)
+branch  1 taken 0
+branch  2 taken 48
+branch  3 taken 6 (fallthrough)
+       48:  248:        c = *ctx_ptr++;
+       48:  249:        ctx_num_left--;
+       48:  250:        *strp++ = c;
+       48:  251:        if (c == '\n')
+branch  0 taken 0 (fallthrough)
+branch  1 taken 48
+    #####:  252:            break;
+       48:  253:        num--;
+        -:  254:    }
+        -:  255:
+        6:  256:    *strp = '\0';
+        6:  257:    ctx->ptr = ctx_ptr;
+        6:  258:    ctx->num_left = ctx_num_left;
+        6:  259:    return str;
+        -:  260:}
+        -:  261:
+        -:  262:/* See documentation in header file. */
+function ini_parse_string called 8 returned 100% blocks executed 100%
+        8:  263:int ini_parse_string(const char* string, ini_handler handler, void* user) {
+        -:  264:    ini_parse_string_ctx ctx;
+        -:  265:
+        8:  266:    ctx.ptr = string;
+        8:  267:    ctx.num_left = strlen(string);
+        8:  268:    return ini_parse_stream((ini_reader)ini_reader_string, &ctx, handler,
+call    0 returned 8
+        -:  269:                            user);
+        -:  270:}
+        -:  271:
+        -:  272:// newly added for running the code
+        -:  273:typedef struct
+        -:  274:{
+        -:  275:    int empty;
+        -:  276:} configuration;
+        -:  277:
+        -:  278:// took the example from the README file to have sth. to parse
+function handler called 6 returned 100% blocks executed 100%
+        6:  279:static int handler(void* user, const char* section, const char* name,
+        -:  280:                   const char* value)
+        -:  281:{
+        6:  282:    return 1;
+        -:  283:}
+        -:  284:
+function read_input called 8 returned 100% blocks executed 88%
+        8:  285:char* read_input() {
+        8:  286:    int counter = 0;
+        8:  287:    char* chars = malloc(sizeof(char) * 1000);
+        8:  288:    char c = 0;
+       64:  289:    while((c = fgetc(stdin)) != EOF){
+call    0 returned 56
+branch  1 taken 48
+branch  2 taken 8 (fallthrough)
+       48:  290:        if (counter == 1000) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 48
+    #####:  291:            exit(1);
+call    0 never executed
+        -:  292:        }
+       48:  293:        chars[counter++] = c;
+        -:  294:    }
+        8:  295:    chars[counter] = '\0';
+        8:  296:    return chars;
+        -:  297:}
+        -:  298:
+function main called 8 returned 100% blocks executed 100%
+        8:  299:int main(int argc, char** argv) {
+        -:  300:    configuration config;
+        8:  301:    char* string = read_input();
+call    0 returned 8
+        8:  302:    printf(string);
+call    0 returned 8
+        8:  303:    return ini_parse_string(string, handler, &config);
+call    0 returned 8
+        -:  304:
+        -:  305:}

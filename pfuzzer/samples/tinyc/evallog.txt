@@ -1,0 +1,107 @@
+w = 5
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcda:version '505*', prefer version '408*'
+w = 5
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/tinyc/tiny.gcda:version '505*', prefer version '408*'
+
+Valid inputs that increase coverage: 7
+
+#################
+Tokenlist:
+
+	ident
+
+	)
+
+	+
+
+	num
+
+	(
+
+	{
+
+	-
+
+	<
+
+	}
+
+	=
+
+	while
+
+	if
+
+	;
+
+
+Toklength: 1
+TokCount: 11
+
+
+Toklength: 5
+TokCount: 1
+
+
+Toklength: 2
+TokCount: 1
+
+Two token size: 22
+######################
+
+
+	( num : 3
+
+	num < : 1
+
+	< ident : 1
+
+	ident + : 1
+
+	+ ident : 1
+
+	ident ) : 1
+
+	) ; : 3
+
+	{ ; : 6
+
+	; ; : 6
+
+	; } : 6
+
+	; ident : 3
+
+	ident ; : 1
+
+	; if : 1
+
+	if ( : 1
+
+	num ) : 2
+
+	ident = : 1
+
+	= num : 1
+
+	num ; : 2
+
+	ident - : 1
+
+	- num : 1
+
+	; while : 1
+
+	while ( : 1

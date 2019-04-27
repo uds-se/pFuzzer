@@ -1,0 +1,130 @@
+{"sn":"cJSON","s":512,"el":[{"e":"next"},{"e":"prev"},{"e":"child"},{"e":"type"},{"e":"valuestring"},{"e":"valueint"},{"e":"valuedouble"},{"e":"string"}]}
+{"sn":"internal_hooks","s":192,"el":[{"e":"allocate"},{"e":"deallocate"},{"e":"reallocate"}]}
+{"sn":"cJSON_Hooks","s":128,"el":[{"e":"malloc_fn"},{"e":"free_fn"}]}
+{"sn":"error","s":128,"el":[{"e":"errorElement0"},{"e":"errorElement1"}]}
+{"sn":"_IO_FILE","s":1664,"el":[{"e":"_IO_FILEElement0"},{"e":"_IO_FILEElement1"},{"e":"_IO_FILEElement2"},{"e":"_IO_FILEElement3"},{"e":"_IO_FILEElement4"},{"e":"_IO_FILEElement5"},{"e":"_IO_FILEElement6"},{"e":"_IO_FILEElement7"},{"e":"_IO_FILEElement8"},{"e":"_IO_FILEElement9"},{"e":"_IO_FILEElement10"},{"e":"_IO_FILEElement11"},{"e":"_IO_FILEElement12"},{"e":"_IO_FILEElement13"},{"e":"_IO_FILEElement14"},{"e":"_IO_FILEElement15"},{"e":"_IO_FILEElement16"},{"e":"_IO_FILEElement17"},{"e":"_IO_FILEElement18"},{"e":"_IO_FILEElement19"},{"e":"_IO_FILEElement20"},{"e":"_IO_FILEElement21"},{"e":"_IO_FILEElement22"},{"e":"_IO_FILEElement23"},{"e":"_IO_FILEElement24"},{"e":"_IO_FILEElement25"},{"e":"_IO_FILEElement26"},{"e":"_IO_FILEElement27"},{"e":"_IO_FILEElement28"}]}
+{"sn":"_IO_marker","s":160,"el":[{"e":"_IO_markerElement0"},{"e":"_IO_markerElement1"},{"e":"_IO_markerElement2"}]}
+{"sn":"parse_buffer","s":512,"el":[{"e":"parse_bufferElement0"},{"e":"parse_bufferElement1"},{"e":"parse_bufferElement2"},{"e":"parse_bufferElement3"},{"e":"parse_bufferElement4"}]}
+{"sn":"printbuffer","s":576,"el":[{"e":"printbufferElement0"},{"e":"printbufferElement1"},{"e":"printbufferElement2"},{"e":"printbufferElement3"},{"e":"printbufferElement4"},{"e":"printbufferElement5"},{"e":"printbufferElement6"}]}
+{"f":"cJSON_GetErrorPtr","ar":[]}
+{"f":"cJSON_GetStringValue","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsString","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_Version","ar":[]}
+{"f":"cJSON_InitHooks","ar":[{"a":"hooks", "t":"cJSON_Hooks*"}]}
+{"f":"cJSON_Delete","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_SetNumberHelper","ar":[{"a":"object", "t":"cJSON*"},{"a":"number", "t":"double"}]}
+{"f":"cJSON_ParseWithOpts","ar":[{"a":"value", "t":"i8*"},{"a":"return_parse_end", "t":"i8**"},{"a":"require_null_terminated", "t":"i32"}]}
+{"f":"cJSON_New_Item","ar":[{"a":"hooks", "t":"internal_hooks*"}]}
+{"f":"parse_value","ar":[{"a":"item", "t":"cJSON*"},{"a":"input_buffer", "t":"parse_buffer*"}]}
+{"f":"buffer_skip_whitespace","ar":[{"a":"buffer", "t":"parse_buffer*"}]}
+{"f":"skip_utf8_bom","ar":[{"a":"buffer", "t":"parse_buffer*"}]}
+{"f":"cJSON_Parse","ar":[{"a":"value", "t":"i8*"}]}
+{"f":"cJSON_Print","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"print","ar":[{"a":"item", "t":"cJSON*"},{"a":"format", "t":"i32"},{"a":"hooks", "t":"internal_hooks*"}]}
+{"f":"cJSON_PrintUnformatted","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_PrintBuffered","ar":[{"a":"item", "t":"cJSON*"},{"a":"prebuffer", "t":"i32"},{"a":"fmt", "t":"i32"}]}
+{"f":"print_value","ar":[{"a":"item", "t":"cJSON*"},{"a":"output_buffer", "t":"printbuffer*"}]}
+{"f":"cJSON_PrintPreallocated","ar":[{"a":"item", "t":"cJSON*"},{"a":"buf", "t":"i8*"},{"a":"len", "t":"i32"},{"a":"fmt", "t":"i32"}]}
+{"f":"cJSON_GetArraySize","ar":[{"a":"array", "t":"cJSON*"}]}
+{"f":"cJSON_GetArrayItem","ar":[{"a":"array", "t":"cJSON*"},{"a":"index", "t":"i32"}]}
+{"f":"get_array_item","ar":[{"a":"array", "t":"cJSON*"},{"a":"index", "t":"i64"}]}
+{"f":"cJSON_GetObjectItem","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"}]}
+{"f":"get_object_item","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"},{"a":"case_sensitive", "t":"i32"}]}
+{"f":"cJSON_GetObjectItemCaseSensitive","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_HasObjectItem","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_AddItemToArray","ar":[{"a":"array", "t":"cJSON*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"add_item_to_array","ar":[{"a":"array", "t":"cJSON*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_AddItemToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"add_item_to_object","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"},{"a":"item", "t":"cJSON*"},{"a":"hooks", "t":"internal_hooks*"},{"a":"constant_key", "t":"i32"}]}
+{"f":"cJSON_AddItemToObjectCS","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_AddItemReferenceToArray","ar":[{"a":"array", "t":"cJSON*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"create_reference","ar":[{"a":"item", "t":"cJSON*"},{"a":"hooks", "t":"internal_hooks*"}]}
+{"f":"cJSON_AddItemReferenceToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_AddNullToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"}]}
+{"f":"cJSON_CreateNull","ar":[]}
+{"f":"cJSON_AddTrueToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"}]}
+{"f":"cJSON_CreateTrue","ar":[]}
+{"f":"cJSON_AddFalseToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"}]}
+{"f":"cJSON_CreateFalse","ar":[]}
+{"f":"cJSON_AddBoolToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"},{"a":"boolean", "t":"i32"}]}
+{"f":"cJSON_CreateBool","ar":[{"a":"b", "t":"i32"}]}
+{"f":"cJSON_AddNumberToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"},{"a":"number", "t":"double"}]}
+{"f":"cJSON_CreateNumber","ar":[{"a":"num", "t":"double"}]}
+{"f":"cJSON_AddStringToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"},{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_CreateString","ar":[{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_AddRawToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"},{"a":"raw", "t":"i8*"}]}
+{"f":"cJSON_CreateRaw","ar":[{"a":"raw", "t":"i8*"}]}
+{"f":"cJSON_AddObjectToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"}]}
+{"f":"cJSON_CreateObject","ar":[]}
+{"f":"cJSON_AddArrayToObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"name", "t":"i8*"}]}
+{"f":"cJSON_CreateArray","ar":[]}
+{"f":"cJSON_DetachItemViaPointer","ar":[{"a":"parent", "t":"cJSON*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_DetachItemFromArray","ar":[{"a":"array", "t":"cJSON*"},{"a":"which", "t":"i32"}]}
+{"f":"cJSON_DeleteItemFromArray","ar":[{"a":"array", "t":"cJSON*"},{"a":"which", "t":"i32"}]}
+{"f":"cJSON_DetachItemFromObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_DetachItemFromObjectCaseSensitive","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_DeleteItemFromObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_DeleteItemFromObjectCaseSensitive","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_InsertItemInArray","ar":[{"a":"array", "t":"cJSON*"},{"a":"which", "t":"i32"},{"a":"newitem", "t":"cJSON*"}]}
+{"f":"cJSON_ReplaceItemViaPointer","ar":[{"a":"parent", "t":"cJSON*"},{"a":"item", "t":"cJSON*"},{"a":"replacement", "t":"cJSON*"}]}
+{"f":"cJSON_ReplaceItemInArray","ar":[{"a":"array", "t":"cJSON*"},{"a":"which", "t":"i32"},{"a":"newitem", "t":"cJSON*"}]}
+{"f":"cJSON_ReplaceItemInObject","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"},{"a":"newitem", "t":"cJSON*"}]}
+{"f":"replace_item_in_object","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"},{"a":"replacement", "t":"cJSON*"},{"a":"case_sensitive", "t":"i32"}]}
+{"f":"cJSON_ReplaceItemInObjectCaseSensitive","ar":[{"a":"object", "t":"cJSON*"},{"a":"string", "t":"i8*"},{"a":"newitem", "t":"cJSON*"}]}
+{"f":"cJSON_strdup","ar":[{"a":"string", "t":"i8*"},{"a":"hooks", "t":"internal_hooks*"}]}
+{"f":"cJSON_CreateStringReference","ar":[{"a":"string", "t":"i8*"}]}
+{"f":"cast_away_const","ar":[{"a":"string", "t":"i8*"}]}
+{"f":"cJSON_CreateObjectReference","ar":[{"a":"child", "t":"cJSON*"}]}
+{"f":"cJSON_CreateArrayReference","ar":[{"a":"child", "t":"cJSON*"}]}
+{"f":"cJSON_CreateIntArray","ar":[{"a":"numbers", "t":"i32*"},{"a":"count", "t":"i32"}]}
+{"f":"suffix_object","ar":[{"a":"prev", "t":"cJSON*"},{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_CreateFloatArray","ar":[{"a":"numbers", "t":"float*"},{"a":"count", "t":"i32"}]}
+{"f":"cJSON_CreateDoubleArray","ar":[{"a":"numbers", "t":"double*"},{"a":"count", "t":"i32"}]}
+{"f":"cJSON_CreateStringArray","ar":[{"a":"strings", "t":"i8**"},{"a":"count", "t":"i32"}]}
+{"f":"cJSON_Duplicate","ar":[{"a":"item", "t":"cJSON*"},{"a":"recurse", "t":"i32"}]}
+{"f":"cJSON_Minify","ar":[{"a":"json", "t":"i8*"}]}
+{"f":"cJSON_IsInvalid","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsFalse","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsTrue","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsBool","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsNull","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsNumber","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsArray","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsObject","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_IsRaw","ar":[{"a":"item", "t":"cJSON*"}]}
+{"f":"cJSON_Compare","ar":[{"a":"a", "t":"cJSON*"},{"a":"b", "t":"cJSON*"},{"a":"case_sensitive", "t":"i32"}]}
+{"f":"cJSON_malloc","ar":[{"a":"size", "t":"i64"}]}
+{"f":"cJSON_free","ar":[{"a":"object", "t":"i8*"}]}
+{"f":"read_input","ar":[]}
+{"f":"main","ar":[{"a":"argc", "t":"i32"},{"a":"argv", "t":"i8**"}]}
+{"f":"update_offset","ar":[{"a":"buffer", "t":"printbuffer*"}]}
+{"f":"parse_string","ar":[{"a":"item", "t":"cJSON*"},{"a":"input_buffer", "t":"parse_buffer*"}]}
+{"f":"parse_number","ar":[{"a":"item", "t":"cJSON*"},{"a":"input_buffer", "t":"parse_buffer*"}]}
+{"f":"parse_array","ar":[{"a":"item", "t":"cJSON*"},{"a":"input_buffer", "t":"parse_buffer*"}]}
+{"f":"parse_object","ar":[{"a":"item", "t":"cJSON*"},{"a":"input_buffer", "t":"parse_buffer*"}]}
+{"f":"utf16_literal_to_utf8","ar":[{"a":"input_pointer", "t":"i8*"},{"a":"input_end", "t":"i8*"},{"a":"output_pointer", "t":"i8**"}]}
+{"f":"parse_hex4","ar":[{"a":"input", "t":"i8*"}]}
+{"f":"get_decimal_point","ar":[]}
+{"f":"ensure","ar":[{"a":"p", "t":"printbuffer*"},{"a":"needed", "t":"i64"}]}
+{"f":"print_number","ar":[{"a":"item", "t":"cJSON*"},{"a":"output_buffer", "t":"printbuffer*"}]}
+{"f":"print_string","ar":[{"a":"item", "t":"cJSON*"},{"a":"p", "t":"printbuffer*"}]}
+{"f":"print_array","ar":[{"a":"item", "t":"cJSON*"},{"a":"output_buffer", "t":"printbuffer*"}]}
+{"f":"print_object","ar":[{"a":"item", "t":"cJSON*"},{"a":"output_buffer", "t":"printbuffer*"}]}
+{"f":"print_string_ptr","ar":[{"a":"input", "t":"i8*"},{"a":"output_buffer", "t":"printbuffer*"}]}
+{"f":"case_insensitive_strcmp","ar":[{"a":"string1", "t":"i8*"},{"a":"string2", "t":"i8*"}]}
+{"gv":"global_error","t":"%struct.error "}
+{"gv":"cJSON_Version.version","t":"[15 x i8]"}
+{"gv":".str","t":"[9 x i8]"}
+{"gv":"global_hooks","t":"%struct.internal_hooks "}
+{"gv":"stdin","t":"%struct._IO_FILE*, "}
+{"gv":".str.1","t":"[15 x i8]"}
+{"gv":".str.2","t":"[4 x i8]"}
+{"gv":"print.default_buffer_size","t":"i64 "}
+{"gv":".str.3","t":"[5 x i8]"}
+{"gv":".str.4","t":"[6 x i8]"}
+{"gv":".str.5","t":"[5 x i8]"}
+{"gv":".str.6","t":"[7 x i8]"}
+{"gv":".str.7","t":"[4 x i8]"}
+{"gv":".str.8","t":"[7 x i8]"}
+{"gv":".str.9","t":"[3 x i8]"}
+{"gv":".str.10","t":"[6 x i8]"}

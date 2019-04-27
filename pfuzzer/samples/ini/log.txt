@@ -1,0 +1,29 @@
+/home/klee/dockermount/checksum-repair/samples/ini/ini.c:302:12: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+    printf(string);
+           ^~~~~~
+/home/klee/dockermount/checksum-repair/samples/ini/ini.c:302:12: note: treat the string as an argument to avoid this
+    printf(string);
+           ^
+           "%s", 
+1 warning generated.
+/home/klee/dockermount/checksum-repair/samples/ini/ini.c:302:12: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+    printf(string);
+           ^~~~~~
+/home/klee/dockermount/checksum-repair/samples/ini/ini.c:302:12: note: treat the string as an argument to avoid this
+    printf(string);
+           ^
+           "%s", 
+1 warning generated.
+[INFO] reading excluded functions from file: ../excluded_functions
+[INFO] number of threads: 432
+[INFO] in thread 139837505525504: instrumenting function: rstrip
+[INFO] in thread 139837522310912: instrumenting function: ini_parse_stream
+[INFO] in thread 139837488740096: instrumenting function: strncpy0
+[INFO] in thread 139837497132800: instrumenting function: find_chars_or_comment
+[INFO] in thread 139837471954688: instrumenting function: ini_parse
+[INFO] in thread 139837455169280: instrumenting function: ini_reader_string
+[INFO] in thread 139837438383872: instrumenting function: _real_program_main
+[INFO] in thread 139837446776576: instrumenting function: read_input
+[INFO] in thread 139837480347392: instrumenting function: ini_parse_file
+[INFO] in thread 139837463561984: instrumenting function: ini_parse_string
+[INFO] in thread 139837513918208: instrumenting function: lskip

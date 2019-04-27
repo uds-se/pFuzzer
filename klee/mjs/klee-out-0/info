@@ -1,0 +1,3 @@
+klee --optimize --only-output-states-covering-new --libc=uclibc -posix-runtime mjs.bc -sym-stdin 200
+PID: 110426
+Started: 2018-11-04 14:34:59

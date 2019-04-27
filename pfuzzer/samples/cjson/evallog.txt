@@ -1,0 +1,113 @@
+{}5truenullfalse["" ,503]8"H"[[42167.]][[42167.9]]{ "":5}[-4.5e29][-3.0E2]{"":[]}[4.5e24]{}/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+5/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+true/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+null/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+false/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+["" ,503]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+8/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+"H"/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+[[42167.]]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+[[42167.9]]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+{ "":5}/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+[-4.5e29]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+[-3.0E2]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+{"":[]}/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+[4.5e24]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/cjson/cJSON.gcda:version '505*', prefer version '408*'
+
+Valid inputs that increase coverage: 12
+
+#################
+Tokenlist:
+
+	null
+
+	num
+
+	:
+
+	{
+
+	,
+
+	st
+
+	false
+
+	-
+
+	true
+
+	[
+
+	]
+
+	}
+
+
+Toklength: 4
+TokCount: 2
+
+
+Toklength: 1
+TokCount: 8
+
+
+Toklength: 2
+TokCount: 1
+
+
+Toklength: 5
+TokCount: 1
+
+Two token size: 17
+######################
+
+
+	{ } : 1
+
+	[ st : 1
+
+	st , : 1
+
+	, num : 1
+
+	num ] : 6
+
+	[ [ : 2
+
+	[ num : 3
+
+	] ] : 2
+
+	{ st : 2
+
+	st : : 2
+
+	: num : 1
+
+	num } : 1
+
+	[ - : 2
+
+	- num : 2
+
+	: [ : 1
+
+	[ ] : 1
+
+	] } : 1

@@ -1,0 +1,355 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+
+intToLineMapping = dict()
+anoTypes = dict()
+
+# stores structs and unions that were already seen
+foundObjects = list()
+
+typeSizeMapping = {"pointer": 64, "float": 32, "double": 64, "half": 16, "void": 0, "x86_fp80": 80}
+
+
+def main(metadata, bcfile, exfunctions):
+    with open(bcfile, 'r') as bitcode:
+        # read all metadata lines
+        for line in bitcode.readlines():
+            if (line.startswith("!")):
+                lineSplit = line.split(" = ")
+                intToLineMapping.update({lineSplit[0]: lineSplit[1]})
+            if (line.startswith("%struct.") or line.startswith("%union.")):
+                lineSplit = line.split(" = type ")
+                anoTypes.update({lineSplit[0]: lineSplit[1]})
+
+        # extract the important information from the metadata lines
+        for key, value in intToLineMapping.items():
+            # if we do not have a name here, it makes no sense to extract information, we cannot map them later
+            if ("name: " in value) and ("DW_TAG_structure_type" in value) and ("DIFlagFwdDecl" not in value):
+                name = extractName(value)
+                foundObjects.append(name)
+
+                size = extractSize(value)
+
+                writeStructMetadata(name, size, extractElements(value))
+                # store size to calculate sizes of anoTypes
+                typeSizeMapping.update({name: int(size)})
+
+            if ("name: " in value) and ("DW_TAG_union_type" in value) and ("DIFlagFwdDecl" not in value):
+                name = extractName(value)
+                foundObjects.append(name)
+
+                size = extractSize(value)
+
+                writeUnionMetadata(name, size)
+                # store size to calculate sizes of anoTypes
+                typeSizeMapping.update({name: int(size)})
+
+        handleAnoTypes(metadata)
+        extractFunctions(metadata, bitcode, exfunctions)
+        extractGVars(metadata, bitcode)
+
+
+def extractFunctions(metadata, bitcode, exfunctions):
+    # get list of functions excluded while instrumenting
+    ef = list()
+    if exfunctions:
+        with open(exfunctions, "r") as excludedFunctions:
+            for line in excludedFunctions.readlines():
+                ef.append(line.strip())
+
+    bitcode.seek(0)
+    for line in bitcode.readlines():
+        # example function line: define i32 @main(i32 %argc, i8** %argv)
+
+        if not line.startswith("define"):
+            continue
+
+        name = line.split("@")[1].split("(")[0]
+
+        if name in ef:
+            # the function was excluded, do not print it
+            continue
+
+        argnames = list()
+        argtypes = list()
+        bracecounter = 0
+
+        argList = [a.strip() for a in line[line.find('(') + 1:line.rfind(')')].split(',') if a]
+        for arg in argList:
+            if arg == "...":
+                # this is a function with an optionally large amount of params
+                continue
+            if "(" in arg:
+                bracecounter += 1
+            if ")" in arg:
+                bracecounter -= 1
+            if bracecounter > 0:
+                continue
+            arg_type = arg.split()[0].replace('%struct.', '').replace('%union.', '')
+            arg_name = arg.split()[1][1:]
+
+            if ")" in arg:
+                arg_type = "i32*"
+
+            argnames.append(arg_name)
+            argtypes.append(arg_type)
+
+        printFunctions(name, argnames, argtypes, metadata)
+
+
+def printFunctions(name, args, argtypes, metadata):
+    # example output: {"f":"clock_settime","ar":[{"a":"clk"},{"a":"ts"}]}
+    metadata.write("{\"f\":\"" + name + "\",\"ar\":[")
+    argString = ""
+    counter = 0
+    for arg in args:
+        argString += "{\"a\":\"" + arg + "\", \"t\":\"" + argtypes[counter] + "\"},"
+        counter += 1
+    metadata.write(argString[:-1] + "]}\n")
+
+
+def extractGVars(metadata, bitcode):
+    bitcode.seek(0)
+    for line in bitcode.readlines():
+        if not line.startswith('@'):
+            continue
+
+        if "weak alias" in line or "weak hidden alias" in line:
+            continue
+
+        gname = line.split(" = ")[0][1:]
+        gtype = ""
+
+        if " constant " in line:
+            gtype = line.split(" constant ")[1]
+        elif " global " in line:
+            gtype = line.split(" global ")[1]
+
+        gtype = extractTypeForGVar(gtype)
+        printGVarJson(gname, gtype, metadata)
+
+
+def printGVarJson(name, typ, metadata):
+    metadata.write("{\"gv\":\"" + name + "\",\"t\":\"" + typ + "\"}\n")
+
+
+def extractTypeForGVar(gtype):
+    openBrace = 'i'
+    closeBrace = ''
+    if gtype.startswith("{"):
+        openBrace = '{'
+        closeBrace = '}'
+    elif gtype.startswith("["):
+        openBrace = '['
+        closeBrace = ']'
+    elif gtype.startswith("<"):
+        openBrace = '<'
+        closeBrace = '>'
+    elif gtype.startswith("%"):
+        openBrace = '%'
+
+    openCounter = 1
+    # delete first character before since this is the opening brace
+    gtype = gtype[1:]
+    resultType = openBrace
+
+    while openCounter != 0:
+        resultType += gtype[0]
+
+        if gtype[0] == openBrace:
+            openCounter += 1
+        if gtype[0] == closeBrace:
+            openCounter -= 1
+        # in the case that the type is just a basic type, a space has to be
+        # looked for. same holds for unions and structs which start with a %
+        if (openBrace == 'i' or openBrace == '%') and gtype[0] == ' ':
+            openCounter -= 1
+        gtype = gtype[1:]
+
+    return resultType
+
+
+def writeStructMetadata(name, size, value):
+    metadata.write("{\"sn\":\"")
+    metadata.write(name)
+
+    metadata.write("\",\"s\":")
+    metadata.write(size)
+
+    metadata.write(",\"el\":[")
+    metadata.write(value)
+    metadata.write("]}\n")
+
+
+def writeUnionMetadata(name, size):
+    metadata.write("{\"un\":\"")
+    metadata.write(name)
+
+    metadata.write("\",\"s\":")
+    metadata.write(size)
+    metadata.write("}\n")
+
+
+def handleAnoTypes(metadata):
+    # iteratively resolve sizes
+    # empty dictionaries evaluate to false in python...
+    while (anoTypes):
+        for key, value in list(anoTypes.items()):
+            if "opaque" in value:
+                del(anoTypes[key])
+                continue
+
+            splitted = value.replace("{ ", "").replace(" }\n", "").replace(" }", "").split(", ")
+            foundNone = False
+            sizes = list()
+            fullsize = 0
+            union = "%union." in key
+            for type in splitted:
+                size = calcSize(type)
+                if size is None:
+                    foundNone = True
+                    break
+                sizes.append(size)
+
+                # for union types the maximum is taken, this is the size that is used in the memory
+                if(union):
+                    fullsize = max(fullsize, size)
+                else:
+                    fullsize += size
+
+            if (not foundNone):
+                # now remove from dict, therefore other iteration mode has to be used
+                del(anoTypes[key])
+                name = key.replace("%struct.", "").replace("%union.", "")
+                typeSizeMapping.update({str(name): int(fullsize)})
+
+                if (name in foundObjects):
+                    continue
+                if (union):
+                    writeUnionMetadata(name, str(fullsize))
+                else:
+                    writeStructMetadata(name, str(fullsize), generateFakeElementList(name, len(sizes)))
+
+
+def calcSize(type_str):
+    # check for standard types and return them
+    if ('*' in type_str):
+        return typeSizeMapping["pointer"]
+
+    if (type_str in typeSizeMapping):
+        return typeSizeMapping[type_str]
+#   if (type_str == "float"):
+#       return typeSizeMapping["float"]
+#   if (type_str == "double"):
+#       return typeSizeMapping["double"]
+#   if (type_str == "half"):
+#       return typeSizeMapping["half"]
+#   if (type_str == "void"):
+#       return typeSizeMapping["void"]
+
+    # check for arrays
+    if (type_str.startswith("[")):
+        splitted = type_str.replace("[", "").replace("]", "").split(" x ")
+        # do not use the last character which is the "]"
+        size = calcSize(splitted[1])
+        if size is None:
+            return None
+
+        return int(splitted[0]) * size
+
+    # check for vectors or such that look like them but are not
+    if (type_str.startswith("<") or ">" in type_str):
+        # if there is no " x " in the type then this is not a vector and the "<" and ">" can be replaced
+        if (" x " not in type_str):
+            splitted = type_str.replace("<", "").replace(">", "").replace("\n", "")
+            size = calcSize(splitted)
+            if size is None:
+                return None
+            else:
+                return size
+
+        splitted = type_str.replace("<", "").replace(">", "").split(" x ")
+        # do not use the last character which is the "<"
+        size = calcSize(splitted[1])
+        if size is None:
+            return None
+
+        return int(splitted[0]) * size
+
+    # check for union and struct and return the respective sizes if possible,
+    # otw none.
+    if ('%struct.' in type_str):
+        replaced = type_str.replace('%struct.', '')
+        if (replaced in typeSizeMapping):
+            return typeSizeMapping[replaced]
+        else:
+            return None
+
+    # then check for union
+    if ('%union.' in type_str):
+        replaced = type_str.replace('%union.', '')
+        if (replaced in typeSizeMapping):
+            return typeSizeMapping[replaced]
+        else:
+            return None
+
+    if ('opaque' in type_str):
+        return None
+
+    replaced = type_str.replace('i', '')
+
+    return int(replaced)
+
+
+def extractName(line):
+    if "name: " not in line:
+        # anonymous field in struct
+        return ""
+
+    name = line.split("name: ")[1].split(",")[0].replace("\"", "")
+    return name
+
+
+def extractSize(line):
+    size = line.split("size: ")[1].split(",")[0].replace("\"", "")
+    return size
+
+
+def extractElements(line):
+    elements = line.split("elements: ")[1].replace(")", "").replace("\"", "")
+    # [:-1] removes the last character which is a line break
+    els = intToLineMapping[elements[:-1]].replace("!{", "").replace("}\n", "").split(", ")
+
+    # linearize names of elements
+    string = ""
+    for element in els:
+        el = intToLineMapping[element]
+        string = string + "{\"e\":\""
+        string = string + extractName(el)
+        string = string + "\"},"
+
+    return string[:-1]
+
+
+def generateFakeElementList(name, numberOfElements):
+    string = ""
+    for x in range(0, numberOfElements):
+        string = string + "{\"e\":\""
+        string = string + name + "Element" + str(x)
+        string = string + "\"},"
+
+    return string[:-1]
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Collects metadata from the bitcode file specified by the argument")
+
+    parser.add_argument("-f", "--file", type=str, required=True, help="Specifies the bitcode file that has to be analyzed.")
+    parser.add_argument("-ef", "--excludedfunctions", type=str, const="", default="", nargs="?", help="Specifies the bitcode file that has to be analyzed.")
+
+    options = parser.parse_args()
+
+    with open(os.path.join(os.path.abspath(os.path.dirname(options.file)), "metadata"), "w") as metadata:
+        main(metadata, options.file, options.excludedfunctions)

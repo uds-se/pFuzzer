@@ -1,0 +1,4 @@
+{ "opcode": 42, "function": "main", "dest": {"name": "tmp12", "type": "i32"}, "operands": [] }
+{ "opcode": 17, "function": "f1",   "dest": {"name": "tmp1", "type": "i32*", "value": "7872341234"}, "operands": [] }
+{ "opcode": 25, "function": "main", "dest": {"name": "tmp4", "type": "[i32 x 3]"}, "operands": [{"name": "tmp23", "type": "i32", "value": "56"}] }
+

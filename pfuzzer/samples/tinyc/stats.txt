@@ -1,0 +1,3 @@
+Number of executions: 204961
+Approx. Search Space Size: 1559630
+Executed since last found: 197357

@@ -1,0 +1,1 @@
+{ "opcode": 42, "function": "__main", "dest": {"name": "tmp12", "type": "i32"}, "operands": [] }

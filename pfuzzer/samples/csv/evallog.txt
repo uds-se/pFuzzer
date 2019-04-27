@@ -1,0 +1,63 @@
+NTITLE: N
+,TITLE: 
+TITLE: 
+
+TITLE: 
+5,"TITLE: 5
+TITLE: 
+",TITLE: ,
+""TITLE: 
+55""TITLE: 55
+"
+,H5TITLE: 
+,H5
+NTITLE: N
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+,TITLE: 
+TITLE: 
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+
+TITLE: 
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+5,"TITLE: 5
+TITLE: 
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+",TITLE: ,
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+""TITLE: 
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+55""TITLE: 55
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+"
+,H5TITLE: 
+,H5
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/csv/csvparser.gcda:version '505*', prefer version '408*'
+
+Valid inputs that increase coverage: 8
+
+#################
+Tokenlist:
+
+	,
+
+	ident
+
+
+Toklength: 1
+TokCount: 2
+
+Two token size: 2
+######################
+
+
+	ident , : 3
+
+	, ident : 2

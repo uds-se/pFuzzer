@@ -1,0 +1,14 @@
+Error: memory error: out of bound pointer
+File: /home/klee/dockermount/klee/csv/csvparser.c
+Line: 183
+assembly.ll line: 842
+Stack: 
+	#000000842 in _CsvParser_getRow (csvParser=43454352) at /home/klee/dockermount/klee/csv/csvparser.c:183
+	#100002043 in __user_main (argc=3, argv=32415280) at /home/klee/dockermount/klee/csv/csvparser.c:86
+	#200006689 in main (=3, =32415280) at /home/klee/klee_build/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+Info: 
+	address: 28911359
+	next: object at 28911360 of size 64
+		MO1627[64] allocated at _CsvParser_getRow():  %389 = tail call noalias i8* @malloc(i64 64) #4, !dbg !3088
+	prev: object at 28370736 of size 144
+		MO449[144] allocated at __user_main():  %s.i.i = alloca %struct.stat64.647, align 8

@@ -1,0 +1,124 @@
+/home/klee/dockermount/checksum-repair/samples/cjson/cJSON.c:2953:12: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+    printf(string);
+           ^~~~~~
+/home/klee/dockermount/checksum-repair/samples/cjson/cJSON.c:2953:12: note: treat the string as an argument to avoid this
+    printf(string);
+           ^
+           "%s", 
+1 warning generated.
+/home/klee/dockermount/checksum-repair/samples/cjson/cJSON.c:2953:12: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+    printf(string);
+           ^~~~~~
+/home/klee/dockermount/checksum-repair/samples/cjson/cJSON.c:2953:12: note: treat the string as an argument to avoid this
+    printf(string);
+           ^
+           "%s", 
+1 warning generated.
+[INFO] reading excluded functions from file: ../excluded_functions
+[INFO] number of threads: 432
+[INFO] in thread 140660307638016: instrumenting function: cJSON_GetStringValue
+[INFO] in thread 140660290852608: instrumenting function: cJSON_Version
+[INFO] in thread 140660282459904: instrumenting function: cJSON_InitHooks
+[INFO] in thread 140660299245312: instrumenting function: cJSON_IsString
+[INFO] in thread 140660316030720: instrumenting function: cJSON_GetErrorPtr
+[INFO] in thread 140660178941696: instrumenting function: cJSON_New_Item
+[INFO] in thread 140660145370880: instrumenting function: cJSON_Parse
+[INFO] in thread 140660128585472: instrumenting function: print
+[INFO] in thread 140659910506240: instrumenting function: cJSON_PrintUnformatted
+[INFO] in thread 140660170548992: instrumenting function: parse_value
+[INFO] in thread 140659902113536: instrumenting function: cJSON_PrintBuffered
+[INFO] in thread 140660274067200: instrumenting function: cJSON_Delete
+[INFO] in thread 140660153763584: instrumenting function: skip_utf8_bom
+[INFO] in thread 140660257281792: instrumenting function: cJSON_ParseWithOpts
+[INFO] in thread 140660136978176: instrumenting function: cJSON_Print
+[INFO] in thread 140660265674496: instrumenting function: cJSON_SetNumberHelper
+[INFO] in thread 140660162156288: instrumenting function: buffer_skip_whitespace
+[INFO] in thread 140659860150016: instrumenting function: get_array_item
+[INFO] in thread 140659876935424: instrumenting function: cJSON_GetArraySize
+[INFO] in thread 140659893720832: instrumenting function: print_value
+[INFO] in thread 140659130345216: instrumenting function: add_item_to_array
+[INFO] in thread 140659121952512: instrumenting function: cJSON_AddItemToObject
+[INFO] in thread 140658635437824: instrumenting function: add_item_to_object
+[INFO] in thread 140659163916032: instrumenting function: get_object_item
+[INFO] in thread 140658627045120: instrumenting function: cJSON_AddItemToObjectCS
+[INFO] in thread 140659138737920: instrumenting function: cJSON_AddItemToArray
+[INFO] in thread 140658618652416: instrumenting function: cJSON_AddItemReferenceToArray
+[INFO] in thread 140659155523328: instrumenting function: cJSON_GetObjectItemCaseSensitive
+[INFO] in thread 140658610259712: instrumenting function: create_reference
+[INFO] in thread 140659147130624: instrumenting function: cJSON_HasObjectItem
+[INFO] in thread 140658601867008: instrumenting function: cJSON_AddItemReferenceToObject
+[INFO] in thread 140659868542720: instrumenting function: cJSON_GetArrayItem
+[INFO] in thread 140658585081600: instrumenting function: cJSON_CreateNull
+[INFO] in thread 140659885328128: instrumenting function: cJSON_PrintPreallocated
+[INFO] in thread 140658501220096: instrumenting function: cJSON_AddTrueToObject
+[INFO] in thread 140659172308736: instrumenting function: cJSON_GetObjectItem
+[INFO] in thread 140658492827392: instrumenting function: cJSON_CreateTrue
+[INFO] in thread 140658593474304: instrumenting function: cJSON_AddNullToObject
+[INFO] in thread 140658484434688: instrumenting function: cJSON_AddFalseToObject
+[INFO] in thread 140658459256576: instrumenting function: cJSON_CreateBool
+[INFO] in thread 140657964349184: instrumenting function: cJSON_CreateNumber
+[INFO] in thread 140658467649280: instrumenting function: cJSON_AddBoolToObject
+[INFO] in thread 140657947563776: instrumenting function: cJSON_CreateString
+[INFO] in thread 140657939171072: instrumenting function: cJSON_AddRawToObject
+[INFO] in thread 140657930778368: instrumenting function: cJSON_CreateRaw
+[INFO] in thread 140657913992960: instrumenting function: cJSON_CreateObject
+[INFO] in thread 140656890607360: instrumenting function: cJSON_AddArrayToObject
+[INFO] in thread 140658476041984: instrumenting function: cJSON_CreateFalse
+[INFO] in thread 140657955956480: instrumenting function: cJSON_AddStringToObject
+[INFO] in thread 140656873821952: instrumenting function: cJSON_DetachItemViaPointer
+[INFO] in thread 140656848643840: instrumenting function: cJSON_DetachItemFromObject
+[INFO] in thread 140656420845312: instrumenting function: cJSON_DeleteItemFromObject
+[INFO] in thread 140656882214656: instrumenting function: cJSON_CreateArray
+[INFO] in thread 140656395667200: instrumenting function: cJSON_ReplaceItemViaPointer
+[INFO] in thread 140656857036544: instrumenting function: cJSON_DeleteItemFromArray
+[INFO] in thread 140656085300992: instrumenting function: cJSON_ReplaceItemInObjectCaseSensitive
+[INFO] in thread 140656865429248: instrumenting function: cJSON_DetachItemFromArray
+[INFO] in thread 140656076908288: instrumenting function: cJSON_strdup
+[INFO] in thread 140657922385664: instrumenting function: cJSON_AddObjectToObject
+[INFO] in thread 140656412452608: instrumenting function: cJSON_DeleteItemFromObjectCaseSensitive
+[INFO] in thread 140656378881792: instrumenting function: cJSON_ReplaceItemInObject
+[INFO] in thread 140656370489088: instrumenting function: replace_item_in_object
+[INFO] in thread 140656068515584: instrumenting function: cJSON_CreateStringReference
+[INFO] in thread 140658450863872: instrumenting function: cJSON_AddNumberToObject
+[INFO] in thread 140655657469696: instrumenting function: cJSON_CreateStringArray
+[INFO] in thread 140655649076992: instrumenting function: cJSON_Duplicate
+[INFO] in thread 140655682647808: instrumenting function: suffix_object
+[INFO] in thread 140655632291584: instrumenting function: cJSON_IsInvalid
+[INFO] in thread 140655145776896: instrumenting function: cJSON_IsFalse
+[INFO] in thread 140655120598784: instrumenting function: cJSON_IsNull
+[INFO] in thread 140655137384192: instrumenting function: cJSON_IsTrue
+[INFO] in thread 140655674255104: instrumenting function: cJSON_CreateFloatArray
+[INFO] in thread 140655103813376: instrumenting function: cJSON_IsArray
+[INFO] in thread 140655665862400: instrumenting function: cJSON_CreateDoubleArray
+[INFO] in thread 140656060122880: instrumenting function: cast_away_const
+[INFO] in thread 140656051730176: instrumenting function: cJSON_CreateObjectReference
+[INFO] in thread 140654667622144: instrumenting function: cJSON_Compare
+[INFO] in thread 140656404059904: instrumenting function: cJSON_InsertItemInArray
+[INFO] in thread 140654650836736: instrumenting function: cJSON_free
+[INFO] in thread 140655640684288: instrumenting function: cJSON_Minify
+[INFO] in thread 140654625658624: instrumenting function: update_offset
+[INFO] in thread 140654676014848: instrumenting function: cJSON_IsRaw
+[INFO] in thread 140654659229440: instrumenting function: cJSON_malloc
+[INFO] in thread 140656034944768: instrumenting function: cJSON_CreateIntArray
+[INFO] in thread 140654231398144: instrumenting function: parse_hex4
+[INFO] in thread 140656387274496: instrumenting function: cJSON_ReplaceItemInArray
+[INFO] in thread 140654223005440: instrumenting function: get_decimal_point
+[INFO] in thread 140653870708480: instrumenting function: ensure
+[INFO] in thread 140655128991488: instrumenting function: cJSON_IsBool
+[INFO] in thread 140655112206080: instrumenting function: cJSON_IsNumber
+[INFO] in thread 140653845530368: instrumenting function: print_array
+[INFO] in thread 140653828744960: instrumenting function: print_string_ptr
+[INFO] in thread 140654239790848: instrumenting function: utf16_literal_to_utf8
+[INFO] in thread 140653862315776: instrumenting function: print_number
+[INFO] in thread 140653853923072: instrumenting function: print_string
+[INFO] in thread 140656043337472: instrumenting function: cJSON_CreateArrayReference
+[INFO] in thread 140654642444032: instrumenting function: read_input
+[INFO] in thread 140656840251136: instrumenting function: cJSON_DetachItemFromObjectCaseSensitive
+[INFO] in thread 140654248183552: instrumenting function: parse_object
+[INFO] in thread 140654256576256: instrumenting function: parse_array
+[INFO] in thread 140654273361664: instrumenting function: parse_string
+[INFO] in thread 140655095420672: instrumenting function: cJSON_IsObject
+[INFO] in thread 140654264968960: instrumenting function: parse_number
+[INFO] in thread 140653837137664: instrumenting function: print_object
+[INFO] in thread 140654634051328: instrumenting function: _real_program_main
+[INFO] in thread 140653820352256: instrumenting function: case_insensitive_strcmp

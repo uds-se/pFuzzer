@@ -1,0 +1,39 @@
+#!/bin/bash -
+
+set -e
+
+PROG_SOURCE=$1
+if [ ! -e "${PROG_SOURCE}" ]; then
+    printf "error: missing c input file '%s'\n" "${PROG_SOURCE}"
+    exit 1
+fi
+
+EXCLUDED_FUNCTIONS=$2
+if [ ! -e "${EXCLUDED_FUNCTIONS}" ]; then
+    printf "error: missing list of functions to exclude from the trace\n"
+    exit 1
+fi
+
+CURDIR=$(dirname ${BASH_SOURCE[0]})
+
+LLVM=@LLVM_BINDIR@
+CLANG=@CLANG@
+
+LIBDIR=${CURDIR}/../@LIBDIR@
+INCDIR=${CURDIR}/../@INCDIR@
+
+TRACEPLUGIN=${LIBDIR}/$(basename "@TRACEPLUGIN@")
+
+# build uninstrumented version for reference
+"${CLANG}" -g -D_FORTIFY_SOURCE=0 -o "${PROG_SOURCE}.uninstrumented" -x c "${PROG_SOURCE}" -ldl
+
+# build instrumented version
+"${CLANG}" -g -S -D_FORTIFY_SOURCE=0 -emit-llvm -include "${INCDIR}/traceinstr/wrapper_libc.h" -o "${PROG_SOURCE}.uninstrumented.bc" -x c "${PROG_SOURCE}"
+
+"${LLVM}/opt" -S -instnamer -reg2mem -load "${TRACEPLUGIN}" -traceplugin -exclude_functions "${EXCLUDED_FUNCTIONS}" -disable-verify "${PROG_SOURCE}.uninstrumented.bc" -o  "${PROG_SOURCE}.opt_debug.bc"
+"${LLVM}/opt" -S -strip-debug "${PROG_SOURCE}.opt_debug.bc" -o "${PROG_SOURCE}.debug.bc"
+
+"${CLANG}" -fno-inline -O3 -o "${PROG_SOURCE}.instrumented" "${PROG_SOURCE}.debug.bc" "-L${LIBDIR}" -lwrappermain -lwrapperlibc -lsimpletracer -ljson-c -lm -lz -ldl
+
+# extract metadata for taint analysis
+"${CURDIR}/extract_metadata" -ef "${EXCLUDED_FUNCTIONS}" -f "${PROG_SOURCE}.uninstrumented.bc"

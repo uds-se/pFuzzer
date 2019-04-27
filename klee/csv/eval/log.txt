@@ -1,0 +1,309 @@
+
+ÿTITLE: 
+NEW LINE:
+FIELD: ÿ
+ÿTITLE: ÿ
+
+
+ÿTITLE: 
+NEW LINE:
+FIELD: 
+NEW LINE:
+FIELD: ÿ
+,
+ÿTITLE: 
+TITLE: 
+NEW LINE:
+FIELD: ÿ
+,ÿTITLE: 
+TITLE: ÿ
+Reached EOF
+Reached EOF
+"ÿTITLE: ÿ
+ÿTITLE: ÿ
+,"ÿTITLE: 
+TITLE: ÿ
+
+File 0 of 10
+
+test000007.ktest
+
+'\nÿ'
+
+File 1 of 10
+
+test000001.ktest
+
+'ÿ'
+
+File 2 of 10
+
+test000010.ktest
+
+'\n\nÿ'
+
+File 3 of 10
+
+test000009.ktest
+
+',\nÿ'
+
+File 4 of 10
+
+test000006.ktest
+
+',ÿ'
+
+File 5 of 10
+
+test000002.ktest
+
+''
+
+File 6 of 10
+
+test000005.ktest
+
+''
+
+File 7 of 10
+
+test000004.ktest
+
+'"ÿ'
+
+File 8 of 10
+
+test000003.ktest
+
+'\rÿ'
+
+File 9 of 10
+
+test000008.ktest
+
+',"ÿ'
+
+-1541867871.3367937
+##############Coverage###########
+rm: cannot remove '*.gcda': No such file or directory
+rm: cannot remove '*.gcno': No such file or directory
+rm: cannot remove '*.cov': No such file or directory
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:cannot open data file, assuming not executed
+
+ÿTITLE: 
+NEW LINE:
+FIELD: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+ÿTITLE: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+
+
+ÿTITLE: 
+NEW LINE:
+FIELD: 
+NEW LINE:
+FIELD: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+,
+ÿTITLE: 
+TITLE: 
+NEW LINE:
+FIELD: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+,ÿTITLE: 
+TITLE: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+"ÿTITLE: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+ÿTITLE: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+,"ÿTITLE: 
+TITLE: ÿ
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/csv/eval/csvparser.gcda:version '505*', prefer version '408*'
+
+
+
+'\nÿ'
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+'ÿ'
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+'\n\nÿ'
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+
+Taken at least once:53.70% of 108
+
+',\nÿ'
+
+
+Taken at least once:57.41% of 108
+
+
+Taken at least once:57.41% of 108
+
+
+Taken at least once:57.41% of 108
+
+
+Taken at least once:57.41% of 108
+
+',ÿ'
+
+
+Taken at least once:57.41% of 108
+
+
+Taken at least once:57.41% of 108
+
+
+Taken at least once:57.41% of 108
+
+
+Taken at least once:57.41% of 108
+
+'"ÿ'
+
+
+Taken at least once:59.26% of 108
+
+
+Taken at least once:59.26% of 108
+
+
+Taken at least once:59.26% of 108
+
+
+Taken at least once:59.26% of 108
+
+'\rÿ'
+
+
+Taken at least once:60.19% of 108
+
+
+Taken at least once:60.19% of 108
+
+
+Taken at least once:60.19% of 108
+
+
+Taken at least once:60.19% of 108
+
+',"ÿ'
+
+
+Taken at least once:60.19% of 108
+
+
+Taken at least once:60.19% of 108
+
+
+Taken at least once:60.19% of 108
+
+
+Valid inputs that increase coverage: 5
+
+#################
+Tokenlist:
+
+	,
+
+	ident
+
+
+Toklength: 1
+TokCount: 2
+
+Two token size: 1
+######################
+
+
+	, ident : 3

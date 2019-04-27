@@ -1,0 +1,8 @@
+KLEE: Using STP solver backend
+KLEE: ERROR: /home/klee/dockermount/klee/ini/ini.c:152: external call with symbolic argument: memchr
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: /home/klee/dockermount/klee/ini/ini.c:59: external call with symbolic argument: memchr
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: /home/klee/dockermount/klee/ini/ini.c:59: external call with symbolic argument: memchr
+KLEE: NOTE: now ignoring this error at this location
+KLEE: halting execution, dumping remaining states

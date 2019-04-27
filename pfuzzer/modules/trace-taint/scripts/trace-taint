@@ -1,0 +1,3 @@
+#!/bin/bash -
+
+java -cp "$(dirname ${BASH_SOURCE[0]})/../@java_jar_dir@/*" main.TaintTracker "$@"

@@ -1,0 +1,5 @@
+KLEE: Using STP solver backend
+KLEE: ERROR: /home/klee/dockermount/klee/tinyc/tiny.c:100: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location
+KLEE: ERROR: /home/klee/dockermount/klee/tinyc/tiny.c:99: memory error: out of bound pointer
+KLEE: NOTE: now ignoring this error at this location

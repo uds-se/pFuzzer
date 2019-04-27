@@ -1,0 +1,604 @@
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+syntax error
+
+File 0 of 64
+
+test000056.ktest
+
+';\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+File 1 of 64
+
+test000036.ktest
+
+'e++'
+
+File 2 of 64
+
+test000010.ktest
+
+'(}'
+
+File 3 of 64
+
+test000032.ktest
+
+'do;}'
+
+File 4 of 64
+
+test000040.ktest
+
+'if(0}'
+
+File 5 of 64
+
+test000029.ktest
+
+'if(+'
+
+File 6 of 64
+
+test000006.ktest
+
+'='
+
+File 7 of 64
+
+test000062.ktest
+
+'0000000000000++'
+
+File 8 of 64
+
+test000043.ktest
+
+'while(0;'
+
+File 9 of 64
+
+test000059.ktest
+
+'d<0-0='
+
+File 10 of 64
+
+test000063.ktest
+
+'000<(((\n(\nd\n))+((\n(0000\n))-\n\n\n\n((d\n+0+0)\n))+0+000-0\n+(0+0\n)-\n(\nd)\n)-\n((\n0<\n\n(\n((d)-\n\n(d+((00)\n+(\n(\n\n\n\n\n\n\n(\n(0))\n))+\n\n(\n0\n\n\n)))<\n000-0)+\n0+0+\n(0000))-\n(e\n))+\n\n(((0))+d)))\n+\n\n((0\n)\n+\n0<(0\n\n\n))-\n0\n\n\n+00;'
+
+File 11 of 64
+
+test000021.ktest
+
+'0++'
+
+File 12 of 64
+
+test000007.ktest
+
+'-'
+
+File 13 of 64
+
+test000009.ktest
+
+'{}('
+
+File 14 of 64
+
+test000053.ktest
+
+'e<0++'
+
+File 15 of 64
+
+test000014.ktest
+
+'0}'
+
+File 16 of 64
+
+test000045.ktest
+
+'d=0}'
+
+File 17 of 64
+
+test000013.ktest
+
+'{+'
+
+File 18 of 64
+
+test000039.ktest
+
+'(0)='
+
+File 19 of 64
+
+test000042.ktest
+
+'0+0++'
+
+File 20 of 64
+
+test000064.ktest
+
+'{;(\n((d\n\n)\n\n\n+0)+\n0)+\n0\n+(000-(\n((\n\n\n00)\n\n+0-\n\n((e<\n0+((0<0-a)\n+((((\nw+0)))<\n\n0)))-0)\n)\n-\n\n(\n\n\n\n000+\n\n000-00)-\n\n(\n\n\n0-\n\n\n(((0+00\n-(\n\n\n0+\ne)\n-\n0+\n(0<(0\n<\n\n0\n-\n\n\n\n0)+\n000)\n)+\n0)\n)-\n00\n-a\n<0+\n000)\n));}\n\n'
+
+File 21 of 64
+
+test000020.ktest
+
+'0+='
+
+File 22 of 64
+
+test000005.ktest
+
+'}'
+
+File 23 of 64
+
+test000015.ktest
+
+'dy'
+
+File 24 of 64
+
+test000051.ktest
+
+'e<0+}'
+
+File 25 of 64
+
+test000047.ktest
+
+';ayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+
+File 26 of 64
+
+test000016.ktest
+
+'{;+'
+
+File 27 of 64
+
+test000001.ktest
+
+'<'
+
+File 28 of 64
+
+test000052.ktest
+
+'if(00)}'
+
+File 29 of 64
+
+test000022.ktest
+
+'0;}'
+
+File 30 of 64
+
+test000049.ktest
+
+'00<0;+'
+
+File 31 of 64
+
+test000003.ktest
+
+'+'
+
+File 32 of 64
+
+test000055.ktest
+
+'if(00)+'
+
+File 33 of 64
+
+test000035.ktest
+
+'d++'
+
+File 34 of 64
+
+test000046.ktest
+
+'{}ayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+
+File 35 of 64
+
+test000058.ktest
+
+'if(0);}'
+
+File 36 of 64
+
+test000011.ktest
+
+'{}+'
+
+File 37 of 64
+
+test000017.ktest
+
+'(+'
+
+File 38 of 64
+
+test000027.ktest
+
+'{;}+'
+
+File 39 of 64
+
+test000012.ktest
+
+';+'
+
+File 40 of 64
+
+test000026.ktest
+
+'d;+'
+
+File 41 of 64
+
+test000060.ktest
+
+'while(0);;'
+
+File 42 of 64
+
+test000019.ktest
+
+'(0}'
+
+File 43 of 64
+
+test000025.ktest
+
+'0;+'
+
+File 44 of 64
+
+test000041.ktest
+
+'0+0<+'
+
+File 45 of 64
+
+test000031.ktest
+
+'00<-'
+
+File 46 of 64
+
+test000004.ktest
+
+''
+
+File 47 of 64
+
+test000044.ktest
+
+'{}000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+
+File 48 of 64
+
+test000008.ktest
+
+';}'
+
+File 49 of 64
+
+test000061.ktest
+
+'0<e+0++'
+
+File 50 of 64
+
+test000037.ktest
+
+'while(+'
+
+File 51 of 64
+
+test000038.ktest
+
+'0<+'
+
+File 52 of 64
+
+test000028.ktest
+
+'while='
+
+File 53 of 64
+
+test000024.ktest
+
+'if+'
+
+File 54 of 64
+
+test000030.ktest
+
+'d=<'
+
+File 55 of 64
+
+test000057.ktest
+
+'while(0)+'
+
+File 56 of 64
+
+test000033.ktest
+
+'while+'
+
+File 57 of 64
+
+test000018.ktest
+
+'do+'
+
+File 58 of 64
+
+test000050.ktest
+
+'elsyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+
+File 59 of 64
+
+test000002.ktest
+
+')'
+
+File 60 of 64
+
+test000054.ktest
+
+'while(00)}'
+
+File 61 of 64
+
+test000048.ktest
+
+'(0)++'
+
+File 62 of 64
+
+test000034.ktest
+
+'d=+'
+
+File 63 of 64
+
+test000023.ktest
+
+'if;'
+
+-1541867871.4327989
+##############Coverage###########
+rm: cannot remove '*.gcda': No such file or directory
+rm: cannot remove '*.gcno': No such file or directory
+rm: cannot remove '*.cov': No such file or directory
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:cannot open data file, assuming not executed
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.6.11.18.1b8cbb4d09d21cc8f3b55db8046800fee45e8e14/klee/tinyc/eval/tiny.gcda:version '505*', prefer version '408*'
+
+
+
+';\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+
+Taken at least once:13.56% of 118
+
+
+Taken at least once:13.56% of 118
+
+
+Taken at least once:13.56% of 118
+
+
+Taken at least once:13.56% of 118
+
+'000<(((\n(\nd\n))+((\n(0000\n))-\n\n\n\n((d\n+0+0)\n))+0+000-0\n+(0+0\n)-\n(\nd)\n)-\n((\n0<\n\n(\n((d)-\n\n(d+((00)\n+(\n(\n\n\n\n\n\n\n(\n(0))\n))+\n\n(\n0\n\n\n)))<\n000-0)+\n0+0+\n(0000))-\n(e\n))+\n\n(((0))+d)))\n+\n\n((0\n)\n+\n0<(0\n\n\n))-\n0\n\n\n+00;'
+
+
+Taken at least once:62.71% of 118
+
+
+Taken at least once:62.71% of 118
+
+
+Taken at least once:62.71% of 118
+
+
+Taken at least once:62.71% of 118
+
+'{;(\n((d\n\n)\n\n\n+0)+\n0)+\n0\n+(000-(\n((\n\n\n00)\n\n+0-\n\n((e<\n0+((0<0-a)\n+((((\nw+0)))<\n\n0)))-0)\n)\n-\n\n(\n\n\n\n000+\n\n000-00)-\n\n(\n\n\n0-\n\n\n(((0+00\n-(\n\n\n0+\ne)\n-\n0+\n(0<(0\n<\n\n0\n-\n\n\n\n0)+\n000)\n)+\n0)\n)-\n00\n-a\n<0+\n000)\n));}\n\n'
+
+
+Taken at least once:67.80% of 118
+
+
+Taken at least once:67.80% of 118
+
+
+Taken at least once:67.80% of 118
+
+
+Valid inputs that increase coverage: 4
+
+#################
+Tokenlist:
+
+	;
+
+	{
+
+	(
+
+	num
+
+	ident
+
+	}
+
+	-
+
+	<
+
+	+
+
+	)
+
+
+Toklength: 1
+TokCount: 10
+
+Two token size: 27
+######################
+
+
+	num < : 6
+
+	< ( : 4
+
+	( ( : 27
+
+	( ident : 9
+
+	ident ) : 8
+
+	) ) : 25
+
+	) + : 16
+
+	+ ( : 12
+
+	( num : 19
+
+	num ) : 22
+
+	) - : 11
+
+	- ( : 11
+
+	ident + : 3
+
+	+ num : 19
+
+	num + : 14
+
+	num - : 10
+
+	- num : 8
+
+	) < : 2
+
+	< num : 6
+
+	+ ident : 2
+
+	num ; : 1
+
+	{ ; : 1
+
+	; ( : 1
+
+	ident < : 2
+
+	- ident : 2
+
+	) ; : 1
+
+	; } : 1

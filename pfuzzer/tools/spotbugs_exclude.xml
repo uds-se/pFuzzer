@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FindBugsFilter>
+    <Match>
+      <Class name="~org.apache.*"/>
+    </Match>
+    <Match>
+      <Class name="~com.google.*"/>
+    </Match>
+    <Match>
+      <Class name="~org.msgpack.*"/>
+    </Match>
+    <Match>
+      <Class name="~org.glassfish.*"/>
+    </Match>
+    <Match>
+      <Class name="~javax.*"/>
+    </Match>
+    <Match>
+      <Class name="~java.*"/>
+    </Match>
+</FindBugsFilter>

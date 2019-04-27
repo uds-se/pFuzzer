@@ -1,0 +1,340 @@
+Generation Time: 58184
+File: ../findings/queue/id:000432,src:000313,op:havoc,rep:2
+'t=d=l=8;'
+
+Generation Time: 402
+File: ../findings/queue/id:000209,src:000166,op:havoc,rep:2
+'8+888+888+88+82+82+8+82+82+8;'
+
+Generation Time: 102
+File: ../findings/queue/id:000157,src:000128,op:havoc,rep:2
+'8+88<8+8+88;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000304,src:000300,op:flip1,pos:2,+cov
+'v=q=8;'
+
+Generation Time: 339
+File: ../findings/queue/id:000205,src:000153,op:havoc,rep:2
+'7-7-5-7-777-725-7-7;'
+
+Generation Time: 1835
+File: ../findings/queue/id:000315,src:000304,op:flip4,pos:0
+'y=q=8;'
+
+Generation Time: 43027
+File: ../findings/hangs/id:000002,src:000425,op:flip2,pos:9
+'if(2)if(757-u-77)if(2)if(r)7-u-7-77-77-7-77-7-u-7-7-u-7-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-u-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 1793
+File: ../findings/queue/id:000312,src:000300,op:havoc,rep:2
+'z=j=8;'
+
+Generation Time: 55321
+File: ../findings/queue/id:000429,src:000425+000418,op:splice,rep:2
+'if(2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-7-u-7-7-u-7-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-w-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-u-7-7;'
+
+Generation Time: 1789
+File: ../findings/queue/id:000300,src:000291+000209,op:splice,rep:8,+cov
+'v=s=8;'
+
+Generation Time: 26913
+File: ../findings/queue/id:000419,src:000311,op:havoc,rep:2
+'v=n=f=n=88;'
+
+Generation Time: 31
+File: ../findings/queue/id:000086,src:000057,op:flip2,pos:6,+cov
+'8888<8;'
+
+Generation Time: 1172
+File: ../findings/queue/id:000212,src:000202,op:havoc,rep:2
+'{{{{{{{}{{{{{{{{{}}}}}}}}}}}}{{{{{{{}}}}}}}}}}'
+
+Generation Time: 27207
+File: ../findings/hangs/id:000000,src:000415,op:havoc,rep:2
+'if(s)7-7-u-7777-u-7-7-u-7-77-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-7-7-7-77-7-u-7-7;'
+
+Generation Time: 124989
+File: ../findings/queue/id:000441,src:000429+000255,op:splice,rep:2
+'if(2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-7-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-7-u-7-7-u-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-77-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 25712
+File: ../findings/queue/id:000412,src:000407,op:havoc,rep:2
+'if(8)if(2);'
+
+Generation Time: 67
+File: ../findings/queue/id:000128,src:000086,op:arith8,pos:1,val:-13,+cov
+'8+88<8;'
+
+Generation Time: 107
+File: ../findings/queue/id:000158,src:000140,op:havoc,rep:2
+'{{}{{}{{}{}}}}'
+
+Generation Time: 556
+File: ../findings/queue/id:000179,src:000134,op:havoc,rep:2
+'{{;;}{{{{{{{}}}}}}}}'
+
+Generation Time: 124996
+File: ../findings/queue/id:000444,src:000441,op:arith8,pos:148,val:+15
+'if(2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-7-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-7<u-7-7-u-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-77-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 0
+File: ../findings/queue/id:000010,src:000000,op:arith8,pos:0,val:+27,+cov
+';'
+
+Generation Time: 44
+File: ../findings/queue/id:000105,src:000073,op:havoc,rep:2,+cov
+'{{}}'
+
+Generation Time: 1791
+File: ../findings/queue/id:000302,src:000300,op:flip1,pos:0,+cov
+'t=s=8;'
+
+Generation Time: 570
+File: ../findings/queue/id:000213,src:000202,op:havoc,rep:4
+'{{{{{{{{{{{{{{}{{{{{{{{{}}}}} {{{{}}}}}}}{{}}}}}}}} {{{{}}}}}}}}}}}}'
+
+Generation Time: 124997
+File: ../findings/queue/id:000445,src:000441,op:arith8,pos:158,val:+15
+'if(2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-7-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-7-u-7-7-u-7<u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-77-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 390
+File: ../findings/queue/id:000215,src:000206,op:havoc,rep:2
+'77-777-7-u-7-777-7-u-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 85
+File: ../findings/queue/id:000140,src:000105,op:havoc,rep:2
+'{{}{{}}}'
+
+Generation Time: 52700
+File: ../findings/queue/id:000428,src:000417,op:havoc,rep:2
+'if(i)7-7-u-7777-u-7-777-7-u-7-77-7-7-77-7-77-7-u-7-7-u-7-777-7-u-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-77-7-u-7-7-7-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 340
+File: ../findings/queue/id:000206,src:000153,op:havoc,rep:2
+'777-7-u-7-77-7-u-7-7;'
+
+Generation Time: 102
+File: ../findings/queue/id:000156,src:000128,op:arith8,pos:4,val:-17
+'8+88+8;'
+
+Generation Time: 27131
+File: ../findings/queue/id:000418,src:000416,op:arith8,pos:3,val:-11
+'if(h)7-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-777-7-u-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 30264
+File: ../findings/hangs/id:000001,src:000417+000416,op:splice,rep:2
+'if(d)7-7-u-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-77757-u-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 129375
+File: ../findings/queue/id:000449,src:000080+000310,op:splice,rep:2
+'c=s=k=8;'
+
+Generation Time: 67
+File: ../findings/queue/id:000129,src:000086,op:arith8,pos:4,val:-17
+'8888+8;'
+
+Generation Time: 328
+File: ../findings/queue/id:000202,src:000137,op:flip1,pos:2
+'{{{{{{{}{{{{{{{{{}}}}}}}}}}}}}}}'
+
+Generation Time: 85
+File: ../findings/queue/id:000141,src:000105,op:havoc,rep:2
+'{{{}}}'
+
+Generation Time: 1791
+File: ../findings/queue/id:000310,src:000300,op:arith8,pos:0,val:-21,+cov
+'a=s=8;'
+
+Generation Time: 99
+File: ../findings/queue/id:000153,src:000123,op:havoc,rep:2
+'77-7-5-7-7;'
+
+Generation Time: 25712
+File: ../findings/queue/id:000411,src:000407,op:havoc,rep:2,+cov
+'if(2)(2);'
+
+Generation Time: 99
+File: ../findings/queue/id:000154,src:000123,op:havoc,rep:2
+'77-7-7-75;'
+
+Generation Time: 101210
+File: ../findings/hangs/id:000005,src:000426,op:havoc,rep:2
+'if(2)if(7-w-u-77)if(2)if(r)7-u-7-77-77-7-777-77-77-7-77-7-u-7-7-u-7-7-u-7-7-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-u-7-77-7-77-7-u-7-7-u-7-777\n-7-u-7-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 434
+File: ../findings/queue/id:000221,src:000215,op:havoc,rep:2
+'77-777-7-u-7-7-777-7-u-7-777-7-u-7-77-7-q-7-7-77-7-u-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 740
+File: ../findings/queue/id:000253,src:000246,op:havoc,rep:2
+'7-7-77-7-u-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-7-u-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000303,src:000300,op:flip1,pos:0,+cov
+'w=s=8;'
+
+Generation Time: 1260
+File: ../findings/queue/id:000254,src:000253,op:havoc,rep:2
+'7-7-77-7-u-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 1178
+File: ../findings/queue/id:000216,src:000209,op:havoc,rep:2
+'8+88+82+88+82+82+8+82+82+888+888+88+82+82+8+82+82+88;'
+
+Generation Time: 8783
+File: ../findings/queue/id:000382,src:000316,op:havoc,rep:2
+'p=p=h=x=8;'
+
+Generation Time: 1852
+File: ../findings/queue/id:000319,src:000306,op:flip4,pos:2
+'u=m=8;'
+
+Generation Time: 61
+File: ../findings/queue/id:000123,src:000082,op:havoc,rep:2
+'77-7-7;'
+
+Generation Time: 28247
+File: ../findings/queue/id:000420,src:000407,op:havoc,rep:2
+'if(2)if(2)22;'
+
+Generation Time: 49891
+File: ../findings/hangs/id:000004,src:000425,op:havoc,rep:2
+'if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-77-7-77-7-u-7-7-u-7-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7<u-7-7-77-u-7-77-7-77-7-u-7-7-u-78777-7-u-7-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 124989
+File: ../findings/queue/id:000442,src:000441,op:flip1,pos:104
+'if(2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-7-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-2)if(7-7-u-77)if(r)if(r)if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-7-u-7-7-u-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-77-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 28978
+File: ../findings/queue/id:000423,src:000422,op:flip1,pos:18
+'if(2)if(2)if(2)if(r)62;'
+
+Generation Time: 43302
+File: ../findings/hangs/id:000003,src:000426,op:havoc,rep:2
+'if(2)if(7-w-u-77)if(2)if(r)7-u-7-77-77-7-77-7-u-7-7-u-7-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-7737-u-7-7-77-u-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7+u-7-7;'
+
+Generation Time: 2
+File: ../findings/queue/id:000046,src:000000,op:havoc,rep:4,+cov
+'9;'
+
+Generation Time: 1844
+File: ../findings/queue/id:000316,src:000305,op:arith8,pos:2,val:+5
+'p=x=8;'
+
+Generation Time: 28412
+File: ../findings/queue/id:000421,src:000303,op:havoc,rep:4
+'o=g=w=s=8;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000309,src:000300,op:arith8,pos:0,val:-20,+cov
+'b=s=8;'
+
+Generation Time: 124991
+File: ../findings/queue/id:000443,src:000441,op:flip2,pos:53
+'if(2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-7-7-7-u-7777-7+u-7-777-7-u-7-77-7-77-7-u-7-7-77-2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-7-u-7-7-u-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-77-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000311,src:000300,op:arith8,pos:2,val:-5
+'v=n=8;'
+
+Generation Time: 25094
+File: ../findings/queue/id:000406,src:000400,op:havoc,rep:4,+cov
+'if(d);'
+
+Generation Time: 350
+File: ../findings/queue/id:000208,src:000166,op:havoc,rep:2
+'8+8+8888+82+82+82+82+8;'
+
+Generation Time: 27195
+File: ../findings/queue/id:000415,src:000400+000254,op:splice,rep:2,+cov
+'if(s)7-7-u-7777-u-7-7-u-7-77-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-u-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 125056
+File: ../findings/queue/id:000446,src:000441,op:arith8,pos:203,val:+15
+'if(2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-u-77)if(2)if(r)7-u-7-77-7-u-7-7-u-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7<777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-77-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000305,src:000300,op:flip2,pos:0,+cov
+'p=s=8;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000306,src:000300,op:flip2,pos:0,+cov
+'u=s=8;'
+
+Generation Time: 26807
+File: ../findings/queue/id:000416,src:000400+000254,op:splice,rep:2,+cov
+'if(s)7-7-u-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-777-7-u-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 21
+File: ../findings/queue/id:000073,src:000022,op:flip2,pos:0,+cov
+'{}'
+
+Generation Time: 133111
+File: ../findings/hangs/id:000006,src:000448,op:havoc,rep:2
+'if(27-7-u-77)if(2)if(r)if(2)if(7-7-7-7-7-u-7777-7+u-8-777-2-u-7-77-7-77-7-u-7-7-77-2)if(7-7-u-77)if(2)if(r)if(2)if(7-7-u-77)if(2)i-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-757-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-77-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 5980
+File: ../findings/queue/id:000377,src:000105,op:havoc,rep:2
+'{;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;{}}'
+
+Generation Time: 1791
+File: ../findings/queue/id:000301,src:000300,op:flip1,pos:0,+cov
+'r=s=8;'
+
+Generation Time: 1816
+File: ../findings/queue/id:000313,src:000302,op:arith8,pos:2,val:-7
+'t=l=8;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000308,src:000300,op:arith8,pos:0,val:-11
+'k=s=8;'
+
+Generation Time: 1791
+File: ../findings/queue/id:000307,src:000300,op:arith8,pos:0,val:-10,+cov
+'l=s=8;'
+
+Generation Time: 719
+File: ../findings/queue/id:000246,src:000222,op:havoc,rep:2
+'7-7-777-7-u-7-77-7-77-7-u-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-77777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7;'
+
+Generation Time: 25102
+File: ../findings/queue/id:000407,src:000406,op:havoc,rep:2,+cov
+'if(2);'
+
+Generation Time: 1825
+File: ../findings/queue/id:000314,src:000303,op:arith8,pos:2,val:-4
+'w=o=8;'
+
+Generation Time: 429
+File: ../findings/queue/id:000219,src:000215,op:havoc,rep:2
+'77-777-7-u-7-777-77-u-7-77-7-u-7-7-77-7-5-7-7-u-7-77-7-u-7-7-77-7-5-7-7;'
+
+Generation Time: 337
+File: ../findings/queue/id:000204,src:000153,op:havoc,rep:2
+'77-7-577-7-57-77-7;'
+
+Generation Time: 26809
+File: ../findings/queue/id:000417,src:000416,op:arith8,pos:3,val:-10,+cov
+'if(i)7-7-u-7777-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-777-7-u-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 621
+File: ../findings/queue/id:000222,src:000215,op:havoc,rep:2
+'7-7-777-7-u-7-77-7-u-7777-u-7-777-7-u-7-77-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7;'
+
+Generation Time: 1263
+File: ../findings/queue/id:000283,src:000254,op:arith8,pos:12,val:-12
+'7-7-77-7-u-7+77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7-7-77-7-77-u-7-777-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-u-7-771-7-u-7-77-77-u-7-7-u-7777-7-u-7-777-7-u-7-77-7-77-7-u-7-7-77-7-u-7-7;'
+
+Generation Time: 1405
+File: ../findings/queue/id:000281,src:000216,op:havoc,rep:2
+'8+88+82+88+82+82+8+82+82+888888+88+82+88+82+82+8+82+82+888+888+88+82+82+8+82+82+888+88+82+82+8+82+82+88;'
+
+Generation Time: 123
+File: ../findings/queue/id:000166,src:000156,op:havoc,rep:2
+'8+88+82+82+8;'
+
+Generation Time: 28712
+File: ../findings/queue/id:000422,src:000416+000421,op:splice,rep:2
+'if(2)if(2)if(2)if(2)62;'
+

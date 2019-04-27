@@ -1,0 +1,775 @@
+undefined
+undefined
+6
+undefined
+undefined
+undefined
+undefined
+
+undefined
+undefined
+undefined
+
+undefined
+undefined
+undefined
+undefined
+-0.029240
+-0.161290
+undefined
+undefined
+undefined
+MJS error: [do] is not implemented
+undefined
+undefined
+undefined
+undefined
+\x0c
+MJS error: [new] is not implemented
+MJS error: [with] is not implemented
+undefined
+MJS error: [case] is not implemented
+null
+MJS error: [void] is not implemented
+true
+undefined
+MJS error: [var] is not implemented
+MJS error: [try] is not implemented
+undefined
+MJS error: [throw] is not implemented
+MJS error: [catch] is not implemented
+false
+undefined
+undefined
+undefined
+undefined
+MJS error: [switch] is not implemented
+MJS error: [delete] is not implemented
+undefined
+undefined
+undefined
+undefined
+#
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+string
+undefined
+undefined
+MJS error: [instanceof] is not implemented
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+6
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+-0.029240
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+-0.161290
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [do] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+\x0c
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [new] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [with] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [case] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+null
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [void] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+true
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [var] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [try] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [throw] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [catch] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+false
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [switch] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [delete] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+#
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+string
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+MJS error: [instanceof] is not implemented
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+undefined
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/mjs/mjs.gcda:version '505*', prefer version '408*'
+
+Valid inputs that increase coverage: 67
+
+#################
+Tokenlist:
+
+	--
+
+	,
+
+	st
+
+	continue
+
+	instanceof
+
+	new
+
+	++
+
+	?
+
+	void
+
+	<
+
+	;
+
+	null
+
+	var
+
+	=
+
+	%
+
+	/
+
+	{
+
+	if
+
+	*
+
+	do
+
+	[
+
+	]
+
+	return
+
+	>=
+
+	<<
+
+	^
+
+	break
+
+	}
+
+	let
+
+	/=
+
+	*=
+
+	this
+
+	case
+
+	num
+
+	)
+
+	switch
+
+	^=
+
+	+
+
+	!
+
+	:
+
+	.
+
+	&=
+
+	try
+
+	catch
+
+	(
+
+	true
+
+	!=
+
+	===
+
+	+=
+
+	delete
+
+	%=
+
+	typeof
+
+	throw
+
+	>>=
+
+	<=
+
+	&
+
+	|
+
+	==
+
+	-
+
+	false
+
+	undefined
+
+	>>
+
+	ident
+
+	with
+
+	>
+
+	~
+
+
+Toklength: 2
+TokCount: 17
+
+
+Toklength: 1
+TokCount: 26
+
+
+Toklength: 8
+TokCount: 1
+
+
+Toklength: 10
+TokCount: 1
+
+
+Toklength: 3
+TokCount: 6
+
+
+Toklength: 4
+TokCount: 6
+
+
+Toklength: 6
+TokCount: 4
+
+
+Toklength: 5
+TokCount: 4
+
+
+Toklength: 9
+TokCount: 1
+
+Two token size: 143
+######################
+
+
+	ident + : 1
+
+	+ ident : 1
+
+	ident < : 2
+
+	< ident : 1
+
+	ident % : 1
+
+	% ident : 1
+
+	num / : 6
+
+	/ ident : 1
+
+	/ - : 2
+
+	- num : 5
+
+	num ident : 9
+
+	ident * : 2
+
+	* ident : 2
+
+	if ( : 5
+
+	( num : 5
+
+	num | : 2
+
+	| num : 3
+
+	num = : 2
+
+	= num : 2
+
+	num > : 2
+
+	> -- : 2
+
+	-- num : 2
+
+	num ^ : 2
+
+	^ st : 1
+
+	st ) : 1
+
+	) === : 1
+
+	=== { : 1
+
+	{ } : 3
+
+	} } : 1
+
+	^ ( : 1
+
+	( ! : 1
+
+	! ~ : 1
+
+	~ [ : 1
+
+	[ ident : 1
+
+	ident ident : 2
+
+	ident = : 1
+
+	= { : 1
+
+	} ] : 1
+
+	] ^ : 1
+
+	^ ident : 2
+
+	ident & : 4
+
+	& st : 1
+
+	st << : 1
+
+	<< ident : 1
+
+	ident == : 1
+
+	== ident : 1
+
+	ident ) : 5
+
+	) [ : 1
+
+	[ num : 1
+
+	num ( : 1
+
+	( - : 1
+
+	) ] : 1
+
+	] ) : 1
+
+	) ident : 2
+
+	ident ; : 1
+
+	num st : 1
+
+	ident , : 1
+
+	, st : 1
+
+	ident ? : 2
+
+	? num : 1
+
+	num & : 1
+
+	& num : 1
+
+	num -- : 1
+
+	-- - : 2
+
+	num : : 1
+
+	: ident : 2
+
+	? ident : 1
+
+	ident -- : 1
+
+	num - : 1
+
+	- st : 1
+
+	st : : 1
+
+	num let : 1
+
+	let ident : 1
+
+	ident . : 1
+
+	. ident : 1
+
+	num switch : 1
+
+	num delete : 1
+
+	num return : 1
+
+	return st : 1
+
+	ident st : 3
+
+	ident { : 3
+
+	{ ; : 1
+
+	; } : 1
+
+	return { : 1
+
+	num null : 1
+
+	null st : 1
+
+	ident %= : 1
+
+	%= st : 1
+
+	{ st : 1
+
+	st ident : 1
+
+	ident ^= : 1
+
+	^= ident : 1
+
+	ident } : 1
+
+	/ st : 3
+
+	st ^ : 1
+
+	st * : 2
+
+	* - : 2
+
+	- ident : 3
+
+	ident >> : 1
+
+	>> ~ : 1
+
+	~ ident : 1
+
+	) st : 2
+
+	ident >>= : 1
+
+	>>= + : 1
+
+	+ ( : 1
+
+	( ident : 1
+
+	) ) : 1
+
+	ident / : 3
+
+	/ / : 1
+
+	ident | : 3
+
+	| + : 1
+
+	+ st : 1
+
+	& ident : 2
+
+	/ * : 2
+
+	num typeof : 1
+
+	typeof st : 1
+
+	num instanceof : 1
+
+	ident != : 1
+
+	!= st : 1
+
+	ident /= : 1
+
+	/= ident : 1
+
+	ident ++ : 1
+
+	{ ident : 1
+
+	ident >= : 1
+
+	>= num : 1
+
+	num } : 1
+
+	| ident : 2
+
+	< st : 1
+
+	ident <= : 1
+
+	<= ident : 1
+
+	ident *= : 1
+
+	*= st : 1
+
+	ident &= : 1
+
+	&= num : 1
+
+	num false : 1
+
+	false | : 1
+
+	& - : 1
+
+	& & : 1
+
+	ident += : 1
+
+	+= st : 1
+
+	st ! : 1
+
+	! ++ : 1
+
+	++ ident : 1

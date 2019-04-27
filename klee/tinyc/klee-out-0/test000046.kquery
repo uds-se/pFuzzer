@@ -1,0 +1,431 @@
+array model_version[4] : w32 -> w8 = symbolic
+array stdin[200] : w32 -> w8 = symbolic
+array stdin-stat[144] : w32 -> w8 = symbolic
+(query [(Eq false
+             (Eq 0
+                 (And w64 (ReadLSB w64 8 stdin-stat)
+                          2147483647)))
+         (Ult (ReadLSB w64 56 stdin-stat)
+              65536)
+         (Eq 1
+             (ReadLSB w32 0 model_version))
+         (Eq 123 (Read w8 0 stdin))
+         (Eq 125 (Read w8 1 stdin))
+         (Eq false
+             (Eq 43 N0:(Read w8 2 stdin)))
+         (Eq false (Eq 125 N0))
+         (Eq false (Eq 59 N0))
+         (Eq false (Eq 61 N0))
+         (Eq false (Eq 45 N0))
+         (Eq false (Eq 60 N0))
+         (Eq false (Eq 41 N0))
+         (Eq false (Eq 40 N0))
+         (Eq false (Eq 10 N0))
+         (Eq false (Eq 123 N0))
+         (Eq false (Eq 32 N0))
+         (Eq false
+             (Ult (Add w32 4294967248 N1:(ZExt w32 N0))
+                  10))
+         (Ult (Add w32 4294967199 N1) 26)
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N2:(Read w8 3 stdin)))
+                  26)
+             (Eq 95 N2))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N3:(Read w8 4 stdin)))
+                  26)
+             (Eq 95 N3))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N4:(Read w8 5 stdin)))
+                  26)
+             (Eq 95 N4))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N5:(Read w8 6 stdin)))
+                  26)
+             (Eq 95 N5))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N6:(Read w8 7 stdin)))
+                  26)
+             (Eq 95 N6))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N7:(Read w8 8 stdin)))
+                  26)
+             (Eq 95 N7))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N8:(Read w8 9 stdin)))
+                  26)
+             (Eq 95 N8))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N9:(Read w8 10 stdin)))
+                  26)
+             (Eq 95 N9))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N10:(Read w8 11 stdin)))
+                  26)
+             (Eq 95 N10))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N11:(Read w8 12 stdin)))
+                  26)
+             (Eq 95 N11))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N12:(Read w8 13 stdin)))
+                  26)
+             (Eq 95 N12))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N13:(Read w8 14 stdin)))
+                  26)
+             (Eq 95 N13))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N14:(Read w8 15 stdin)))
+                  26)
+             (Eq 95 N14))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N15:(Read w8 16 stdin)))
+                  26)
+             (Eq 95 N15))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N16:(Read w8 17 stdin)))
+                  26)
+             (Eq 95 N16))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N17:(Read w8 18 stdin)))
+                  26)
+             (Eq 95 N17))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N18:(Read w8 19 stdin)))
+                  26)
+             (Eq 95 N18))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N19:(Read w8 20 stdin)))
+                  26)
+             (Eq 95 N19))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N20:(Read w8 21 stdin)))
+                  26)
+             (Eq 95 N20))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N21:(Read w8 22 stdin)))
+                  26)
+             (Eq 95 N21))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N22:(Read w8 23 stdin)))
+                  26)
+             (Eq 95 N22))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N23:(Read w8 24 stdin)))
+                  26)
+             (Eq 95 N23))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N24:(Read w8 25 stdin)))
+                  26)
+             (Eq 95 N24))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N25:(Read w8 26 stdin)))
+                  26)
+             (Eq 95 N25))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N26:(Read w8 27 stdin)))
+                  26)
+             (Eq 95 N26))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N27:(Read w8 28 stdin)))
+                  26)
+             (Eq 95 N27))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N28:(Read w8 29 stdin)))
+                  26)
+             (Eq 95 N28))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N29:(Read w8 30 stdin)))
+                  26)
+             (Eq 95 N29))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N30:(Read w8 31 stdin)))
+                  26)
+             (Eq 95 N30))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N31:(Read w8 32 stdin)))
+                  26)
+             (Eq 95 N31))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N32:(Read w8 33 stdin)))
+                  26)
+             (Eq 95 N32))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N33:(Read w8 34 stdin)))
+                  26)
+             (Eq 95 N33))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N34:(Read w8 35 stdin)))
+                  26)
+             (Eq 95 N34))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N35:(Read w8 36 stdin)))
+                  26)
+             (Eq 95 N35))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N36:(Read w8 37 stdin)))
+                  26)
+             (Eq 95 N36))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N37:(Read w8 38 stdin)))
+                  26)
+             (Eq 95 N37))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N38:(Read w8 39 stdin)))
+                  26)
+             (Eq 95 N38))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N39:(Read w8 40 stdin)))
+                  26)
+             (Eq 95 N39))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N40:(Read w8 41 stdin)))
+                  26)
+             (Eq 95 N40))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N41:(Read w8 42 stdin)))
+                  26)
+             (Eq 95 N41))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N42:(Read w8 43 stdin)))
+                  26)
+             (Eq 95 N42))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N43:(Read w8 44 stdin)))
+                  26)
+             (Eq 95 N43))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N44:(Read w8 45 stdin)))
+                  26)
+             (Eq 95 N44))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N45:(Read w8 46 stdin)))
+                  26)
+             (Eq 95 N45))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N46:(Read w8 47 stdin)))
+                  26)
+             (Eq 95 N46))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N47:(Read w8 48 stdin)))
+                  26)
+             (Eq 95 N47))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N48:(Read w8 49 stdin)))
+                  26)
+             (Eq 95 N48))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N49:(Read w8 50 stdin)))
+                  26)
+             (Eq 95 N49))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N50:(Read w8 51 stdin)))
+                  26)
+             (Eq 95 N50))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N51:(Read w8 52 stdin)))
+                  26)
+             (Eq 95 N51))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N52:(Read w8 53 stdin)))
+                  26)
+             (Eq 95 N52))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N53:(Read w8 54 stdin)))
+                  26)
+             (Eq 95 N53))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N54:(Read w8 55 stdin)))
+                  26)
+             (Eq 95 N54))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N55:(Read w8 56 stdin)))
+                  26)
+             (Eq 95 N55))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N56:(Read w8 57 stdin)))
+                  26)
+             (Eq 95 N56))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N57:(Read w8 58 stdin)))
+                  26)
+             (Eq 95 N57))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N58:(Read w8 59 stdin)))
+                  26)
+             (Eq 95 N58))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N59:(Read w8 60 stdin)))
+                  26)
+             (Eq 95 N59))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N60:(Read w8 61 stdin)))
+                  26)
+             (Eq 95 N60))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N61:(Read w8 62 stdin)))
+                  26)
+             (Eq 95 N61))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N62:(Read w8 63 stdin)))
+                  26)
+             (Eq 95 N62))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N63:(Read w8 64 stdin)))
+                  26)
+             (Eq 95 N63))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N64:(Read w8 65 stdin)))
+                  26)
+             (Eq 95 N64))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N65:(Read w8 66 stdin)))
+                  26)
+             (Eq 95 N65))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N66:(Read w8 67 stdin)))
+                  26)
+             (Eq 95 N66))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N67:(Read w8 68 stdin)))
+                  26)
+             (Eq 95 N67))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N68:(Read w8 69 stdin)))
+                  26)
+             (Eq 95 N68))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N69:(Read w8 70 stdin)))
+                  26)
+             (Eq 95 N69))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N70:(Read w8 71 stdin)))
+                  26)
+             (Eq 95 N70))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N71:(Read w8 72 stdin)))
+                  26)
+             (Eq 95 N71))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N72:(Read w8 73 stdin)))
+                  26)
+             (Eq 95 N72))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N73:(Read w8 74 stdin)))
+                  26)
+             (Eq 95 N73))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N74:(Read w8 75 stdin)))
+                  26)
+             (Eq 95 N74))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N75:(Read w8 76 stdin)))
+                  26)
+             (Eq 95 N75))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N76:(Read w8 77 stdin)))
+                  26)
+             (Eq 95 N76))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N77:(Read w8 78 stdin)))
+                  26)
+             (Eq 95 N77))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N78:(Read w8 79 stdin)))
+                  26)
+             (Eq 95 N78))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N79:(Read w8 80 stdin)))
+                  26)
+             (Eq 95 N79))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N80:(Read w8 81 stdin)))
+                  26)
+             (Eq 95 N80))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N81:(Read w8 82 stdin)))
+                  26)
+             (Eq 95 N81))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N82:(Read w8 83 stdin)))
+                  26)
+             (Eq 95 N82))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N83:(Read w8 84 stdin)))
+                  26)
+             (Eq 95 N83))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N84:(Read w8 85 stdin)))
+                  26)
+             (Eq 95 N84))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N85:(Read w8 86 stdin)))
+                  26)
+             (Eq 95 N85))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N86:(Read w8 87 stdin)))
+                  26)
+             (Eq 95 N86))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N87:(Read w8 88 stdin)))
+                  26)
+             (Eq 95 N87))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N88:(Read w8 89 stdin)))
+                  26)
+             (Eq 95 N88))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N89:(Read w8 90 stdin)))
+                  26)
+             (Eq 95 N89))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N90:(Read w8 91 stdin)))
+                  26)
+             (Eq 95 N90))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N91:(Read w8 92 stdin)))
+                  26)
+             (Eq 95 N91))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N92:(Read w8 93 stdin)))
+                  26)
+             (Eq 95 N92))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N93:(Read w8 94 stdin)))
+                  26)
+             (Eq 95 N93))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N94:(Read w8 95 stdin)))
+                  26)
+             (Eq 95 N94))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N95:(Read w8 96 stdin)))
+                  26)
+             (Eq 95 N95))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N96:(Read w8 97 stdin)))
+                  26)
+             (Eq 95 N96))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N97:(Read w8 98 stdin)))
+                  26)
+             (Eq 95 N97))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N98:(Read w8 99 stdin)))
+                  26)
+             (Eq 95 N98))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N99:(Read w8 100 stdin)))
+                  26)
+             (Eq 95 N99))
+         (Or (Ult (Add w32 4294967199
+                           (ZExt w32 N100:(Read w8 101 stdin)))
+                  26)
+             (Eq 95 N100))
+         (Eq false
+             (Ult (Add w32 4294967199
+                           (ZExt w32 N101:(Read w8 102 stdin)))
+                  26))
+         (Eq false (Eq 95 N101))]
+        false)

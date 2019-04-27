@@ -1,0 +1,22 @@
+# install requirements:
+$ pip3 install --user meson==0.46.1
+$ brew install ninja
+$ brew install json-c
+
+# compile llvm with the correct flags (!!! takes some time and disk space !!!)
+# result will be installed in $HOME/toolchains
+$ ./scripts/setup_llvm_clang.sh
+
+# build:
+$ export PATH="/usr/local/opt/llvm@4/bin:${PATH}"
+$ meson build/debug --prefix="$(pwd)/install"
+$ ninja -C build/debug install
+
+# instrument your c program:
+$ ./install/bin/trace-instr <myfile.c> ./samples/excluded_functions
+
+# run your c program:
+$ ./myfile.c.instrumented <whatever commandline you need>
+
+# generate the taint from the trace
+$ ./install/bin/trace-taint -me metadata -po pygmalion.json -to taints.tnt -t output.gz

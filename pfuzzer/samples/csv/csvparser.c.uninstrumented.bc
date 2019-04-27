@@ -1,0 +1,2213 @@
+; ModuleID = '/home/klee/dockermount/checksum-repair/samples/csv/csvparser.c'
+source_filename = "/home/klee/dockermount/checksum-repair/samples/csv/csvparser.c"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+%struct._IO_FILE = type { i32, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, %struct._IO_marker*, %struct._IO_FILE*, i32, i32, i64, i16, i8, [1 x i8], i8*, i64, i8*, i8*, i8*, i8*, i64, i32, [20 x i8] }
+%struct._IO_marker = type { %struct._IO_marker*, %struct._IO_FILE*, i32 }
+%struct.CsvParser = type { i8*, i8, i32, i8*, %struct.CsvRow*, %struct._IO_FILE*, i32, i8*, i32 }
+%struct.CsvRow = type { i8**, i32 }
+
+@.str = private unnamed_addr constant [74 x i8] c"Cannot supply header, as current CsvParser object does not support header\00", align 1
+@.str.1 = private unnamed_addr constant [31 x i8] c"Supplied CSV file path is NULL\00", align 1
+@.str.2 = private unnamed_addr constant [28 x i8] c"Supplied CSV string is NULL\00", align 1
+@.str.3 = private unnamed_addr constant [36 x i8] c"Supplied delimiter is not supported\00", align 1
+@.str.4 = private unnamed_addr constant [2 x i8] c"r\00", align 1
+@.str.5 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
+@.str.6 = private unnamed_addr constant [44 x i8] c"Error opening CSV file for reading: %s : %s\00", align 1
+@.str.7 = private unnamed_addr constant [12 x i8] c"Reached EOF\00", align 1
+@stdin = external global %struct._IO_FILE*, align 8
+@.str.8 = private unnamed_addr constant [2 x i8] c",\00", align 1
+@.str.9 = private unnamed_addr constant [4 x i8] c"%s\0A\00", align 1
+@.str.10 = private unnamed_addr constant [11 x i8] c"TITLE: %s\0A\00", align 1
+@.str.11 = private unnamed_addr constant [11 x i8] c"NEW LINE:\0A\00", align 1
+@.str.12 = private unnamed_addr constant [11 x i8] c"FIELD: %s\0A\00", align 1
+
+; Function Attrs: noinline nounwind uwtable
+define %struct.CsvParser* @CsvParser_new(i8* %filePath, i8* %delimiter, i32 %firstLineIsHeader) #0 !dbg !91 {
+  %filePath.addr = alloca i8*, align 8
+  %delimiter.addr = alloca i8*, align 8
+  %firstLineIsHeader.addr = alloca i32, align 4
+  %csvParser = alloca %struct.CsvParser*, align 8
+  %filePathLen = alloca i32, align 4
+  store i8* %filePath, i8** %filePath.addr, align 8
+  call void @llvm.dbg.declare(metadata i8** %filePath.addr, metadata !96, metadata !97), !dbg !98
+  store i8* %delimiter, i8** %delimiter.addr, align 8
+  call void @llvm.dbg.declare(metadata i8** %delimiter.addr, metadata !99, metadata !97), !dbg !100
+  store i32 %firstLineIsHeader, i32* %firstLineIsHeader.addr, align 4
+  call void @llvm.dbg.declare(metadata i32* %firstLineIsHeader.addr, metadata !101, metadata !97), !dbg !102
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser, metadata !103, metadata !97), !dbg !104
+  %call = call noalias i8* @malloc(i64 64) #7, !dbg !105
+  %1 = bitcast i8* %call to %struct.CsvParser*, !dbg !106
+  store %struct.CsvParser* %1, %struct.CsvParser** %csvParser, align 8, !dbg !104
+  %2 = load i8*, i8** %filePath.addr, align 8, !dbg !107
+  %cmp = icmp eq i8* %2, null, !dbg !109
+  br i1 %cmp, label %3, label %5, !dbg !110
+
+; <label>:3:                                      ; preds = %0
+  %4 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !111
+  %filePath_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %4, i32 0, i32 0, !dbg !113
+  store i8* null, i8** %filePath_, align 8, !dbg !114
+  br label %12, !dbg !115
+
+; <label>:5:                                      ; preds = %0
+  call void @llvm.dbg.declare(metadata i32* %filePathLen, metadata !116, metadata !97), !dbg !118
+  %6 = load i8*, i8** %filePath.addr, align 8, !dbg !119
+  %call1 = call i64 @strlen(i8* %6) #8, !dbg !120
+  %conv = trunc i64 %call1 to i32, !dbg !120
+  store i32 %conv, i32* %filePathLen, align 4, !dbg !118
+  %7 = load i32, i32* %filePathLen, align 4, !dbg !121
+  %add = add nsw i32 %7, 1, !dbg !122
+  %conv2 = sext i32 %add to i64, !dbg !123
+  %call3 = call noalias i8* @malloc(i64 %conv2) #7, !dbg !124
+  %8 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !125
+  %filePath_4 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %8, i32 0, i32 0, !dbg !126
+  store i8* %call3, i8** %filePath_4, align 8, !dbg !127
+  %9 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !128
+  %filePath_5 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %9, i32 0, i32 0, !dbg !129
+  %10 = load i8*, i8** %filePath_5, align 8, !dbg !129
+  %11 = load i8*, i8** %filePath.addr, align 8, !dbg !130
+  %call6 = call i8* @strcpy(i8* %10, i8* %11) #7, !dbg !131
+  br label %12
+
+; <label>:12:                                     ; preds = %5, %3
+  %13 = load i32, i32* %firstLineIsHeader.addr, align 4, !dbg !132
+  %14 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !133
+  %firstLineIsHeader_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %14, i32 0, i32 2, !dbg !134
+  store i32 %13, i32* %firstLineIsHeader_, align 4, !dbg !135
+  %15 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !136
+  %errMsg_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %15, i32 0, i32 3, !dbg !137
+  store i8* null, i8** %errMsg_, align 8, !dbg !138
+  %16 = load i8*, i8** %delimiter.addr, align 8, !dbg !139
+  %cmp7 = icmp eq i8* %16, null, !dbg !141
+  br i1 %cmp7, label %17, label %19, !dbg !142
+
+; <label>:17:                                     ; preds = %12
+  %18 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !143
+  %delimiter_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %18, i32 0, i32 1, !dbg !145
+  store i8 44, i8* %delimiter_, align 8, !dbg !146
+  br label %28, !dbg !147
+
+; <label>:19:                                     ; preds = %12
+  %20 = load i8*, i8** %delimiter.addr, align 8, !dbg !148
+  %call9 = call i32 @_CsvParser_delimiterIsAccepted(i8* %20), !dbg !151
+  %tobool = icmp ne i32 %call9, 0, !dbg !151
+  br i1 %tobool, label %21, label %25, !dbg !152
+
+; <label>:21:                                     ; preds = %19
+  %22 = load i8*, i8** %delimiter.addr, align 8, !dbg !154
+  %23 = load i8, i8* %22, align 1, !dbg !156
+  %24 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !157
+  %delimiter_10 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %24, i32 0, i32 1, !dbg !158
+  store i8 %23, i8* %delimiter_10, align 8, !dbg !159
+  br label %27, !dbg !160
+
+; <label>:25:                                     ; preds = %19
+  %26 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !161
+  %delimiter_11 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %26, i32 0, i32 1, !dbg !163
+  store i8 0, i8* %delimiter_11, align 8, !dbg !164
+  br label %27
+
+; <label>:27:                                     ; preds = %25, %21
+  br label %28
+
+; <label>:28:                                     ; preds = %27, %17
+  %29 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !165
+  %header_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %29, i32 0, i32 4, !dbg !166
+  store %struct.CsvRow* null, %struct.CsvRow** %header_, align 8, !dbg !167
+  %30 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !168
+  %fileHandler_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %30, i32 0, i32 5, !dbg !169
+  store %struct._IO_FILE* null, %struct._IO_FILE** %fileHandler_, align 8, !dbg !170
+  %31 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !171
+  %fromString_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %31, i32 0, i32 6, !dbg !172
+  store i32 0, i32* %fromString_, align 8, !dbg !173
+  %32 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !174
+  %csvString_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %32, i32 0, i32 7, !dbg !175
+  store i8* null, i8** %csvString_, align 8, !dbg !176
+  %33 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !177
+  %csvStringIter_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %33, i32 0, i32 8, !dbg !178
+  store i32 0, i32* %csvStringIter_, align 8, !dbg !179
+  %34 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !180
+  ret %struct.CsvParser* %34, !dbg !181
+}
+
+; Function Attrs: nounwind readnone
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+
+; Function Attrs: nounwind
+declare noalias i8* @malloc(i64) #2
+
+; Function Attrs: nounwind readonly
+declare i64 @strlen(i8*) #3
+
+; Function Attrs: nounwind
+declare i8* @strcpy(i8*, i8*) #2
+
+; Function Attrs: noinline nounwind uwtable
+define i32 @_CsvParser_delimiterIsAccepted(i8* %delimiter) #0 !dbg !182 {
+  %retval = alloca i32, align 4
+  %delimiter.addr = alloca i8*, align 8
+  %actualDelimiter = alloca i8, align 1
+  store i8* %delimiter, i8** %delimiter.addr, align 8
+  call void @llvm.dbg.declare(metadata i8** %delimiter.addr, metadata !185, metadata !97), !dbg !186
+  call void @llvm.dbg.declare(metadata i8* %actualDelimiter, metadata !187, metadata !97), !dbg !188
+  %1 = load i8*, i8** %delimiter.addr, align 8, !dbg !189
+  %2 = load i8, i8* %1, align 1, !dbg !190
+  store i8 %2, i8* %actualDelimiter, align 1, !dbg !188
+  %3 = load i8, i8* %actualDelimiter, align 1, !dbg !191
+  %conv = sext i8 %3 to i32, !dbg !191
+  %cmp = icmp eq i32 %conv, 10, !dbg !193
+  br i1 %cmp, label %10, label %4, !dbg !194
+
+; <label>:4:                                      ; preds = %0
+  %5 = load i8, i8* %actualDelimiter, align 1, !dbg !195
+  %conv2 = sext i8 %5 to i32, !dbg !195
+  %cmp3 = icmp eq i32 %conv2, 13, !dbg !197
+  br i1 %cmp3, label %10, label %6, !dbg !198
+
+; <label>:6:                                      ; preds = %4
+  %7 = load i8, i8* %actualDelimiter, align 1, !dbg !199
+  %conv5 = sext i8 %7 to i32, !dbg !199
+  %cmp6 = icmp eq i32 %conv5, 0, !dbg !201
+  br i1 %cmp6, label %10, label %8, !dbg !202
+
+; <label>:8:                                      ; preds = %6
+  %9 = load i8, i8* %actualDelimiter, align 1, !dbg !203
+  %conv8 = sext i8 %9 to i32, !dbg !203
+  %cmp9 = icmp eq i32 %conv8, 34, !dbg !204
+  br i1 %cmp9, label %10, label %11, !dbg !205
+
+; <label>:10:                                     ; preds = %8, %6, %4, %0
+  store i32 0, i32* %retval, align 4, !dbg !207
+  br label %12, !dbg !207
+
+; <label>:11:                                     ; preds = %8
+  store i32 1, i32* %retval, align 4, !dbg !209
+  br label %12, !dbg !209
+
+; <label>:12:                                     ; preds = %11, %10
+  %13 = load i32, i32* %retval, align 4, !dbg !210
+  ret i32 %13, !dbg !210
+}
+
+; Function Attrs: noinline nounwind uwtable
+define %struct.CsvParser* @CsvParser_new_from_string(i8* %csvString, i8* %delimiter, i32 %firstLineIsHeader) #0 !dbg !211 {
+  %csvString.addr = alloca i8*, align 8
+  %delimiter.addr = alloca i8*, align 8
+  %firstLineIsHeader.addr = alloca i32, align 4
+  %csvParser = alloca %struct.CsvParser*, align 8
+  %csvStringLen = alloca i32, align 4
+  store i8* %csvString, i8** %csvString.addr, align 8
+  call void @llvm.dbg.declare(metadata i8** %csvString.addr, metadata !212, metadata !97), !dbg !213
+  store i8* %delimiter, i8** %delimiter.addr, align 8
+  call void @llvm.dbg.declare(metadata i8** %delimiter.addr, metadata !214, metadata !97), !dbg !215
+  store i32 %firstLineIsHeader, i32* %firstLineIsHeader.addr, align 4
+  call void @llvm.dbg.declare(metadata i32* %firstLineIsHeader.addr, metadata !216, metadata !97), !dbg !217
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser, metadata !218, metadata !97), !dbg !219
+  %1 = load i8*, i8** %delimiter.addr, align 8, !dbg !220
+  %2 = load i32, i32* %firstLineIsHeader.addr, align 4, !dbg !221
+  %call = call %struct.CsvParser* @CsvParser_new(i8* null, i8* %1, i32 %2), !dbg !222
+  store %struct.CsvParser* %call, %struct.CsvParser** %csvParser, align 8, !dbg !219
+  %3 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !223
+  %fromString_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %3, i32 0, i32 6, !dbg !224
+  store i32 1, i32* %fromString_, align 8, !dbg !225
+  %4 = load i8*, i8** %csvString.addr, align 8, !dbg !226
+  %cmp = icmp ne i8* %4, null, !dbg !228
+  br i1 %cmp, label %5, label %12, !dbg !229
+
+; <label>:5:                                      ; preds = %0
+  call void @llvm.dbg.declare(metadata i32* %csvStringLen, metadata !230, metadata !97), !dbg !232
+  %6 = load i8*, i8** %csvString.addr, align 8, !dbg !233
+  %call1 = call i64 @strlen(i8* %6) #8, !dbg !234
+  %conv = trunc i64 %call1 to i32, !dbg !234
+  store i32 %conv, i32* %csvStringLen, align 4, !dbg !232
+  %7 = load i32, i32* %csvStringLen, align 4, !dbg !235
+  %add = add nsw i32 %7, 1, !dbg !236
+  %conv2 = sext i32 %add to i64, !dbg !235
+  %call3 = call noalias i8* @malloc(i64 %conv2) #7, !dbg !237
+  %8 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !238
+  %csvString_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %8, i32 0, i32 7, !dbg !239
+  store i8* %call3, i8** %csvString_, align 8, !dbg !240
+  %9 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !241
+  %csvString_4 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %9, i32 0, i32 7, !dbg !242
+  %10 = load i8*, i8** %csvString_4, align 8, !dbg !242
+  %11 = load i8*, i8** %csvString.addr, align 8, !dbg !243
+  %call5 = call i8* @strcpy(i8* %10, i8* %11) #7, !dbg !244
+  br label %12, !dbg !245
+
+; <label>:12:                                     ; preds = %5, %0
+  %13 = load %struct.CsvParser*, %struct.CsvParser** %csvParser, align 8, !dbg !246
+  ret %struct.CsvParser* %13, !dbg !247
+}
+
+; Function Attrs: noinline nounwind uwtable
+define void @CsvParser_destroy(%struct.CsvParser* %csvParser) #0 !dbg !248 {
+  %csvParser.addr = alloca %struct.CsvParser*, align 8
+  store %struct.CsvParser* %csvParser, %struct.CsvParser** %csvParser.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser.addr, metadata !251, metadata !97), !dbg !252
+  %1 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !253
+  %cmp = icmp eq %struct.CsvParser* %1, null, !dbg !255
+  br i1 %cmp, label %2, label %3, !dbg !256
+
+; <label>:2:                                      ; preds = %0
+  br label %36, !dbg !257
+
+; <label>:3:                                      ; preds = %0
+  %4 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !259
+  %filePath_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %4, i32 0, i32 0, !dbg !261
+  %5 = load i8*, i8** %filePath_, align 8, !dbg !261
+  %cmp1 = icmp ne i8* %5, null, !dbg !262
+  br i1 %cmp1, label %6, label %9, !dbg !263
+
+; <label>:6:                                      ; preds = %3
+  %7 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !264
+  %filePath_2 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %7, i32 0, i32 0, !dbg !266
+  %8 = load i8*, i8** %filePath_2, align 8, !dbg !266
+  call void @free(i8* %8) #7, !dbg !267
+  br label %9, !dbg !268
+
+; <label>:9:                                      ; preds = %6, %3
+  %10 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !269
+  %errMsg_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %10, i32 0, i32 3, !dbg !271
+  %11 = load i8*, i8** %errMsg_, align 8, !dbg !271
+  %cmp3 = icmp ne i8* %11, null, !dbg !272
+  br i1 %cmp3, label %12, label %15, !dbg !273
+
+; <label>:12:                                     ; preds = %9
+  %13 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !274
+  %errMsg_4 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %13, i32 0, i32 3, !dbg !276
+  %14 = load i8*, i8** %errMsg_4, align 8, !dbg !276
+  call void @free(i8* %14) #7, !dbg !277
+  br label %15, !dbg !278
+
+; <label>:15:                                     ; preds = %12, %9
+  %16 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !279
+  %fileHandler_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %16, i32 0, i32 5, !dbg !281
+  %17 = load %struct._IO_FILE*, %struct._IO_FILE** %fileHandler_, align 8, !dbg !281
+  %cmp5 = icmp ne %struct._IO_FILE* %17, null, !dbg !282
+  br i1 %cmp5, label %18, label %21, !dbg !283
+
+; <label>:18:                                     ; preds = %15
+  %19 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !284
+  %fileHandler_6 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %19, i32 0, i32 5, !dbg !286
+  %20 = load %struct._IO_FILE*, %struct._IO_FILE** %fileHandler_6, align 8, !dbg !286
+  %call = call i32 @fclose(%struct._IO_FILE* %20), !dbg !287
+  br label %21, !dbg !288
+
+; <label>:21:                                     ; preds = %18, %15
+  %22 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !289
+  %header_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %22, i32 0, i32 4, !dbg !291
+  %23 = load %struct.CsvRow*, %struct.CsvRow** %header_, align 8, !dbg !291
+  %cmp7 = icmp ne %struct.CsvRow* %23, null, !dbg !292
+  br i1 %cmp7, label %24, label %27, !dbg !293
+
+; <label>:24:                                     ; preds = %21
+  %25 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !294
+  %header_8 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %25, i32 0, i32 4, !dbg !296
+  %26 = load %struct.CsvRow*, %struct.CsvRow** %header_8, align 8, !dbg !296
+  call void @CsvParser_destroy_row(%struct.CsvRow* %26), !dbg !297
+  br label %27, !dbg !298
+
+; <label>:27:                                     ; preds = %24, %21
+  %28 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !299
+  %csvString_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %28, i32 0, i32 7, !dbg !301
+  %29 = load i8*, i8** %csvString_, align 8, !dbg !301
+  %cmp9 = icmp ne i8* %29, null, !dbg !302
+  br i1 %cmp9, label %30, label %33, !dbg !303
+
+; <label>:30:                                     ; preds = %27
+  %31 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !304
+  %csvString_10 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %31, i32 0, i32 7, !dbg !306
+  %32 = load i8*, i8** %csvString_10, align 8, !dbg !306
+  call void @free(i8* %32) #7, !dbg !307
+  br label %33, !dbg !308
+
+; <label>:33:                                     ; preds = %30, %27
+  %34 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !309
+  %35 = bitcast %struct.CsvParser* %34 to i8*, !dbg !309
+  call void @free(i8* %35) #7, !dbg !310
+  br label %36, !dbg !311
+
+; <label>:36:                                     ; preds = %33, %2
+  ret void, !dbg !312
+}
+
+; Function Attrs: nounwind
+declare void @free(i8*) #2
+
+declare i32 @fclose(%struct._IO_FILE*) #4
+
+; Function Attrs: noinline nounwind uwtable
+define void @CsvParser_destroy_row(%struct.CsvRow* %csvRow) #0 !dbg !314 {
+  %csvRow.addr = alloca %struct.CsvRow*, align 8
+  %i = alloca i32, align 4
+  store %struct.CsvRow* %csvRow, %struct.CsvRow** %csvRow.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvRow** %csvRow.addr, metadata !317, metadata !97), !dbg !318
+  call void @llvm.dbg.declare(metadata i32* %i, metadata !319, metadata !97), !dbg !320
+  store i32 0, i32* %i, align 4, !dbg !321
+  br label %1, !dbg !323
+
+; <label>:1:                                      ; preds = %10, %0
+  %2 = load i32, i32* %i, align 4, !dbg !324
+  %3 = load %struct.CsvRow*, %struct.CsvRow** %csvRow.addr, align 8, !dbg !327
+  %numOfFields_ = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %3, i32 0, i32 1, !dbg !328
+  %4 = load i32, i32* %numOfFields_, align 8, !dbg !328
+  %cmp = icmp slt i32 %2, %4, !dbg !329
+  br i1 %cmp, label %5, label %12, !dbg !330
+
+; <label>:5:                                      ; preds = %1
+  %6 = load %struct.CsvRow*, %struct.CsvRow** %csvRow.addr, align 8, !dbg !332
+  %fields_ = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %6, i32 0, i32 0, !dbg !334
+  %7 = load i8**, i8*** %fields_, align 8, !dbg !334
+  %8 = load i32, i32* %i, align 4, !dbg !335
+  %idxprom = sext i32 %8 to i64, !dbg !332
+  %arrayidx = getelementptr inbounds i8*, i8** %7, i64 %idxprom, !dbg !332
+  %9 = load i8*, i8** %arrayidx, align 8, !dbg !332
+  call void @free(i8* %9) #7, !dbg !336
+  br label %10, !dbg !337
+
+; <label>:10:                                     ; preds = %5
+  %11 = load i32, i32* %i, align 4, !dbg !338
+  %inc = add nsw i32 %11, 1, !dbg !338
+  store i32 %inc, i32* %i, align 4, !dbg !338
+  br label %1, !dbg !340, !llvm.loop !341
+
+; <label>:12:                                     ; preds = %1
+  %13 = load %struct.CsvRow*, %struct.CsvRow** %csvRow.addr, align 8, !dbg !344
+  %14 = bitcast %struct.CsvRow* %13 to i8*, !dbg !344
+  call void @free(i8* %14) #7, !dbg !345
+  ret void, !dbg !346
+}
+
+; Function Attrs: noinline nounwind uwtable
+define %struct.CsvRow* @CsvParser_getHeader(%struct.CsvParser* %csvParser) #0 !dbg !347 {
+  %retval = alloca %struct.CsvRow*, align 8
+  %csvParser.addr = alloca %struct.CsvParser*, align 8
+  store %struct.CsvParser* %csvParser, %struct.CsvParser** %csvParser.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser.addr, metadata !350, metadata !97), !dbg !351
+  %1 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !352
+  %firstLineIsHeader_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %1, i32 0, i32 2, !dbg !354
+  %2 = load i32, i32* %firstLineIsHeader_, align 4, !dbg !354
+  %tobool = icmp ne i32 %2, 0, !dbg !352
+  br i1 %tobool, label %5, label %3, !dbg !355
+
+; <label>:3:                                      ; preds = %0
+  %4 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !356
+  call void @_CsvParser_setErrorMessage(%struct.CsvParser* %4, i8* getelementptr inbounds ([74 x i8], [74 x i8]* @.str, i32 0, i32 0)), !dbg !358
+  store %struct.CsvRow* null, %struct.CsvRow** %retval, align 8, !dbg !359
+  br label %14, !dbg !359
+
+; <label>:5:                                      ; preds = %0
+  %6 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !360
+  %header_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %6, i32 0, i32 4, !dbg !362
+  %7 = load %struct.CsvRow*, %struct.CsvRow** %header_, align 8, !dbg !362
+  %cmp = icmp eq %struct.CsvRow* %7, null, !dbg !363
+  br i1 %cmp, label %8, label %11, !dbg !364
+
+; <label>:8:                                      ; preds = %5
+  %9 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !365
+  %call = call %struct.CsvRow* @_CsvParser_getRow(%struct.CsvParser* %9), !dbg !367
+  %10 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !368
+  %header_1 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %10, i32 0, i32 4, !dbg !369
+  store %struct.CsvRow* %call, %struct.CsvRow** %header_1, align 8, !dbg !370
+  br label %11, !dbg !371
+
+; <label>:11:                                     ; preds = %8, %5
+  %12 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !372
+  %header_2 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %12, i32 0, i32 4, !dbg !373
+  %13 = load %struct.CsvRow*, %struct.CsvRow** %header_2, align 8, !dbg !373
+  store %struct.CsvRow* %13, %struct.CsvRow** %retval, align 8, !dbg !374
+  br label %14, !dbg !374
+
+; <label>:14:                                     ; preds = %11, %3
+  %15 = load %struct.CsvRow*, %struct.CsvRow** %retval, align 8, !dbg !375
+  ret %struct.CsvRow* %15, !dbg !375
+}
+
+; Function Attrs: noinline nounwind uwtable
+define void @_CsvParser_setErrorMessage(%struct.CsvParser* %csvParser, i8* %errorMessage) #0 !dbg !376 {
+  %csvParser.addr = alloca %struct.CsvParser*, align 8
+  %errorMessage.addr = alloca i8*, align 8
+  %errMsgLen = alloca i32, align 4
+  store %struct.CsvParser* %csvParser, %struct.CsvParser** %csvParser.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser.addr, metadata !379, metadata !97), !dbg !380
+  store i8* %errorMessage, i8** %errorMessage.addr, align 8
+  call void @llvm.dbg.declare(metadata i8** %errorMessage.addr, metadata !381, metadata !97), !dbg !382
+  %1 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !383
+  %errMsg_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %1, i32 0, i32 3, !dbg !385
+  %2 = load i8*, i8** %errMsg_, align 8, !dbg !385
+  %cmp = icmp ne i8* %2, null, !dbg !386
+  br i1 %cmp, label %3, label %6, !dbg !387
+
+; <label>:3:                                      ; preds = %0
+  %4 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !388
+  %errMsg_1 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %4, i32 0, i32 3, !dbg !390
+  %5 = load i8*, i8** %errMsg_1, align 8, !dbg !390
+  call void @free(i8* %5) #7, !dbg !391
+  br label %6, !dbg !392
+
+; <label>:6:                                      ; preds = %3, %0
+  call void @llvm.dbg.declare(metadata i32* %errMsgLen, metadata !393, metadata !97), !dbg !394
+  %7 = load i8*, i8** %errorMessage.addr, align 8, !dbg !395
+  %call = call i64 @strlen(i8* %7) #8, !dbg !396
+  %conv = trunc i64 %call to i32, !dbg !396
+  store i32 %conv, i32* %errMsgLen, align 4, !dbg !394
+  %8 = load i32, i32* %errMsgLen, align 4, !dbg !397
+  %add = add nsw i32 %8, 1, !dbg !398
+  %conv2 = sext i32 %add to i64, !dbg !397
+  %call3 = call noalias i8* @malloc(i64 %conv2) #7, !dbg !399
+  %9 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !400
+  %errMsg_4 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %9, i32 0, i32 3, !dbg !401
+  store i8* %call3, i8** %errMsg_4, align 8, !dbg !402
+  %10 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !403
+  %errMsg_5 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %10, i32 0, i32 3, !dbg !404
+  %11 = load i8*, i8** %errMsg_5, align 8, !dbg !404
+  %12 = load i8*, i8** %errorMessage.addr, align 8, !dbg !405
+  %call6 = call i8* @strcpy(i8* %11, i8* %12) #7, !dbg !406
+  ret void, !dbg !407
+}
+
+; Function Attrs: noinline nounwind uwtable
+define %struct.CsvRow* @_CsvParser_getRow(%struct.CsvParser* %csvParser) #0 !dbg !408 {
+  %retval = alloca %struct.CsvRow*, align 8
+  %csvParser.addr = alloca %struct.CsvParser*, align 8
+  %numRowRealloc = alloca i32, align 4
+  %acceptedFields = alloca i32, align 4
+  %acceptedCharsInField = alloca i32, align 4
+  %errorNum = alloca i32, align 4
+  %errStr = alloca i8*, align 8
+  %errMsg = alloca i8*, align 8
+  %csvRow = alloca %struct.CsvRow*, align 8
+  %fieldIter = alloca i32, align 4
+  %currField = alloca i8*, align 8
+  %inside_complex_field = alloca i32, align 4
+  %currFieldCharIter = alloca i32, align 4
+  %seriesOfQuotesLength = alloca i32, align 4
+  %lastCharIsQuote = alloca i32, align 4
+  %isEndOfFile = alloca i32, align 4
+  %currChar = alloca i8, align 1
+  %endOfFileIndicator = alloca i32, align 4
+  store %struct.CsvParser* %csvParser, %struct.CsvParser** %csvParser.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser.addr, metadata !409, metadata !97), !dbg !410
+  call void @llvm.dbg.declare(metadata i32* %numRowRealloc, metadata !411, metadata !97), !dbg !412
+  store i32 0, i32* %numRowRealloc, align 4, !dbg !412
+  call void @llvm.dbg.declare(metadata i32* %acceptedFields, metadata !413, metadata !97), !dbg !414
+  store i32 64, i32* %acceptedFields, align 4, !dbg !414
+  call void @llvm.dbg.declare(metadata i32* %acceptedCharsInField, metadata !415, metadata !97), !dbg !416
+  store i32 64, i32* %acceptedCharsInField, align 4, !dbg !416
+  %1 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !417
+  %filePath_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %1, i32 0, i32 0, !dbg !419
+  %2 = load i8*, i8** %filePath_, align 8, !dbg !419
+  %cmp = icmp eq i8* %2, null, !dbg !420
+  br i1 %cmp, label %3, label %8, !dbg !421
+
+; <label>:3:                                      ; preds = %0
+  %4 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !422
+  %fromString_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %4, i32 0, i32 6, !dbg !424
+  %5 = load i32, i32* %fromString_, align 8, !dbg !424
+  %tobool = icmp ne i32 %5, 0, !dbg !422
+  br i1 %tobool, label %8, label %6, !dbg !425
+
+; <label>:6:                                      ; preds = %3
+  %7 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !427
+  call void @_CsvParser_setErrorMessage(%struct.CsvParser* %7, i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i32 0, i32 0)), !dbg !429
+  store %struct.CsvRow* null, %struct.CsvRow** %retval, align 8, !dbg !430
+  br label %173, !dbg !430
+
+; <label>:8:                                      ; preds = %3, %0
+  %9 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !431
+  %csvString_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %9, i32 0, i32 7, !dbg !433
+  %10 = load i8*, i8** %csvString_, align 8, !dbg !433
+  %cmp1 = icmp eq i8* %10, null, !dbg !434
+  br i1 %cmp1, label %11, label %16, !dbg !435
+
+; <label>:11:                                     ; preds = %8
+  %12 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !436
+  %fromString_2 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %12, i32 0, i32 6, !dbg !438
+  %13 = load i32, i32* %fromString_2, align 8, !dbg !438
+  %tobool3 = icmp ne i32 %13, 0, !dbg !436
+  br i1 %tobool3, label %14, label %16, !dbg !439
+
+; <label>:14:                                     ; preds = %11
+  %15 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !440
+  call void @_CsvParser_setErrorMessage(%struct.CsvParser* %15, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.2, i32 0, i32 0)), !dbg !442
+  store %struct.CsvRow* null, %struct.CsvRow** %retval, align 8, !dbg !443
+  br label %173, !dbg !443
+
+; <label>:16:                                     ; preds = %11, %8
+  %17 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !444
+  %delimiter_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %17, i32 0, i32 1, !dbg !446
+  %18 = load i8, i8* %delimiter_, align 8, !dbg !446
+  %conv = sext i8 %18 to i32, !dbg !444
+  %cmp4 = icmp eq i32 %conv, 0, !dbg !447
+  br i1 %cmp4, label %19, label %21, !dbg !448
+
+; <label>:19:                                     ; preds = %16
+  %20 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !449
+  call void @_CsvParser_setErrorMessage(%struct.CsvParser* %20, i8* getelementptr inbounds ([36 x i8], [36 x i8]* @.str.3, i32 0, i32 0)), !dbg !451
+  store %struct.CsvRow* null, %struct.CsvRow** %retval, align 8, !dbg !452
+  br label %173, !dbg !452
+
+; <label>:21:                                     ; preds = %16
+  %22 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !453
+  %fromString_6 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %22, i32 0, i32 6, !dbg !455
+  %23 = load i32, i32* %fromString_6, align 8, !dbg !455
+  %tobool7 = icmp ne i32 %23, 0, !dbg !453
+  br i1 %tobool7, label %47, label %24, !dbg !456
+
+; <label>:24:                                     ; preds = %21
+  %25 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !457
+  %fileHandler_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %25, i32 0, i32 5, !dbg !460
+  %26 = load %struct._IO_FILE*, %struct._IO_FILE** %fileHandler_, align 8, !dbg !460
+  %cmp8 = icmp eq %struct._IO_FILE* %26, null, !dbg !461
+  br i1 %cmp8, label %27, label %46, !dbg !462
+
+; <label>:27:                                     ; preds = %24
+  %28 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !463
+  %filePath_10 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %28, i32 0, i32 0, !dbg !465
+  %29 = load i8*, i8** %filePath_10, align 8, !dbg !465
+  %call = call %struct._IO_FILE* @fopen(i8* %29, i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.4, i32 0, i32 0)), !dbg !466
+  %30 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !467
+  %fileHandler_11 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %30, i32 0, i32 5, !dbg !468
+  store %struct._IO_FILE* %call, %struct._IO_FILE** %fileHandler_11, align 8, !dbg !469
+  %31 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !470
+  %fileHandler_12 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %31, i32 0, i32 5, !dbg !472
+  %32 = load %struct._IO_FILE*, %struct._IO_FILE** %fileHandler_12, align 8, !dbg !472
+  %cmp13 = icmp eq %struct._IO_FILE* %32, null, !dbg !473
+  br i1 %cmp13, label %33, label %45, !dbg !474
+
+; <label>:33:                                     ; preds = %27
+  call void @llvm.dbg.declare(metadata i32* %errorNum, metadata !475, metadata !97), !dbg !477
+  %call15 = call i32* @__errno_location() #1, !dbg !478
+  %34 = load i32, i32* %call15, align 4, !dbg !478
+  store i32 %34, i32* %errorNum, align 4, !dbg !477
+  call void @llvm.dbg.declare(metadata i8** %errStr, metadata !479, metadata !97), !dbg !480
+  %35 = load i32, i32* %errorNum, align 4, !dbg !481
+  %call16 = call i8* @strerror(i32 %35) #7, !dbg !482
+  store i8* %call16, i8** %errStr, align 8, !dbg !480
+  call void @llvm.dbg.declare(metadata i8** %errMsg, metadata !483, metadata !97), !dbg !484
+  %36 = load i8*, i8** %errStr, align 8, !dbg !485
+  %call17 = call i64 @strlen(i8* %36) #8, !dbg !486
+  %add = add i64 1024, %call17, !dbg !487
+  %call18 = call noalias i8* @malloc(i64 %add) #7, !dbg !488
+  store i8* %call18, i8** %errMsg, align 8, !dbg !484
+  %37 = load i8*, i8** %errMsg, align 8, !dbg !490
+  %call19 = call i8* @strcpy(i8* %37, i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.5, i32 0, i32 0)) #7, !dbg !491
+  %38 = load i8*, i8** %errMsg, align 8, !dbg !492
+  %39 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !493
+  %filePath_20 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %39, i32 0, i32 0, !dbg !494
+  %40 = load i8*, i8** %filePath_20, align 8, !dbg !494
+  %41 = load i8*, i8** %errStr, align 8, !dbg !495
+  %call21 = call i32 (i8*, i8*, ...) @sprintf(i8* %38, i8* getelementptr inbounds ([44 x i8], [44 x i8]* @.str.6, i32 0, i32 0), i8* %40, i8* %41) #7, !dbg !496
+  %42 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !497
+  %43 = load i8*, i8** %errMsg, align 8, !dbg !498
+  call void @_CsvParser_setErrorMessage(%struct.CsvParser* %42, i8* %43), !dbg !499
+  %44 = load i8*, i8** %errMsg, align 8, !dbg !500
+  call void @free(i8* %44) #7, !dbg !501
+  store %struct.CsvRow* null, %struct.CsvRow** %retval, align 8, !dbg !502
+  br label %173, !dbg !502
+
+; <label>:45:                                     ; preds = %27
+  br label %46, !dbg !503
+
+; <label>:46:                                     ; preds = %45, %24
+  br label %47, !dbg !504
+
+; <label>:47:                                     ; preds = %46, %21
+  call void @llvm.dbg.declare(metadata %struct.CsvRow** %csvRow, metadata !505, metadata !97), !dbg !506
+  %call22 = call noalias i8* @malloc(i64 16) #7, !dbg !507
+  %48 = bitcast i8* %call22 to %struct.CsvRow*, !dbg !508
+  store %struct.CsvRow* %48, %struct.CsvRow** %csvRow, align 8, !dbg !506
+  %49 = load i32, i32* %acceptedFields, align 4, !dbg !509
+  %conv23 = sext i32 %49 to i64, !dbg !509
+  %mul = mul i64 %conv23, 8, !dbg !510
+  %call24 = call noalias i8* @malloc(i64 %mul) #7, !dbg !511
+  %50 = bitcast i8* %call24 to i8**, !dbg !512
+  %51 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !513
+  %fields_ = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %51, i32 0, i32 0, !dbg !514
+  store i8** %50, i8*** %fields_, align 8, !dbg !515
+  %52 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !516
+  %numOfFields_ = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %52, i32 0, i32 1, !dbg !517
+  store i32 0, i32* %numOfFields_, align 8, !dbg !518
+  call void @llvm.dbg.declare(metadata i32* %fieldIter, metadata !519, metadata !97), !dbg !520
+  store i32 0, i32* %fieldIter, align 4, !dbg !520
+  call void @llvm.dbg.declare(metadata i8** %currField, metadata !521, metadata !97), !dbg !522
+  %53 = load i32, i32* %acceptedCharsInField, align 4, !dbg !523
+  %conv25 = sext i32 %53 to i64, !dbg !523
+  %call26 = call noalias i8* @malloc(i64 %conv25) #7, !dbg !524
+  store i8* %call26, i8** %currField, align 8, !dbg !522
+  call void @llvm.dbg.declare(metadata i32* %inside_complex_field, metadata !525, metadata !97), !dbg !526
+  store i32 0, i32* %inside_complex_field, align 4, !dbg !526
+  call void @llvm.dbg.declare(metadata i32* %currFieldCharIter, metadata !527, metadata !97), !dbg !528
+  store i32 0, i32* %currFieldCharIter, align 4, !dbg !528
+  call void @llvm.dbg.declare(metadata i32* %seriesOfQuotesLength, metadata !529, metadata !97), !dbg !530
+  store i32 0, i32* %seriesOfQuotesLength, align 4, !dbg !530
+  call void @llvm.dbg.declare(metadata i32* %lastCharIsQuote, metadata !531, metadata !97), !dbg !532
+  store i32 0, i32* %lastCharIsQuote, align 4, !dbg !532
+  call void @llvm.dbg.declare(metadata i32* %isEndOfFile, metadata !533, metadata !97), !dbg !534
+  store i32 0, i32* %isEndOfFile, align 4, !dbg !534
+  br label %54, !dbg !535
+
+; <label>:54:                                     ; preds = %47, %87, %94, %171
+  call void @llvm.dbg.declare(metadata i8* %currChar, metadata !536, metadata !97), !dbg !538
+  %55 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !539
+  %fromString_27 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %55, i32 0, i32 6, !dbg !540
+  %56 = load i32, i32* %fromString_27, align 8, !dbg !540
+  %tobool28 = icmp ne i32 %56, 0, !dbg !541
+  br i1 %tobool28, label %57, label %63, !dbg !541
+
+; <label>:57:                                     ; preds = %54
+  %58 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !542
+  %csvString_29 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %58, i32 0, i32 7, !dbg !544
+  %59 = load i8*, i8** %csvString_29, align 8, !dbg !544
+  %60 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !545
+  %csvStringIter_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %60, i32 0, i32 8, !dbg !546
+  %61 = load i32, i32* %csvStringIter_, align 8, !dbg !546
+  %idxprom = sext i32 %61 to i64, !dbg !542
+  %arrayidx = getelementptr inbounds i8, i8* %59, i64 %idxprom, !dbg !542
+  %62 = load i8, i8* %arrayidx, align 1, !dbg !542
+  %conv30 = sext i8 %62 to i32, !dbg !542
+  br label %66, !dbg !547
+
+; <label>:63:                                     ; preds = %54
+  %64 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !548
+  %fileHandler_31 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %64, i32 0, i32 5, !dbg !550
+  %65 = load %struct._IO_FILE*, %struct._IO_FILE** %fileHandler_31, align 8, !dbg !550
+  %call32 = call i32 @fgetc(%struct._IO_FILE* %65), !dbg !551
+  br label %66, !dbg !552
+
+; <label>:66:                                     ; preds = %63, %57
+  %cond = phi i32 [ %conv30, %57 ], [ %call32, %63 ], !dbg !553
+  %conv33 = trunc i32 %cond to i8, !dbg !553
+  store i8 %conv33, i8* %currChar, align 1, !dbg !555
+  %67 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !556
+  %csvStringIter_34 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %67, i32 0, i32 8, !dbg !557
+  %68 = load i32, i32* %csvStringIter_34, align 8, !dbg !558
+  %inc = add nsw i32 %68, 1, !dbg !558
+  store i32 %inc, i32* %csvStringIter_34, align 8, !dbg !558
+  call void @llvm.dbg.declare(metadata i32* %endOfFileIndicator, metadata !559, metadata !97), !dbg !560
+  %69 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !561
+  %fromString_35 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %69, i32 0, i32 6, !dbg !563
+  %70 = load i32, i32* %fromString_35, align 8, !dbg !563
+  %tobool36 = icmp ne i32 %70, 0, !dbg !561
+  br i1 %tobool36, label %71, label %73, !dbg !564
+
+; <label>:71:                                     ; preds = %66
+  %72 = load i8, i8* %currChar, align 1, !dbg !565
+  %conv37 = sext i8 %72 to i32, !dbg !565
+  %cmp38 = icmp eq i32 %conv37, 0, !dbg !567
+  %conv39 = zext i1 %cmp38 to i32, !dbg !567
+  store i32 %conv39, i32* %endOfFileIndicator, align 4, !dbg !568
+  br label %76, !dbg !569
+
+; <label>:73:                                     ; preds = %66
+  %74 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !570
+  %fileHandler_40 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %74, i32 0, i32 5, !dbg !572
+  %75 = load %struct._IO_FILE*, %struct._IO_FILE** %fileHandler_40, align 8, !dbg !572
+  %call41 = call i32 @feof(%struct._IO_FILE* %75) #7, !dbg !573
+  store i32 %call41, i32* %endOfFileIndicator, align 4, !dbg !574
+  br label %76
+
+; <label>:76:                                     ; preds = %73, %71
+  %77 = load i32, i32* %endOfFileIndicator, align 4, !dbg !575
+  %tobool42 = icmp ne i32 %77, 0, !dbg !575
+  br i1 %tobool42, label %78, label %85, !dbg !577
+
+; <label>:78:                                     ; preds = %76
+  %79 = load i32, i32* %currFieldCharIter, align 4, !dbg !578
+  %cmp43 = icmp eq i32 %79, 0, !dbg !581
+  br i1 %cmp43, label %80, label %84, !dbg !582
+
+; <label>:80:                                     ; preds = %78
+  %81 = load i32, i32* %fieldIter, align 4, !dbg !583
+  %cmp45 = icmp eq i32 %81, 0, !dbg !585
+  br i1 %cmp45, label %82, label %84, !dbg !586
+
+; <label>:82:                                     ; preds = %80
+  %83 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !588
+  call void @_CsvParser_setErrorMessage(%struct.CsvParser* %83, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.7, i32 0, i32 0)), !dbg !590
+  store %struct.CsvRow* null, %struct.CsvRow** %retval, align 8, !dbg !591
+  br label %173, !dbg !591
+
+; <label>:84:                                     ; preds = %80, %78
+  store i8 10, i8* %currChar, align 1, !dbg !592
+  store i32 1, i32* %isEndOfFile, align 4, !dbg !593
+  br label %85, !dbg !594
+
+; <label>:85:                                     ; preds = %84, %76
+  %86 = load i8, i8* %currChar, align 1, !dbg !595
+  %conv47 = sext i8 %86 to i32, !dbg !595
+  %cmp48 = icmp eq i32 %conv47, 13, !dbg !597
+  br i1 %cmp48, label %87, label %88, !dbg !598
+
+; <label>:87:                                     ; preds = %85
+  br label %54, !dbg !599, !llvm.loop !601
+
+; <label>:88:                                     ; preds = %85
+  %89 = load i32, i32* %currFieldCharIter, align 4, !dbg !603
+  %cmp50 = icmp eq i32 %89, 0, !dbg !605
+  br i1 %cmp50, label %90, label %96, !dbg !606
+
+; <label>:90:                                     ; preds = %88
+  %91 = load i32, i32* %lastCharIsQuote, align 4, !dbg !607
+  %tobool52 = icmp ne i32 %91, 0, !dbg !607
+  br i1 %tobool52, label %96, label %92, !dbg !609
+
+; <label>:92:                                     ; preds = %90
+  %93 = load i8, i8* %currChar, align 1, !dbg !610
+  %conv53 = sext i8 %93 to i32, !dbg !610
+  %cmp54 = icmp eq i32 %conv53, 34, !dbg !613
+  br i1 %cmp54, label %94, label %95, !dbg !614
+
+; <label>:94:                                     ; preds = %92
+  store i32 1, i32* %inside_complex_field, align 4, !dbg !615
+  store i32 1, i32* %lastCharIsQuote, align 4, !dbg !617
+  br label %54, !dbg !618, !llvm.loop !601
+
+; <label>:95:                                     ; preds = %92
+  br label %107, !dbg !619
+
+; <label>:96:                                     ; preds = %90, %88
+  %97 = load i8, i8* %currChar, align 1, !dbg !620
+  %conv56 = sext i8 %97 to i32, !dbg !620
+  %cmp57 = icmp eq i32 %conv56, 34, !dbg !623
+  br i1 %cmp57, label %98, label %105, !dbg !624
+
+; <label>:98:                                     ; preds = %96
+  %99 = load i32, i32* %seriesOfQuotesLength, align 4, !dbg !625
+  %inc59 = add nsw i32 %99, 1, !dbg !625
+  store i32 %inc59, i32* %seriesOfQuotesLength, align 4, !dbg !625
+  %100 = load i32, i32* %seriesOfQuotesLength, align 4, !dbg !627
+  %rem = srem i32 %100, 2, !dbg !628
+  %cmp60 = icmp eq i32 %rem, 0, !dbg !629
+  %conv61 = zext i1 %cmp60 to i32, !dbg !629
+  store i32 %conv61, i32* %inside_complex_field, align 4, !dbg !630
+  %101 = load i32, i32* %inside_complex_field, align 4, !dbg !631
+  %tobool62 = icmp ne i32 %101, 0, !dbg !631
+  br i1 %tobool62, label %102, label %104, !dbg !633
+
+; <label>:102:                                    ; preds = %98
+  %103 = load i32, i32* %currFieldCharIter, align 4, !dbg !634
+  %dec = add nsw i32 %103, -1, !dbg !634
+  store i32 %dec, i32* %currFieldCharIter, align 4, !dbg !634
+  br label %104, !dbg !636
+
+; <label>:104:                                    ; preds = %102, %98
+  br label %106, !dbg !637
+
+; <label>:105:                                    ; preds = %96
+  store i32 0, i32* %seriesOfQuotesLength, align 4, !dbg !638
+  br label %106
+
+; <label>:106:                                    ; preds = %105, %104
+  br label %107
+
+; <label>:107:                                    ; preds = %106, %95
+  %108 = load i32, i32* %isEndOfFile, align 4, !dbg !640
+  %tobool63 = icmp ne i32 %108, 0, !dbg !640
+  br i1 %tobool63, label %117, label %109, !dbg !642
+
+; <label>:109:                                    ; preds = %107
+  %110 = load i8, i8* %currChar, align 1, !dbg !643
+  %conv64 = sext i8 %110 to i32, !dbg !643
+  %111 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !645
+  %delimiter_65 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %111, i32 0, i32 1, !dbg !646
+  %112 = load i8, i8* %delimiter_65, align 8, !dbg !646
+  %conv66 = sext i8 %112 to i32, !dbg !645
+  %cmp67 = icmp eq i32 %conv64, %conv66, !dbg !647
+  br i1 %cmp67, label %115, label %113, !dbg !648
+
+; <label>:113:                                    ; preds = %109
+  %114 = load i8, i8* %currChar, align 1, !dbg !649
+  %conv69 = sext i8 %114 to i32, !dbg !649
+  %cmp70 = icmp eq i32 %conv69, 10, !dbg !651
+  br i1 %cmp70, label %115, label %159, !dbg !652
+
+; <label>:115:                                    ; preds = %113, %109
+  %116 = load i32, i32* %inside_complex_field, align 4, !dbg !653
+  %tobool72 = icmp ne i32 %116, 0, !dbg !653
+  br i1 %tobool72, label %159, label %117, !dbg !655
+
+; <label>:117:                                    ; preds = %115, %107
+  %118 = load i8*, i8** %currField, align 8, !dbg !656
+  %119 = load i32, i32* %lastCharIsQuote, align 4, !dbg !658
+  %tobool73 = icmp ne i32 %119, 0, !dbg !658
+  br i1 %tobool73, label %120, label %122, !dbg !658
+
+; <label>:120:                                    ; preds = %117
+  %121 = load i32, i32* %currFieldCharIter, align 4, !dbg !659
+  %sub = sub nsw i32 %121, 1, !dbg !661
+  br label %124, !dbg !662
+
+; <label>:122:                                    ; preds = %117
+  %123 = load i32, i32* %currFieldCharIter, align 4, !dbg !663
+  br label %124, !dbg !665
+
+; <label>:124:                                    ; preds = %122, %120
+  %cond74 = phi i32 [ %sub, %120 ], [ %123, %122 ], !dbg !666
+  %idxprom75 = sext i32 %cond74 to i64, !dbg !668
+  %arrayidx76 = getelementptr inbounds i8, i8* %118, i64 %idxprom75, !dbg !668
+  store i8 0, i8* %arrayidx76, align 1, !dbg !669
+  %125 = load i32, i32* %currFieldCharIter, align 4, !dbg !670
+  %add77 = add nsw i32 %125, 1, !dbg !671
+  %conv78 = sext i32 %add77 to i64, !dbg !670
+  %call79 = call noalias i8* @malloc(i64 %conv78) #7, !dbg !672
+  %126 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !673
+  %fields_80 = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %126, i32 0, i32 0, !dbg !674
+  %127 = load i8**, i8*** %fields_80, align 8, !dbg !674
+  %128 = load i32, i32* %fieldIter, align 4, !dbg !675
+  %idxprom81 = sext i32 %128 to i64, !dbg !673
+  %arrayidx82 = getelementptr inbounds i8*, i8** %127, i64 %idxprom81, !dbg !673
+  store i8* %call79, i8** %arrayidx82, align 8, !dbg !676
+  %129 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !677
+  %fields_83 = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %129, i32 0, i32 0, !dbg !678
+  %130 = load i8**, i8*** %fields_83, align 8, !dbg !678
+  %131 = load i32, i32* %fieldIter, align 4, !dbg !679
+  %idxprom84 = sext i32 %131 to i64, !dbg !677
+  %arrayidx85 = getelementptr inbounds i8*, i8** %130, i64 %idxprom84, !dbg !677
+  %132 = load i8*, i8** %arrayidx85, align 8, !dbg !677
+  %133 = load i8*, i8** %currField, align 8, !dbg !680
+  %call86 = call i8* @strcpy(i8* %132, i8* %133) #7, !dbg !681
+  %134 = load i8*, i8** %currField, align 8, !dbg !682
+  call void @free(i8* %134) #7, !dbg !683
+  %135 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !684
+  %numOfFields_87 = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %135, i32 0, i32 1, !dbg !685
+  %136 = load i32, i32* %numOfFields_87, align 8, !dbg !686
+  %inc88 = add nsw i32 %136, 1, !dbg !686
+  store i32 %inc88, i32* %numOfFields_87, align 8, !dbg !686
+  %137 = load i8, i8* %currChar, align 1, !dbg !687
+  %conv89 = sext i8 %137 to i32, !dbg !687
+  %cmp90 = icmp eq i32 %conv89, 10, !dbg !689
+  br i1 %cmp90, label %138, label %140, !dbg !690
+
+; <label>:138:                                    ; preds = %124
+  %139 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !691
+  store %struct.CsvRow* %139, %struct.CsvRow** %retval, align 8, !dbg !693
+  br label %173, !dbg !693
+
+; <label>:140:                                    ; preds = %124
+  %141 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !694
+  %numOfFields_92 = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %141, i32 0, i32 1, !dbg !696
+  %142 = load i32, i32* %numOfFields_92, align 8, !dbg !696
+  %cmp93 = icmp ne i32 %142, 0, !dbg !697
+  br i1 %cmp93, label %143, label %156, !dbg !698
+
+; <label>:143:                                    ; preds = %140
+  %144 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !699
+  %numOfFields_95 = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %144, i32 0, i32 1, !dbg !701
+  %145 = load i32, i32* %numOfFields_95, align 8, !dbg !701
+  %146 = load i32, i32* %acceptedFields, align 4, !dbg !702
+  %rem96 = srem i32 %145, %146, !dbg !703
+  %cmp97 = icmp eq i32 %rem96, 0, !dbg !704
+  br i1 %cmp97, label %147, label %156, !dbg !705
+
+; <label>:147:                                    ; preds = %143
+  %148 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !706
+  %fields_99 = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %148, i32 0, i32 0, !dbg !708
+  %149 = load i8**, i8*** %fields_99, align 8, !dbg !708
+  %150 = bitcast i8** %149 to i8*, !dbg !706
+  %151 = load i32, i32* %numRowRealloc, align 4, !dbg !709
+  %add100 = add nsw i32 %151, 2, !dbg !710
+  %152 = load i32, i32* %acceptedFields, align 4, !dbg !711
+  %mul101 = mul nsw i32 %add100, %152, !dbg !712
+  %conv102 = sext i32 %mul101 to i64, !dbg !713
+  %mul103 = mul i64 %conv102, 8, !dbg !714
+  %call104 = call i8* @realloc(i8* %150, i64 %mul103) #7, !dbg !715
+  %153 = bitcast i8* %call104 to i8**, !dbg !716
+  %154 = load %struct.CsvRow*, %struct.CsvRow** %csvRow, align 8, !dbg !717
+  %fields_105 = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %154, i32 0, i32 0, !dbg !718
+  store i8** %153, i8*** %fields_105, align 8, !dbg !719
+  %155 = load i32, i32* %numRowRealloc, align 4, !dbg !720
+  %inc106 = add nsw i32 %155, 1, !dbg !720
+  store i32 %inc106, i32* %numRowRealloc, align 4, !dbg !720
+  br label %156, !dbg !721
+
+; <label>:156:                                    ; preds = %147, %143, %140
+  store i32 64, i32* %acceptedCharsInField, align 4, !dbg !722
+  %157 = load i32, i32* %acceptedCharsInField, align 4, !dbg !723
+  %conv107 = sext i32 %157 to i64, !dbg !723
+  %call108 = call noalias i8* @malloc(i64 %conv107) #7, !dbg !724
+  store i8* %call108, i8** %currField, align 8, !dbg !725
+  store i32 0, i32* %currFieldCharIter, align 4, !dbg !726
+  %158 = load i32, i32* %fieldIter, align 4, !dbg !727
+  %inc109 = add nsw i32 %158, 1, !dbg !727
+  store i32 %inc109, i32* %fieldIter, align 4, !dbg !727
+  store i32 0, i32* %inside_complex_field, align 4, !dbg !728
+  br label %171, !dbg !729
+
+; <label>:159:                                    ; preds = %115, %113
+  %160 = load i8, i8* %currChar, align 1, !dbg !730
+  %161 = load i8*, i8** %currField, align 8, !dbg !732
+  %162 = load i32, i32* %currFieldCharIter, align 4, !dbg !733
+  %idxprom110 = sext i32 %162 to i64, !dbg !732
+  %arrayidx111 = getelementptr inbounds i8, i8* %161, i64 %idxprom110, !dbg !732
+  store i8 %160, i8* %arrayidx111, align 1, !dbg !734
+  %163 = load i32, i32* %currFieldCharIter, align 4, !dbg !735
+  %inc112 = add nsw i32 %163, 1, !dbg !735
+  store i32 %inc112, i32* %currFieldCharIter, align 4, !dbg !735
+  %164 = load i32, i32* %currFieldCharIter, align 4, !dbg !736
+  %165 = load i32, i32* %acceptedCharsInField, align 4, !dbg !738
+  %sub113 = sub nsw i32 %165, 1, !dbg !739
+  %cmp114 = icmp eq i32 %164, %sub113, !dbg !740
+  br i1 %cmp114, label %166, label %170, !dbg !741
+
+; <label>:166:                                    ; preds = %159
+  %167 = load i32, i32* %acceptedCharsInField, align 4, !dbg !742
+  %mul116 = mul nsw i32 %167, 2, !dbg !742
+  store i32 %mul116, i32* %acceptedCharsInField, align 4, !dbg !742
+  %168 = load i8*, i8** %currField, align 8, !dbg !744
+  %169 = load i32, i32* %acceptedCharsInField, align 4, !dbg !745
+  %conv117 = sext i32 %169 to i64, !dbg !745
+  %call118 = call i8* @realloc(i8* %168, i64 %conv117) #7, !dbg !746
+  store i8* %call118, i8** %currField, align 8, !dbg !747
+  br label %170, !dbg !748
+
+; <label>:170:                                    ; preds = %166, %159
+  br label %171
+
+; <label>:171:                                    ; preds = %170, %156
+  %172 = load i8, i8* %currChar, align 1, !dbg !749
+  %conv119 = sext i8 %172 to i32, !dbg !749
+  %cmp120 = icmp eq i32 %conv119, 34, !dbg !750
+  %cond122 = select i1 %cmp120, i32 1, i32 0, !dbg !751
+  store i32 %cond122, i32* %lastCharIsQuote, align 4, !dbg !752
+  br label %54, !dbg !753, !llvm.loop !601
+
+; <label>:173:                                    ; preds = %138, %82, %33, %19, %14, %6
+  %174 = load %struct.CsvRow*, %struct.CsvRow** %retval, align 8, !dbg !754
+  ret %struct.CsvRow* %174, !dbg !754
+}
+
+; Function Attrs: noinline nounwind uwtable
+define %struct.CsvRow* @CsvParser_getRow(%struct.CsvParser* %csvParser) #0 !dbg !755 {
+  %csvParser.addr = alloca %struct.CsvParser*, align 8
+  store %struct.CsvParser* %csvParser, %struct.CsvParser** %csvParser.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser.addr, metadata !756, metadata !97), !dbg !757
+  %1 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !758
+  %firstLineIsHeader_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %1, i32 0, i32 2, !dbg !760
+  %2 = load i32, i32* %firstLineIsHeader_, align 4, !dbg !760
+  %tobool = icmp ne i32 %2, 0, !dbg !758
+  br i1 %tobool, label %3, label %9, !dbg !761
+
+; <label>:3:                                      ; preds = %0
+  %4 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !762
+  %header_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %4, i32 0, i32 4, !dbg !764
+  %5 = load %struct.CsvRow*, %struct.CsvRow** %header_, align 8, !dbg !764
+  %cmp = icmp eq %struct.CsvRow* %5, null, !dbg !765
+  br i1 %cmp, label %6, label %9, !dbg !766
+
+; <label>:6:                                      ; preds = %3
+  %7 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !768
+  %call = call %struct.CsvRow* @_CsvParser_getRow(%struct.CsvParser* %7), !dbg !770
+  %8 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !771
+  %header_1 = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %8, i32 0, i32 4, !dbg !772
+  store %struct.CsvRow* %call, %struct.CsvRow** %header_1, align 8, !dbg !773
+  br label %9, !dbg !774
+
+; <label>:9:                                      ; preds = %6, %3, %0
+  %10 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !775
+  %call2 = call %struct.CsvRow* @_CsvParser_getRow(%struct.CsvParser* %10), !dbg !776
+  ret %struct.CsvRow* %call2, !dbg !777
+}
+
+; Function Attrs: noinline nounwind uwtable
+define i32 @CsvParser_getNumFields(%struct.CsvRow* %csvRow) #0 !dbg !778 {
+  %csvRow.addr = alloca %struct.CsvRow*, align 8
+  store %struct.CsvRow* %csvRow, %struct.CsvRow** %csvRow.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvRow** %csvRow.addr, metadata !781, metadata !97), !dbg !782
+  %1 = load %struct.CsvRow*, %struct.CsvRow** %csvRow.addr, align 8, !dbg !783
+  %numOfFields_ = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %1, i32 0, i32 1, !dbg !784
+  %2 = load i32, i32* %numOfFields_, align 8, !dbg !784
+  ret i32 %2, !dbg !785
+}
+
+; Function Attrs: noinline nounwind uwtable
+define i8** @CsvParser_getFields(%struct.CsvRow* %csvRow) #0 !dbg !786 {
+  %csvRow.addr = alloca %struct.CsvRow*, align 8
+  store %struct.CsvRow* %csvRow, %struct.CsvRow** %csvRow.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvRow** %csvRow.addr, metadata !789, metadata !97), !dbg !790
+  %1 = load %struct.CsvRow*, %struct.CsvRow** %csvRow.addr, align 8, !dbg !791
+  %fields_ = getelementptr inbounds %struct.CsvRow, %struct.CsvRow* %1, i32 0, i32 0, !dbg !792
+  %2 = load i8**, i8*** %fields_, align 8, !dbg !792
+  ret i8** %2, !dbg !793
+}
+
+declare %struct._IO_FILE* @fopen(i8*, i8*) #4
+
+; Function Attrs: nounwind readnone
+declare i32* @__errno_location() #5
+
+; Function Attrs: nounwind
+declare i8* @strerror(i32) #2
+
+; Function Attrs: nounwind
+declare i32 @sprintf(i8*, i8*, ...) #2
+
+declare i32 @fgetc(%struct._IO_FILE*) #4
+
+; Function Attrs: nounwind
+declare i32 @feof(%struct._IO_FILE*) #2
+
+; Function Attrs: nounwind
+declare i8* @realloc(i8*, i64) #2
+
+; Function Attrs: noinline nounwind uwtable
+define i8* @CsvParser_getErrorMessage(%struct.CsvParser* %csvParser) #0 !dbg !794 {
+  %csvParser.addr = alloca %struct.CsvParser*, align 8
+  store %struct.CsvParser* %csvParser, %struct.CsvParser** %csvParser.addr, align 8
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvParser.addr, metadata !797, metadata !97), !dbg !798
+  %1 = load %struct.CsvParser*, %struct.CsvParser** %csvParser.addr, align 8, !dbg !799
+  %errMsg_ = getelementptr inbounds %struct.CsvParser, %struct.CsvParser* %1, i32 0, i32 3, !dbg !800
+  %2 = load i8*, i8** %errMsg_, align 8, !dbg !800
+  ret i8* %2, !dbg !801
+}
+
+; Function Attrs: noinline nounwind uwtable
+define i8* @read_input() #0 !dbg !802 {
+  %counter = alloca i32, align 4
+  %chars = alloca i8*, align 8
+  %c = alloca i8, align 1
+  call void @llvm.dbg.declare(metadata i32* %counter, metadata !805, metadata !97), !dbg !806
+  store i32 0, i32* %counter, align 4, !dbg !806
+  call void @llvm.dbg.declare(metadata i8** %chars, metadata !807, metadata !97), !dbg !808
+  %call = call noalias i8* @malloc(i64 1000) #7, !dbg !809
+  store i8* %call, i8** %chars, align 8, !dbg !808
+  call void @llvm.dbg.declare(metadata i8* %c, metadata !810, metadata !97), !dbg !811
+  store i8 0, i8* %c, align 1, !dbg !811
+  br label %1, !dbg !812
+
+; <label>:1:                                      ; preds = %6, %0
+  %2 = load %struct._IO_FILE*, %struct._IO_FILE** @stdin, align 8, !dbg !813
+  %call1 = call i32 @fgetc(%struct._IO_FILE* %2), !dbg !815
+  %conv = trunc i32 %call1 to i8, !dbg !815
+  store i8 %conv, i8* %c, align 1, !dbg !816
+  %conv2 = sext i8 %conv to i32, !dbg !817
+  %cmp = icmp ne i32 %conv2, -1, !dbg !818
+  br i1 %cmp, label %3, label %10, !dbg !819
+
+; <label>:3:                                      ; preds = %1
+  %4 = load i32, i32* %counter, align 4, !dbg !820
+  %cmp4 = icmp eq i32 %4, 1000, !dbg !823
+  br i1 %cmp4, label %5, label %6, !dbg !824
+
+; <label>:5:                                      ; preds = %3
+  call void @exit(i32 1) #9, !dbg !825
+  unreachable, !dbg !825
+
+; <label>:6:                                      ; preds = %3
+  %7 = load i8, i8* %c, align 1, !dbg !827
+  %8 = load i8*, i8** %chars, align 8, !dbg !828
+  %9 = load i32, i32* %counter, align 4, !dbg !829
+  %inc = add nsw i32 %9, 1, !dbg !829
+  store i32 %inc, i32* %counter, align 4, !dbg !829
+  %idxprom = sext i32 %9 to i64, !dbg !828
+  %arrayidx = getelementptr inbounds i8, i8* %8, i64 %idxprom, !dbg !828
+  store i8 %7, i8* %arrayidx, align 1, !dbg !830
+  br label %1, !dbg !831, !llvm.loop !833
+
+; <label>:10:                                     ; preds = %1
+  %11 = load i8*, i8** %chars, align 8, !dbg !835
+  %12 = load i32, i32* %counter, align 4, !dbg !836
+  %idxprom6 = sext i32 %12 to i64, !dbg !835
+  %arrayidx7 = getelementptr inbounds i8, i8* %11, i64 %idxprom6, !dbg !835
+  store i8 0, i8* %arrayidx7, align 1, !dbg !837
+  %13 = load i8*, i8** %chars, align 8, !dbg !838
+  ret i8* %13, !dbg !839
+}
+
+; Function Attrs: noreturn nounwind
+declare void @exit(i32) #6
+
+; Function Attrs: noinline nounwind uwtable
+define i32 @main(i32 %argc, i8** %argv) #0 !dbg !840 {
+  %retval = alloca i32, align 4
+  %argc.addr = alloca i32, align 4
+  %argv.addr = alloca i8**, align 8
+  %string = alloca i8*, align 8
+  %i = alloca i32, align 4
+  %csvparser = alloca %struct.CsvParser*, align 8
+  %header = alloca %struct.CsvRow*, align 8
+  %row = alloca %struct.CsvRow*, align 8
+  %headerFields = alloca i8**, align 8
+  %rowFields = alloca i8**, align 8
+  store i32 0, i32* %retval, align 4
+  store i32 %argc, i32* %argc.addr, align 4
+  call void @llvm.dbg.declare(metadata i32* %argc.addr, metadata !843, metadata !97), !dbg !844
+  store i8** %argv, i8*** %argv.addr, align 8
+  call void @llvm.dbg.declare(metadata i8*** %argv.addr, metadata !845, metadata !97), !dbg !846
+  call void @llvm.dbg.declare(metadata i8** %string, metadata !847, metadata !97), !dbg !848
+  %call = call i8* @read_input(), !dbg !849
+  store i8* %call, i8** %string, align 8, !dbg !848
+  %1 = load i8*, i8** %string, align 8, !dbg !850
+  %call1 = call i32 (i8*, ...) @printf(i8* %1), !dbg !851
+  call void @llvm.dbg.declare(metadata i32* %i, metadata !852, metadata !97), !dbg !853
+  store i32 0, i32* %i, align 4, !dbg !853
+  call void @llvm.dbg.declare(metadata %struct.CsvParser** %csvparser, metadata !854, metadata !97), !dbg !855
+  %2 = load i8*, i8** %string, align 8, !dbg !856
+  %call2 = call %struct.CsvParser* @CsvParser_new_from_string(i8* %2, i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.8, i32 0, i32 0), i32 1), !dbg !857
+  store %struct.CsvParser* %call2, %struct.CsvParser** %csvparser, align 8, !dbg !855
+  call void @llvm.dbg.declare(metadata %struct.CsvRow** %header, metadata !858, metadata !97), !dbg !859
+  call void @llvm.dbg.declare(metadata %struct.CsvRow** %row, metadata !860, metadata !97), !dbg !861
+  %3 = load %struct.CsvParser*, %struct.CsvParser** %csvparser, align 8, !dbg !862
+  %call3 = call %struct.CsvRow* @CsvParser_getHeader(%struct.CsvParser* %3), !dbg !863
+  store %struct.CsvRow* %call3, %struct.CsvRow** %header, align 8, !dbg !864
+  %4 = load %struct.CsvRow*, %struct.CsvRow** %header, align 8, !dbg !865
+  %cmp = icmp eq %struct.CsvRow* %4, null, !dbg !867
+  br i1 %cmp, label %5, label %7, !dbg !868
+
+; <label>:5:                                      ; preds = %0
+  %6 = load %struct.CsvParser*, %struct.CsvParser** %csvparser, align 8, !dbg !869
+  %call4 = call i8* @CsvParser_getErrorMessage(%struct.CsvParser* %6), !dbg !871
+  %call5 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.9, i32 0, i32 0), i8* %call4), !dbg !872
+  store i32 1, i32* %retval, align 4, !dbg !874
+  br label %36, !dbg !874
+
+; <label>:7:                                      ; preds = %0
+  call void @llvm.dbg.declare(metadata i8*** %headerFields, metadata !875, metadata !97), !dbg !876
+  %8 = load %struct.CsvRow*, %struct.CsvRow** %header, align 8, !dbg !877
+  %call6 = call i8** @CsvParser_getFields(%struct.CsvRow* %8), !dbg !878
+  store i8** %call6, i8*** %headerFields, align 8, !dbg !876
+  store i32 0, i32* %i, align 4, !dbg !879
+  br label %9, !dbg !881
+
+; <label>:9:                                      ; preds = %16, %7
+  %10 = load i32, i32* %i, align 4, !dbg !882
+  %11 = load %struct.CsvRow*, %struct.CsvRow** %header, align 8, !dbg !885
+  %call7 = call i32 @CsvParser_getNumFields(%struct.CsvRow* %11), !dbg !886
+  %cmp8 = icmp slt i32 %10, %call7, !dbg !887
+  br i1 %cmp8, label %12, label %18, !dbg !888
+
+; <label>:12:                                     ; preds = %9
+  %13 = load i8**, i8*** %headerFields, align 8, !dbg !890
+  %14 = load i32, i32* %i, align 4, !dbg !892
+  %idxprom = sext i32 %14 to i64, !dbg !890
+  %arrayidx = getelementptr inbounds i8*, i8** %13, i64 %idxprom, !dbg !890
+  %15 = load i8*, i8** %arrayidx, align 8, !dbg !890
+  %call9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.10, i32 0, i32 0), i8* %15), !dbg !893
+  br label %16, !dbg !894
+
+; <label>:16:                                     ; preds = %12
+  %17 = load i32, i32* %i, align 4, !dbg !895
+  %inc = add nsw i32 %17, 1, !dbg !895
+  store i32 %inc, i32* %i, align 4, !dbg !895
+  br label %9, !dbg !897, !llvm.loop !898
+
+; <label>:18:                                     ; preds = %9
+  br label %19, !dbg !901
+
+; <label>:19:                                     ; preds = %32, %18
+  %20 = load %struct.CsvParser*, %struct.CsvParser** %csvparser, align 8, !dbg !902
+  %call10 = call %struct.CsvRow* @CsvParser_getRow(%struct.CsvParser* %20), !dbg !904
+  store %struct.CsvRow* %call10, %struct.CsvRow** %row, align 8, !dbg !905
+  %tobool = icmp ne %struct.CsvRow* %call10, null, !dbg !906
+  br i1 %tobool, label %21, label %34, !dbg !906
+
+; <label>:21:                                     ; preds = %19
+  %call11 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.11, i32 0, i32 0)), !dbg !907
+  call void @llvm.dbg.declare(metadata i8*** %rowFields, metadata !909, metadata !97), !dbg !910
+  %22 = load %struct.CsvRow*, %struct.CsvRow** %row, align 8, !dbg !911
+  %call12 = call i8** @CsvParser_getFields(%struct.CsvRow* %22), !dbg !912
+  store i8** %call12, i8*** %rowFields, align 8, !dbg !910
+  store i32 0, i32* %i, align 4, !dbg !913
+  br label %23, !dbg !915
+
+; <label>:23:                                     ; preds = %30, %21
+  %24 = load i32, i32* %i, align 4, !dbg !916
+  %25 = load %struct.CsvRow*, %struct.CsvRow** %row, align 8, !dbg !919
+  %call13 = call i32 @CsvParser_getNumFields(%struct.CsvRow* %25), !dbg !920
+  %cmp14 = icmp slt i32 %24, %call13, !dbg !921
+  br i1 %cmp14, label %26, label %32, !dbg !922
+
+; <label>:26:                                     ; preds = %23
+  %27 = load i8**, i8*** %rowFields, align 8, !dbg !924
+  %28 = load i32, i32* %i, align 4, !dbg !926
+  %idxprom15 = sext i32 %28 to i64, !dbg !924
+  %arrayidx16 = getelementptr inbounds i8*, i8** %27, i64 %idxprom15, !dbg !924
+  %29 = load i8*, i8** %arrayidx16, align 8, !dbg !924
+  %call17 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.12, i32 0, i32 0), i8* %29), !dbg !927
+  br label %30, !dbg !928
+
+; <label>:30:                                     ; preds = %26
+  %31 = load i32, i32* %i, align 4, !dbg !929
+  %inc18 = add nsw i32 %31, 1, !dbg !929
+  store i32 %inc18, i32* %i, align 4, !dbg !929
+  br label %23, !dbg !931, !llvm.loop !932
+
+; <label>:32:                                     ; preds = %23
+  %33 = load %struct.CsvRow*, %struct.CsvRow** %row, align 8, !dbg !935
+  call void @CsvParser_destroy_row(%struct.CsvRow* %33), !dbg !936
+  br label %19, !dbg !937, !llvm.loop !939
+
+; <label>:34:                                     ; preds = %19
+  %35 = load %struct.CsvParser*, %struct.CsvParser** %csvparser, align 8, !dbg !941
+  call void @CsvParser_destroy(%struct.CsvParser* %35), !dbg !942
+  store i32 0, i32* %retval, align 4, !dbg !943
+  br label %36, !dbg !943
+
+; <label>:36:                                     ; preds = %34, %5
+  %37 = load i32, i32* %retval, align 4, !dbg !944
+  ret i32 %37, !dbg !944
+}
+
+declare i32 @printf(i8*, ...) #4
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { nounwind readnone }
+attributes #2 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind readonly "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #5 = { nounwind readnone "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #6 = { noreturn nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #7 = { nounwind }
+attributes #8 = { nounwind readonly }
+attributes #9 = { noreturn nounwind }
+
+!llvm.dbg.cu = !{!0}
+!llvm.module.flags = !{!88, !89}
+!llvm.ident = !{!90}
+
+!0 = distinct !DICompileUnit(language: DW_LANG_C99, file: !1, producer: "clang version 4.0.1 (tags/RELEASE_401/final 336792)", isOptimized: false, runtimeVersion: 0, emissionKind: FullDebug, enums: !2, retainedTypes: !3)
+!1 = !DIFile(filename: "/home/klee/dockermount/checksum-repair/samples/csv/csvparser.c", directory: "/home/klee/dockermount/checksum-repair/samples/csv")
+!2 = !{}
+!3 = !{!4, !72, !10, !17, !22}
+!4 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !5, size: 64)
+!5 = !DIDerivedType(tag: DW_TAG_typedef, name: "CsvParser", file: !6, line: 25, baseType: !7)
+!6 = !DIFile(filename: "/home/klee/dockermount/checksum-repair/samples/csv/csvparser.h", directory: "/home/klee/dockermount/checksum-repair/samples/csv")
+!7 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "CsvParser", file: !6, line: 15, size: 512, elements: !8)
+!8 = !{!9, !12, !13, !15, !16, !24, !85, !86, !87}
+!9 = !DIDerivedType(tag: DW_TAG_member, name: "filePath_", scope: !7, file: !6, line: 16, baseType: !10, size: 64)
+!10 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !11, size: 64)
+!11 = !DIBasicType(name: "char", size: 8, encoding: DW_ATE_signed_char)
+!12 = !DIDerivedType(tag: DW_TAG_member, name: "delimiter_", scope: !7, file: !6, line: 17, baseType: !11, size: 8, offset: 64)
+!13 = !DIDerivedType(tag: DW_TAG_member, name: "firstLineIsHeader_", scope: !7, file: !6, line: 18, baseType: !14, size: 32, offset: 96)
+!14 = !DIBasicType(name: "int", size: 32, encoding: DW_ATE_signed)
+!15 = !DIDerivedType(tag: DW_TAG_member, name: "errMsg_", scope: !7, file: !6, line: 19, baseType: !10, size: 64, offset: 128)
+!16 = !DIDerivedType(tag: DW_TAG_member, name: "header_", scope: !7, file: !6, line: 20, baseType: !17, size: 64, offset: 192)
+!17 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !18, size: 64)
+!18 = !DIDerivedType(tag: DW_TAG_typedef, name: "CsvRow", file: !6, line: 13, baseType: !19)
+!19 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "CsvRow", file: !6, line: 10, size: 128, elements: !20)
+!20 = !{!21, !23}
+!21 = !DIDerivedType(tag: DW_TAG_member, name: "fields_", scope: !19, file: !6, line: 11, baseType: !22, size: 64)
+!22 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !10, size: 64)
+!23 = !DIDerivedType(tag: DW_TAG_member, name: "numOfFields_", scope: !19, file: !6, line: 12, baseType: !14, size: 32, offset: 64)
+!24 = !DIDerivedType(tag: DW_TAG_member, name: "fileHandler_", scope: !7, file: !6, line: 21, baseType: !25, size: 64, offset: 256)
+!25 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !26, size: 64)
+!26 = !DIDerivedType(tag: DW_TAG_typedef, name: "FILE", file: !27, line: 48, baseType: !28)
+!27 = !DIFile(filename: "/usr/include/stdio.h", directory: "/home/klee/dockermount/checksum-repair/samples/csv")
+!28 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "_IO_FILE", file: !29, line: 245, size: 1728, elements: !30)
+!29 = !DIFile(filename: "/usr/include/libio.h", directory: "/home/klee/dockermount/checksum-repair/samples/csv")
+!30 = !{!31, !32, !33, !34, !35, !36, !37, !38, !39, !40, !41, !42, !43, !51, !52, !53, !54, !58, !60, !62, !66, !69, !71, !73, !74, !75, !76, !80, !81}
+!31 = !DIDerivedType(tag: DW_TAG_member, name: "_flags", scope: !28, file: !29, line: 246, baseType: !14, size: 32)
+!32 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_read_ptr", scope: !28, file: !29, line: 251, baseType: !10, size: 64, offset: 64)
+!33 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_read_end", scope: !28, file: !29, line: 252, baseType: !10, size: 64, offset: 128)
+!34 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_read_base", scope: !28, file: !29, line: 253, baseType: !10, size: 64, offset: 192)
+!35 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_write_base", scope: !28, file: !29, line: 254, baseType: !10, size: 64, offset: 256)
+!36 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_write_ptr", scope: !28, file: !29, line: 255, baseType: !10, size: 64, offset: 320)
+!37 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_write_end", scope: !28, file: !29, line: 256, baseType: !10, size: 64, offset: 384)
+!38 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_buf_base", scope: !28, file: !29, line: 257, baseType: !10, size: 64, offset: 448)
+!39 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_buf_end", scope: !28, file: !29, line: 258, baseType: !10, size: 64, offset: 512)
+!40 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_save_base", scope: !28, file: !29, line: 260, baseType: !10, size: 64, offset: 576)
+!41 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_backup_base", scope: !28, file: !29, line: 261, baseType: !10, size: 64, offset: 640)
+!42 = !DIDerivedType(tag: DW_TAG_member, name: "_IO_save_end", scope: !28, file: !29, line: 262, baseType: !10, size: 64, offset: 704)
+!43 = !DIDerivedType(tag: DW_TAG_member, name: "_markers", scope: !28, file: !29, line: 264, baseType: !44, size: 64, offset: 768)
+!44 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !45, size: 64)
+!45 = distinct !DICompositeType(tag: DW_TAG_structure_type, name: "_IO_marker", file: !29, line: 160, size: 192, elements: !46)
+!46 = !{!47, !48, !50}
+!47 = !DIDerivedType(tag: DW_TAG_member, name: "_next", scope: !45, file: !29, line: 161, baseType: !44, size: 64)
+!48 = !DIDerivedType(tag: DW_TAG_member, name: "_sbuf", scope: !45, file: !29, line: 162, baseType: !49, size: 64, offset: 64)
+!49 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !28, size: 64)
+!50 = !DIDerivedType(tag: DW_TAG_member, name: "_pos", scope: !45, file: !29, line: 166, baseType: !14, size: 32, offset: 128)
+!51 = !DIDerivedType(tag: DW_TAG_member, name: "_chain", scope: !28, file: !29, line: 266, baseType: !49, size: 64, offset: 832)
+!52 = !DIDerivedType(tag: DW_TAG_member, name: "_fileno", scope: !28, file: !29, line: 268, baseType: !14, size: 32, offset: 896)
+!53 = !DIDerivedType(tag: DW_TAG_member, name: "_flags2", scope: !28, file: !29, line: 272, baseType: !14, size: 32, offset: 928)
+!54 = !DIDerivedType(tag: DW_TAG_member, name: "_old_offset", scope: !28, file: !29, line: 274, baseType: !55, size: 64, offset: 960)
+!55 = !DIDerivedType(tag: DW_TAG_typedef, name: "__off_t", file: !56, line: 131, baseType: !57)
+!56 = !DIFile(filename: "/usr/include/x86_64-linux-gnu/bits/types.h", directory: "/home/klee/dockermount/checksum-repair/samples/csv")
+!57 = !DIBasicType(name: "long int", size: 64, encoding: DW_ATE_signed)
+!58 = !DIDerivedType(tag: DW_TAG_member, name: "_cur_column", scope: !28, file: !29, line: 278, baseType: !59, size: 16, offset: 1024)
+!59 = !DIBasicType(name: "unsigned short", size: 16, encoding: DW_ATE_unsigned)
+!60 = !DIDerivedType(tag: DW_TAG_member, name: "_vtable_offset", scope: !28, file: !29, line: 279, baseType: !61, size: 8, offset: 1040)
+!61 = !DIBasicType(name: "signed char", size: 8, encoding: DW_ATE_signed_char)
+!62 = !DIDerivedType(tag: DW_TAG_member, name: "_shortbuf", scope: !28, file: !29, line: 280, baseType: !63, size: 8, offset: 1048)
+!63 = !DICompositeType(tag: DW_TAG_array_type, baseType: !11, size: 8, elements: !64)
+!64 = !{!65}
+!65 = !DISubrange(count: 1)
+!66 = !DIDerivedType(tag: DW_TAG_member, name: "_lock", scope: !28, file: !29, line: 284, baseType: !67, size: 64, offset: 1088)
+!67 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !68, size: 64)
+!68 = !DIDerivedType(tag: DW_TAG_typedef, name: "_IO_lock_t", file: !29, line: 154, baseType: null)
+!69 = !DIDerivedType(tag: DW_TAG_member, name: "_offset", scope: !28, file: !29, line: 293, baseType: !70, size: 64, offset: 1152)
+!70 = !DIDerivedType(tag: DW_TAG_typedef, name: "__off64_t", file: !56, line: 132, baseType: !57)
+!71 = !DIDerivedType(tag: DW_TAG_member, name: "__pad1", scope: !28, file: !29, line: 302, baseType: !72, size: 64, offset: 1216)
+!72 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: null, size: 64)
+!73 = !DIDerivedType(tag: DW_TAG_member, name: "__pad2", scope: !28, file: !29, line: 303, baseType: !72, size: 64, offset: 1280)
+!74 = !DIDerivedType(tag: DW_TAG_member, name: "__pad3", scope: !28, file: !29, line: 304, baseType: !72, size: 64, offset: 1344)
+!75 = !DIDerivedType(tag: DW_TAG_member, name: "__pad4", scope: !28, file: !29, line: 305, baseType: !72, size: 64, offset: 1408)
+!76 = !DIDerivedType(tag: DW_TAG_member, name: "__pad5", scope: !28, file: !29, line: 306, baseType: !77, size: 64, offset: 1472)
+!77 = !DIDerivedType(tag: DW_TAG_typedef, name: "size_t", file: !78, line: 62, baseType: !79)
+!78 = !DIFile(filename: "/home/klee/toolchains/llvm+clang-401-x86_64-unknown-linux-gnu/bin/../lib/clang/4.0.1/include/stddef.h", directory: "/home/klee/dockermount/checksum-repair/samples/csv")
+!79 = !DIBasicType(name: "long unsigned int", size: 64, encoding: DW_ATE_unsigned)
+!80 = !DIDerivedType(tag: DW_TAG_member, name: "_mode", scope: !28, file: !29, line: 308, baseType: !14, size: 32, offset: 1536)
+!81 = !DIDerivedType(tag: DW_TAG_member, name: "_unused2", scope: !28, file: !29, line: 310, baseType: !82, size: 160, offset: 1568)
+!82 = !DICompositeType(tag: DW_TAG_array_type, baseType: !11, size: 160, elements: !83)
+!83 = !{!84}
+!84 = !DISubrange(count: 20)
+!85 = !DIDerivedType(tag: DW_TAG_member, name: "fromString_", scope: !7, file: !6, line: 22, baseType: !14, size: 32, offset: 320)
+!86 = !DIDerivedType(tag: DW_TAG_member, name: "csvString_", scope: !7, file: !6, line: 23, baseType: !10, size: 64, offset: 384)
+!87 = !DIDerivedType(tag: DW_TAG_member, name: "csvStringIter_", scope: !7, file: !6, line: 24, baseType: !14, size: 32, offset: 448)
+!88 = !{i32 2, !"Dwarf Version", i32 4}
+!89 = !{i32 2, !"Debug Info Version", i32 3}
+!90 = !{!"clang version 4.0.1 (tags/RELEASE_401/final 336792)"}
+!91 = distinct !DISubprogram(name: "CsvParser_new", scope: !1, file: !1, line: 12, type: !92, isLocal: false, isDefinition: true, scopeLine: 12, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!92 = !DISubroutineType(types: !93)
+!93 = !{!4, !94, !94, !14}
+!94 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !95, size: 64)
+!95 = !DIDerivedType(tag: DW_TAG_const_type, baseType: !11)
+!96 = !DILocalVariable(name: "filePath", arg: 1, scope: !91, file: !1, line: 12, type: !94)
+!97 = !DIExpression()
+!98 = !DILocation(line: 12, column: 38, scope: !91)
+!99 = !DILocalVariable(name: "delimiter", arg: 2, scope: !91, file: !1, line: 12, type: !94)
+!100 = !DILocation(line: 12, column: 60, scope: !91)
+!101 = !DILocalVariable(name: "firstLineIsHeader", arg: 3, scope: !91, file: !1, line: 12, type: !14)
+!102 = !DILocation(line: 12, column: 75, scope: !91)
+!103 = !DILocalVariable(name: "csvParser", scope: !91, file: !1, line: 13, type: !4)
+!104 = !DILocation(line: 13, column: 16, scope: !91)
+!105 = !DILocation(line: 13, column: 40, scope: !91)
+!106 = !DILocation(line: 13, column: 28, scope: !91)
+!107 = !DILocation(line: 14, column: 9, scope: !108)
+!108 = distinct !DILexicalBlock(scope: !91, file: !1, line: 14, column: 9)
+!109 = !DILocation(line: 14, column: 18, scope: !108)
+!110 = !DILocation(line: 14, column: 9, scope: !91)
+!111 = !DILocation(line: 15, column: 9, scope: !112)
+!112 = distinct !DILexicalBlock(scope: !108, file: !1, line: 14, column: 27)
+!113 = !DILocation(line: 15, column: 20, scope: !112)
+!114 = !DILocation(line: 15, column: 30, scope: !112)
+!115 = !DILocation(line: 16, column: 5, scope: !112)
+!116 = !DILocalVariable(name: "filePathLen", scope: !117, file: !1, line: 17, type: !14)
+!117 = distinct !DILexicalBlock(scope: !108, file: !1, line: 16, column: 12)
+!118 = !DILocation(line: 17, column: 13, scope: !117)
+!119 = !DILocation(line: 17, column: 34, scope: !117)
+!120 = !DILocation(line: 17, column: 27, scope: !117)
+!121 = !DILocation(line: 18, column: 47, scope: !117)
+!122 = !DILocation(line: 18, column: 59, scope: !117)
+!123 = !DILocation(line: 18, column: 46, scope: !117)
+!124 = !DILocation(line: 18, column: 39, scope: !117)
+!125 = !DILocation(line: 18, column: 9, scope: !117)
+!126 = !DILocation(line: 18, column: 20, scope: !117)
+!127 = !DILocation(line: 18, column: 30, scope: !117)
+!128 = !DILocation(line: 19, column: 16, scope: !117)
+!129 = !DILocation(line: 19, column: 27, scope: !117)
+!130 = !DILocation(line: 19, column: 38, scope: !117)
+!131 = !DILocation(line: 19, column: 9, scope: !117)
+!132 = !DILocation(line: 21, column: 37, scope: !91)
+!133 = !DILocation(line: 21, column: 5, scope: !91)
+!134 = !DILocation(line: 21, column: 16, scope: !91)
+!135 = !DILocation(line: 21, column: 35, scope: !91)
+!136 = !DILocation(line: 22, column: 5, scope: !91)
+!137 = !DILocation(line: 22, column: 16, scope: !91)
+!138 = !DILocation(line: 22, column: 24, scope: !91)
+!139 = !DILocation(line: 23, column: 9, scope: !140)
+!140 = distinct !DILexicalBlock(scope: !91, file: !1, line: 23, column: 9)
+!141 = !DILocation(line: 23, column: 19, scope: !140)
+!142 = !DILocation(line: 23, column: 9, scope: !91)
+!143 = !DILocation(line: 24, column: 9, scope: !144)
+!144 = distinct !DILexicalBlock(scope: !140, file: !1, line: 23, column: 28)
+!145 = !DILocation(line: 24, column: 20, scope: !144)
+!146 = !DILocation(line: 24, column: 31, scope: !144)
+!147 = !DILocation(line: 25, column: 5, scope: !144)
+!148 = !DILocation(line: 25, column: 47, scope: !149)
+!149 = !DILexicalBlockFile(scope: !150, file: !1, discriminator: 1)
+!150 = distinct !DILexicalBlock(scope: !140, file: !1, line: 25, column: 16)
+!151 = !DILocation(line: 25, column: 16, scope: !149)
+!152 = !DILocation(line: 25, column: 16, scope: !153)
+!153 = !DILexicalBlockFile(scope: !140, file: !1, discriminator: 1)
+!154 = !DILocation(line: 26, column: 34, scope: !155)
+!155 = distinct !DILexicalBlock(scope: !150, file: !1, line: 25, column: 59)
+!156 = !DILocation(line: 26, column: 33, scope: !155)
+!157 = !DILocation(line: 26, column: 9, scope: !155)
+!158 = !DILocation(line: 26, column: 20, scope: !155)
+!159 = !DILocation(line: 26, column: 31, scope: !155)
+!160 = !DILocation(line: 27, column: 5, scope: !155)
+!161 = !DILocation(line: 28, column: 9, scope: !162)
+!162 = distinct !DILexicalBlock(scope: !150, file: !1, line: 27, column: 12)
+!163 = !DILocation(line: 28, column: 20, scope: !162)
+!164 = !DILocation(line: 28, column: 31, scope: !162)
+!165 = !DILocation(line: 30, column: 5, scope: !91)
+!166 = !DILocation(line: 30, column: 16, scope: !91)
+!167 = !DILocation(line: 30, column: 24, scope: !91)
+!168 = !DILocation(line: 31, column: 5, scope: !91)
+!169 = !DILocation(line: 31, column: 16, scope: !91)
+!170 = !DILocation(line: 31, column: 29, scope: !91)
+!171 = !DILocation(line: 32, column: 2, scope: !91)
+!172 = !DILocation(line: 32, column: 13, scope: !91)
+!173 = !DILocation(line: 32, column: 25, scope: !91)
+!174 = !DILocation(line: 33, column: 2, scope: !91)
+!175 = !DILocation(line: 33, column: 13, scope: !91)
+!176 = !DILocation(line: 33, column: 24, scope: !91)
+!177 = !DILocation(line: 34, column: 2, scope: !91)
+!178 = !DILocation(line: 34, column: 13, scope: !91)
+!179 = !DILocation(line: 34, column: 28, scope: !91)
+!180 = !DILocation(line: 36, column: 12, scope: !91)
+!181 = !DILocation(line: 36, column: 5, scope: !91)
+!182 = distinct !DISubprogram(name: "_CsvParser_delimiterIsAccepted", scope: !1, file: !1, line: 212, type: !183, isLocal: false, isDefinition: true, scopeLine: 212, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!183 = !DISubroutineType(types: !184)
+!184 = !{!14, !94}
+!185 = !DILocalVariable(name: "delimiter", arg: 1, scope: !182, file: !1, line: 212, type: !94)
+!186 = !DILocation(line: 212, column: 48, scope: !182)
+!187 = !DILocalVariable(name: "actualDelimiter", scope: !182, file: !1, line: 213, type: !11)
+!188 = !DILocation(line: 213, column: 10, scope: !182)
+!189 = !DILocation(line: 213, column: 29, scope: !182)
+!190 = !DILocation(line: 213, column: 28, scope: !182)
+!191 = !DILocation(line: 214, column: 9, scope: !192)
+!192 = distinct !DILexicalBlock(scope: !182, file: !1, line: 214, column: 9)
+!193 = !DILocation(line: 214, column: 25, scope: !192)
+!194 = !DILocation(line: 214, column: 33, scope: !192)
+!195 = !DILocation(line: 214, column: 36, scope: !196)
+!196 = !DILexicalBlockFile(scope: !192, file: !1, discriminator: 1)
+!197 = !DILocation(line: 214, column: 52, scope: !196)
+!198 = !DILocation(line: 214, column: 60, scope: !196)
+!199 = !DILocation(line: 214, column: 63, scope: !200)
+!200 = !DILexicalBlockFile(scope: !192, file: !1, discriminator: 2)
+!201 = !DILocation(line: 214, column: 79, scope: !200)
+!202 = !DILocation(line: 214, column: 87, scope: !200)
+!203 = !DILocation(line: 215, column: 13, scope: !192)
+!204 = !DILocation(line: 215, column: 29, scope: !192)
+!205 = !DILocation(line: 214, column: 9, scope: !206)
+!206 = !DILexicalBlockFile(scope: !182, file: !1, discriminator: 3)
+!207 = !DILocation(line: 216, column: 9, scope: !208)
+!208 = distinct !DILexicalBlock(scope: !192, file: !1, line: 215, column: 38)
+!209 = !DILocation(line: 218, column: 5, scope: !182)
+!210 = !DILocation(line: 219, column: 1, scope: !182)
+!211 = distinct !DISubprogram(name: "CsvParser_new_from_string", scope: !1, file: !1, line: 39, type: !92, isLocal: false, isDefinition: true, scopeLine: 39, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!212 = !DILocalVariable(name: "csvString", arg: 1, scope: !211, file: !1, line: 39, type: !94)
+!213 = !DILocation(line: 39, column: 50, scope: !211)
+!214 = !DILocalVariable(name: "delimiter", arg: 2, scope: !211, file: !1, line: 39, type: !94)
+!215 = !DILocation(line: 39, column: 73, scope: !211)
+!216 = !DILocalVariable(name: "firstLineIsHeader", arg: 3, scope: !211, file: !1, line: 39, type: !14)
+!217 = !DILocation(line: 39, column: 88, scope: !211)
+!218 = !DILocalVariable(name: "csvParser", scope: !211, file: !1, line: 40, type: !4)
+!219 = !DILocation(line: 40, column: 13, scope: !211)
+!220 = !DILocation(line: 40, column: 45, scope: !211)
+!221 = !DILocation(line: 40, column: 56, scope: !211)
+!222 = !DILocation(line: 40, column: 25, scope: !211)
+!223 = !DILocation(line: 41, column: 2, scope: !211)
+!224 = !DILocation(line: 41, column: 13, scope: !211)
+!225 = !DILocation(line: 41, column: 25, scope: !211)
+!226 = !DILocation(line: 42, column: 6, scope: !227)
+!227 = distinct !DILexicalBlock(scope: !211, file: !1, line: 42, column: 6)
+!228 = !DILocation(line: 42, column: 16, scope: !227)
+!229 = !DILocation(line: 42, column: 6, scope: !211)
+!230 = !DILocalVariable(name: "csvStringLen", scope: !231, file: !1, line: 43, type: !14)
+!231 = distinct !DILexicalBlock(scope: !227, file: !1, line: 42, column: 25)
+!232 = !DILocation(line: 43, column: 7, scope: !231)
+!233 = !DILocation(line: 43, column: 29, scope: !231)
+!234 = !DILocation(line: 43, column: 22, scope: !231)
+!235 = !DILocation(line: 44, column: 41, scope: !231)
+!236 = !DILocation(line: 44, column: 54, scope: !231)
+!237 = !DILocation(line: 44, column: 34, scope: !231)
+!238 = !DILocation(line: 44, column: 3, scope: !231)
+!239 = !DILocation(line: 44, column: 14, scope: !231)
+!240 = !DILocation(line: 44, column: 25, scope: !231)
+!241 = !DILocation(line: 45, column: 10, scope: !231)
+!242 = !DILocation(line: 45, column: 21, scope: !231)
+!243 = !DILocation(line: 45, column: 33, scope: !231)
+!244 = !DILocation(line: 45, column: 3, scope: !231)
+!245 = !DILocation(line: 46, column: 2, scope: !231)
+!246 = !DILocation(line: 47, column: 9, scope: !211)
+!247 = !DILocation(line: 47, column: 2, scope: !211)
+!248 = distinct !DISubprogram(name: "CsvParser_destroy", scope: !1, file: !1, line: 50, type: !249, isLocal: false, isDefinition: true, scopeLine: 50, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!249 = !DISubroutineType(types: !250)
+!250 = !{null, !4}
+!251 = !DILocalVariable(name: "csvParser", arg: 1, scope: !248, file: !1, line: 50, type: !4)
+!252 = !DILocation(line: 50, column: 35, scope: !248)
+!253 = !DILocation(line: 51, column: 9, scope: !254)
+!254 = distinct !DILexicalBlock(scope: !248, file: !1, line: 51, column: 9)
+!255 = !DILocation(line: 51, column: 19, scope: !254)
+!256 = !DILocation(line: 51, column: 9, scope: !248)
+!257 = !DILocation(line: 52, column: 9, scope: !258)
+!258 = distinct !DILexicalBlock(scope: !254, file: !1, line: 51, column: 28)
+!259 = !DILocation(line: 54, column: 9, scope: !260)
+!260 = distinct !DILexicalBlock(scope: !248, file: !1, line: 54, column: 9)
+!261 = !DILocation(line: 54, column: 20, scope: !260)
+!262 = !DILocation(line: 54, column: 30, scope: !260)
+!263 = !DILocation(line: 54, column: 9, scope: !248)
+!264 = !DILocation(line: 55, column: 14, scope: !265)
+!265 = distinct !DILexicalBlock(scope: !260, file: !1, line: 54, column: 39)
+!266 = !DILocation(line: 55, column: 25, scope: !265)
+!267 = !DILocation(line: 55, column: 9, scope: !265)
+!268 = !DILocation(line: 56, column: 5, scope: !265)
+!269 = !DILocation(line: 57, column: 9, scope: !270)
+!270 = distinct !DILexicalBlock(scope: !248, file: !1, line: 57, column: 9)
+!271 = !DILocation(line: 57, column: 20, scope: !270)
+!272 = !DILocation(line: 57, column: 28, scope: !270)
+!273 = !DILocation(line: 57, column: 9, scope: !248)
+!274 = !DILocation(line: 58, column: 14, scope: !275)
+!275 = distinct !DILexicalBlock(scope: !270, file: !1, line: 57, column: 37)
+!276 = !DILocation(line: 58, column: 25, scope: !275)
+!277 = !DILocation(line: 58, column: 9, scope: !275)
+!278 = !DILocation(line: 59, column: 5, scope: !275)
+!279 = !DILocation(line: 60, column: 9, scope: !280)
+!280 = distinct !DILexicalBlock(scope: !248, file: !1, line: 60, column: 9)
+!281 = !DILocation(line: 60, column: 20, scope: !280)
+!282 = !DILocation(line: 60, column: 33, scope: !280)
+!283 = !DILocation(line: 60, column: 9, scope: !248)
+!284 = !DILocation(line: 61, column: 16, scope: !285)
+!285 = distinct !DILexicalBlock(scope: !280, file: !1, line: 60, column: 42)
+!286 = !DILocation(line: 61, column: 27, scope: !285)
+!287 = !DILocation(line: 61, column: 9, scope: !285)
+!288 = !DILocation(line: 62, column: 5, scope: !285)
+!289 = !DILocation(line: 63, column: 9, scope: !290)
+!290 = distinct !DILexicalBlock(scope: !248, file: !1, line: 63, column: 9)
+!291 = !DILocation(line: 63, column: 20, scope: !290)
+!292 = !DILocation(line: 63, column: 28, scope: !290)
+!293 = !DILocation(line: 63, column: 9, scope: !248)
+!294 = !DILocation(line: 64, column: 31, scope: !295)
+!295 = distinct !DILexicalBlock(scope: !290, file: !1, line: 63, column: 37)
+!296 = !DILocation(line: 64, column: 42, scope: !295)
+!297 = !DILocation(line: 64, column: 9, scope: !295)
+!298 = !DILocation(line: 65, column: 5, scope: !295)
+!299 = !DILocation(line: 66, column: 6, scope: !300)
+!300 = distinct !DILexicalBlock(scope: !248, file: !1, line: 66, column: 6)
+!301 = !DILocation(line: 66, column: 17, scope: !300)
+!302 = !DILocation(line: 66, column: 28, scope: !300)
+!303 = !DILocation(line: 66, column: 6, scope: !248)
+!304 = !DILocation(line: 67, column: 8, scope: !305)
+!305 = distinct !DILexicalBlock(scope: !300, file: !1, line: 66, column: 37)
+!306 = !DILocation(line: 67, column: 19, scope: !305)
+!307 = !DILocation(line: 67, column: 3, scope: !305)
+!308 = !DILocation(line: 68, column: 2, scope: !305)
+!309 = !DILocation(line: 69, column: 10, scope: !248)
+!310 = !DILocation(line: 69, column: 5, scope: !248)
+!311 = !DILocation(line: 70, column: 1, scope: !248)
+!312 = !DILocation(line: 70, column: 1, scope: !313)
+!313 = !DILexicalBlockFile(scope: !248, file: !1, discriminator: 1)
+!314 = distinct !DISubprogram(name: "CsvParser_destroy_row", scope: !1, file: !1, line: 72, type: !315, isLocal: false, isDefinition: true, scopeLine: 72, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!315 = !DISubroutineType(types: !316)
+!316 = !{null, !17}
+!317 = !DILocalVariable(name: "csvRow", arg: 1, scope: !314, file: !1, line: 72, type: !17)
+!318 = !DILocation(line: 72, column: 36, scope: !314)
+!319 = !DILocalVariable(name: "i", scope: !314, file: !1, line: 73, type: !14)
+!320 = !DILocation(line: 73, column: 9, scope: !314)
+!321 = !DILocation(line: 74, column: 12, scope: !322)
+!322 = distinct !DILexicalBlock(scope: !314, file: !1, line: 74, column: 5)
+!323 = !DILocation(line: 74, column: 10, scope: !322)
+!324 = !DILocation(line: 74, column: 18, scope: !325)
+!325 = !DILexicalBlockFile(scope: !326, file: !1, discriminator: 1)
+!326 = distinct !DILexicalBlock(scope: !322, file: !1, line: 74, column: 5)
+!327 = !DILocation(line: 74, column: 22, scope: !325)
+!328 = !DILocation(line: 74, column: 30, scope: !325)
+!329 = !DILocation(line: 74, column: 20, scope: !325)
+!330 = !DILocation(line: 74, column: 5, scope: !331)
+!331 = !DILexicalBlockFile(scope: !322, file: !1, discriminator: 1)
+!332 = !DILocation(line: 75, column: 14, scope: !333)
+!333 = distinct !DILexicalBlock(scope: !326, file: !1, line: 74, column: 50)
+!334 = !DILocation(line: 75, column: 22, scope: !333)
+!335 = !DILocation(line: 75, column: 30, scope: !333)
+!336 = !DILocation(line: 75, column: 9, scope: !333)
+!337 = !DILocation(line: 76, column: 5, scope: !333)
+!338 = !DILocation(line: 74, column: 46, scope: !339)
+!339 = !DILexicalBlockFile(scope: !326, file: !1, discriminator: 2)
+!340 = !DILocation(line: 74, column: 5, scope: !339)
+!341 = distinct !{!341, !342, !343}
+!342 = !DILocation(line: 74, column: 5, scope: !322)
+!343 = !DILocation(line: 76, column: 5, scope: !322)
+!344 = !DILocation(line: 77, column: 10, scope: !314)
+!345 = !DILocation(line: 77, column: 5, scope: !314)
+!346 = !DILocation(line: 78, column: 1, scope: !314)
+!347 = distinct !DISubprogram(name: "CsvParser_getHeader", scope: !1, file: !1, line: 80, type: !348, isLocal: false, isDefinition: true, scopeLine: 80, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!348 = !DISubroutineType(types: !349)
+!349 = !{!17, !4}
+!350 = !DILocalVariable(name: "csvParser", arg: 1, scope: !347, file: !1, line: 80, type: !4)
+!351 = !DILocation(line: 80, column: 40, scope: !347)
+!352 = !DILocation(line: 81, column: 11, scope: !353)
+!353 = distinct !DILexicalBlock(scope: !347, file: !1, line: 81, column: 9)
+!354 = !DILocation(line: 81, column: 22, scope: !353)
+!355 = !DILocation(line: 81, column: 9, scope: !347)
+!356 = !DILocation(line: 82, column: 36, scope: !357)
+!357 = distinct !DILexicalBlock(scope: !353, file: !1, line: 81, column: 42)
+!358 = !DILocation(line: 82, column: 9, scope: !357)
+!359 = !DILocation(line: 83, column: 9, scope: !357)
+!360 = !DILocation(line: 85, column: 9, scope: !361)
+!361 = distinct !DILexicalBlock(scope: !347, file: !1, line: 85, column: 9)
+!362 = !DILocation(line: 85, column: 20, scope: !361)
+!363 = !DILocation(line: 85, column: 28, scope: !361)
+!364 = !DILocation(line: 85, column: 9, scope: !347)
+!365 = !DILocation(line: 86, column: 48, scope: !366)
+!366 = distinct !DILexicalBlock(scope: !361, file: !1, line: 85, column: 37)
+!367 = !DILocation(line: 86, column: 30, scope: !366)
+!368 = !DILocation(line: 86, column: 9, scope: !366)
+!369 = !DILocation(line: 86, column: 20, scope: !366)
+!370 = !DILocation(line: 86, column: 28, scope: !366)
+!371 = !DILocation(line: 87, column: 5, scope: !366)
+!372 = !DILocation(line: 88, column: 12, scope: !347)
+!373 = !DILocation(line: 88, column: 23, scope: !347)
+!374 = !DILocation(line: 88, column: 5, scope: !347)
+!375 = !DILocation(line: 89, column: 1, scope: !347)
+!376 = distinct !DISubprogram(name: "_CsvParser_setErrorMessage", scope: !1, file: !1, line: 221, type: !377, isLocal: false, isDefinition: true, scopeLine: 221, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!377 = !DISubroutineType(types: !378)
+!378 = !{null, !4, !94}
+!379 = !DILocalVariable(name: "csvParser", arg: 1, scope: !376, file: !1, line: 221, type: !4)
+!380 = !DILocation(line: 221, column: 44, scope: !376)
+!381 = !DILocalVariable(name: "errorMessage", arg: 2, scope: !376, file: !1, line: 221, type: !94)
+!382 = !DILocation(line: 221, column: 67, scope: !376)
+!383 = !DILocation(line: 222, column: 9, scope: !384)
+!384 = distinct !DILexicalBlock(scope: !376, file: !1, line: 222, column: 9)
+!385 = !DILocation(line: 222, column: 20, scope: !384)
+!386 = !DILocation(line: 222, column: 28, scope: !384)
+!387 = !DILocation(line: 222, column: 9, scope: !376)
+!388 = !DILocation(line: 223, column: 14, scope: !389)
+!389 = distinct !DILexicalBlock(scope: !384, file: !1, line: 222, column: 37)
+!390 = !DILocation(line: 223, column: 25, scope: !389)
+!391 = !DILocation(line: 223, column: 9, scope: !389)
+!392 = !DILocation(line: 224, column: 5, scope: !389)
+!393 = !DILocalVariable(name: "errMsgLen", scope: !376, file: !1, line: 225, type: !14)
+!394 = !DILocation(line: 225, column: 9, scope: !376)
+!395 = !DILocation(line: 225, column: 28, scope: !376)
+!396 = !DILocation(line: 225, column: 21, scope: !376)
+!397 = !DILocation(line: 226, column: 40, scope: !376)
+!398 = !DILocation(line: 226, column: 50, scope: !376)
+!399 = !DILocation(line: 226, column: 33, scope: !376)
+!400 = !DILocation(line: 226, column: 5, scope: !376)
+!401 = !DILocation(line: 226, column: 16, scope: !376)
+!402 = !DILocation(line: 226, column: 24, scope: !376)
+!403 = !DILocation(line: 227, column: 12, scope: !376)
+!404 = !DILocation(line: 227, column: 23, scope: !376)
+!405 = !DILocation(line: 227, column: 32, scope: !376)
+!406 = !DILocation(line: 227, column: 5, scope: !376)
+!407 = !DILocation(line: 228, column: 1, scope: !376)
+!408 = distinct !DISubprogram(name: "_CsvParser_getRow", scope: !1, file: !1, line: 106, type: !348, isLocal: false, isDefinition: true, scopeLine: 106, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!409 = !DILocalVariable(name: "csvParser", arg: 1, scope: !408, file: !1, line: 106, type: !4)
+!410 = !DILocation(line: 106, column: 38, scope: !408)
+!411 = !DILocalVariable(name: "numRowRealloc", scope: !408, file: !1, line: 107, type: !14)
+!412 = !DILocation(line: 107, column: 9, scope: !408)
+!413 = !DILocalVariable(name: "acceptedFields", scope: !408, file: !1, line: 108, type: !14)
+!414 = !DILocation(line: 108, column: 9, scope: !408)
+!415 = !DILocalVariable(name: "acceptedCharsInField", scope: !408, file: !1, line: 109, type: !14)
+!416 = !DILocation(line: 109, column: 9, scope: !408)
+!417 = !DILocation(line: 110, column: 9, scope: !418)
+!418 = distinct !DILexicalBlock(scope: !408, file: !1, line: 110, column: 9)
+!419 = !DILocation(line: 110, column: 20, scope: !418)
+!420 = !DILocation(line: 110, column: 30, scope: !418)
+!421 = !DILocation(line: 110, column: 38, scope: !418)
+!422 = !DILocation(line: 110, column: 44, scope: !423)
+!423 = !DILexicalBlockFile(scope: !418, file: !1, discriminator: 1)
+!424 = !DILocation(line: 110, column: 55, scope: !423)
+!425 = !DILocation(line: 110, column: 9, scope: !426)
+!426 = !DILexicalBlockFile(scope: !408, file: !1, discriminator: 1)
+!427 = !DILocation(line: 111, column: 36, scope: !428)
+!428 = distinct !DILexicalBlock(scope: !418, file: !1, line: 110, column: 69)
+!429 = !DILocation(line: 111, column: 9, scope: !428)
+!430 = !DILocation(line: 112, column: 9, scope: !428)
+!431 = !DILocation(line: 114, column: 9, scope: !432)
+!432 = distinct !DILexicalBlock(scope: !408, file: !1, line: 114, column: 9)
+!433 = !DILocation(line: 114, column: 20, scope: !432)
+!434 = !DILocation(line: 114, column: 31, scope: !432)
+!435 = !DILocation(line: 114, column: 39, scope: !432)
+!436 = !DILocation(line: 114, column: 42, scope: !437)
+!437 = !DILexicalBlockFile(scope: !432, file: !1, discriminator: 1)
+!438 = !DILocation(line: 114, column: 53, scope: !437)
+!439 = !DILocation(line: 114, column: 9, scope: !426)
+!440 = !DILocation(line: 115, column: 36, scope: !441)
+!441 = distinct !DILexicalBlock(scope: !432, file: !1, line: 114, column: 66)
+!442 = !DILocation(line: 115, column: 9, scope: !441)
+!443 = !DILocation(line: 116, column: 9, scope: !441)
+!444 = !DILocation(line: 118, column: 9, scope: !445)
+!445 = distinct !DILexicalBlock(scope: !408, file: !1, line: 118, column: 9)
+!446 = !DILocation(line: 118, column: 20, scope: !445)
+!447 = !DILocation(line: 118, column: 31, scope: !445)
+!448 = !DILocation(line: 118, column: 9, scope: !408)
+!449 = !DILocation(line: 119, column: 36, scope: !450)
+!450 = distinct !DILexicalBlock(scope: !445, file: !1, line: 118, column: 40)
+!451 = !DILocation(line: 119, column: 9, scope: !450)
+!452 = !DILocation(line: 120, column: 9, scope: !450)
+!453 = !DILocation(line: 122, column: 11, scope: !454)
+!454 = distinct !DILexicalBlock(scope: !408, file: !1, line: 122, column: 9)
+!455 = !DILocation(line: 122, column: 22, scope: !454)
+!456 = !DILocation(line: 122, column: 9, scope: !408)
+!457 = !DILocation(line: 123, column: 13, scope: !458)
+!458 = distinct !DILexicalBlock(scope: !459, file: !1, line: 123, column: 13)
+!459 = distinct !DILexicalBlock(scope: !454, file: !1, line: 122, column: 35)
+!460 = !DILocation(line: 123, column: 24, scope: !458)
+!461 = !DILocation(line: 123, column: 37, scope: !458)
+!462 = !DILocation(line: 123, column: 13, scope: !459)
+!463 = !DILocation(line: 124, column: 45, scope: !464)
+!464 = distinct !DILexicalBlock(scope: !458, file: !1, line: 123, column: 46)
+!465 = !DILocation(line: 124, column: 56, scope: !464)
+!466 = !DILocation(line: 124, column: 39, scope: !464)
+!467 = !DILocation(line: 124, column: 13, scope: !464)
+!468 = !DILocation(line: 124, column: 24, scope: !464)
+!469 = !DILocation(line: 124, column: 37, scope: !464)
+!470 = !DILocation(line: 125, column: 17, scope: !471)
+!471 = distinct !DILexicalBlock(scope: !464, file: !1, line: 125, column: 17)
+!472 = !DILocation(line: 125, column: 28, scope: !471)
+!473 = !DILocation(line: 125, column: 41, scope: !471)
+!474 = !DILocation(line: 125, column: 17, scope: !464)
+!475 = !DILocalVariable(name: "errorNum", scope: !476, file: !1, line: 126, type: !14)
+!476 = distinct !DILexicalBlock(scope: !471, file: !1, line: 125, column: 50)
+!477 = !DILocation(line: 126, column: 21, scope: !476)
+!478 = !DILocation(line: 126, column: 32, scope: !476)
+!479 = !DILocalVariable(name: "errStr", scope: !476, file: !1, line: 127, type: !94)
+!480 = !DILocation(line: 127, column: 29, scope: !476)
+!481 = !DILocation(line: 127, column: 47, scope: !476)
+!482 = !DILocation(line: 127, column: 38, scope: !476)
+!483 = !DILocalVariable(name: "errMsg", scope: !476, file: !1, line: 128, type: !10)
+!484 = !DILocation(line: 128, column: 23, scope: !476)
+!485 = !DILocation(line: 128, column: 60, scope: !476)
+!486 = !DILocation(line: 128, column: 53, scope: !476)
+!487 = !DILocation(line: 128, column: 51, scope: !476)
+!488 = !DILocation(line: 128, column: 39, scope: !489)
+!489 = !DILexicalBlockFile(scope: !476, file: !1, discriminator: 1)
+!490 = !DILocation(line: 129, column: 24, scope: !476)
+!491 = !DILocation(line: 129, column: 17, scope: !476)
+!492 = !DILocation(line: 130, column: 25, scope: !476)
+!493 = !DILocation(line: 130, column: 80, scope: !476)
+!494 = !DILocation(line: 130, column: 91, scope: !476)
+!495 = !DILocation(line: 130, column: 102, scope: !476)
+!496 = !DILocation(line: 130, column: 17, scope: !476)
+!497 = !DILocation(line: 131, column: 44, scope: !476)
+!498 = !DILocation(line: 131, column: 55, scope: !476)
+!499 = !DILocation(line: 131, column: 17, scope: !476)
+!500 = !DILocation(line: 132, column: 22, scope: !476)
+!501 = !DILocation(line: 132, column: 17, scope: !476)
+!502 = !DILocation(line: 133, column: 17, scope: !476)
+!503 = !DILocation(line: 135, column: 9, scope: !464)
+!504 = !DILocation(line: 136, column: 5, scope: !459)
+!505 = !DILocalVariable(name: "csvRow", scope: !408, file: !1, line: 137, type: !17)
+!506 = !DILocation(line: 137, column: 13, scope: !408)
+!507 = !DILocation(line: 137, column: 31, scope: !408)
+!508 = !DILocation(line: 137, column: 22, scope: !408)
+!509 = !DILocation(line: 138, column: 38, scope: !408)
+!510 = !DILocation(line: 138, column: 53, scope: !408)
+!511 = !DILocation(line: 138, column: 31, scope: !408)
+!512 = !DILocation(line: 138, column: 23, scope: !408)
+!513 = !DILocation(line: 138, column: 5, scope: !408)
+!514 = !DILocation(line: 138, column: 13, scope: !408)
+!515 = !DILocation(line: 138, column: 21, scope: !408)
+!516 = !DILocation(line: 139, column: 5, scope: !408)
+!517 = !DILocation(line: 139, column: 13, scope: !408)
+!518 = !DILocation(line: 139, column: 26, scope: !408)
+!519 = !DILocalVariable(name: "fieldIter", scope: !408, file: !1, line: 140, type: !14)
+!520 = !DILocation(line: 140, column: 9, scope: !408)
+!521 = !DILocalVariable(name: "currField", scope: !408, file: !1, line: 141, type: !10)
+!522 = !DILocation(line: 141, column: 11, scope: !408)
+!523 = !DILocation(line: 141, column: 37, scope: !408)
+!524 = !DILocation(line: 141, column: 30, scope: !408)
+!525 = !DILocalVariable(name: "inside_complex_field", scope: !408, file: !1, line: 142, type: !14)
+!526 = !DILocation(line: 142, column: 9, scope: !408)
+!527 = !DILocalVariable(name: "currFieldCharIter", scope: !408, file: !1, line: 143, type: !14)
+!528 = !DILocation(line: 143, column: 9, scope: !408)
+!529 = !DILocalVariable(name: "seriesOfQuotesLength", scope: !408, file: !1, line: 144, type: !14)
+!530 = !DILocation(line: 144, column: 9, scope: !408)
+!531 = !DILocalVariable(name: "lastCharIsQuote", scope: !408, file: !1, line: 145, type: !14)
+!532 = !DILocation(line: 145, column: 9, scope: !408)
+!533 = !DILocalVariable(name: "isEndOfFile", scope: !408, file: !1, line: 146, type: !14)
+!534 = !DILocation(line: 146, column: 9, scope: !408)
+!535 = !DILocation(line: 147, column: 5, scope: !408)
+!536 = !DILocalVariable(name: "currChar", scope: !537, file: !1, line: 148, type: !11)
+!537 = distinct !DILexicalBlock(scope: !408, file: !1, line: 147, column: 15)
+!538 = !DILocation(line: 148, column: 14, scope: !537)
+!539 = !DILocation(line: 148, column: 26, scope: !537)
+!540 = !DILocation(line: 148, column: 37, scope: !537)
+!541 = !DILocation(line: 148, column: 25, scope: !537)
+!542 = !DILocation(line: 148, column: 52, scope: !543)
+!543 = !DILexicalBlockFile(scope: !537, file: !1, discriminator: 1)
+!544 = !DILocation(line: 148, column: 63, scope: !543)
+!545 = !DILocation(line: 148, column: 74, scope: !543)
+!546 = !DILocation(line: 148, column: 85, scope: !543)
+!547 = !DILocation(line: 148, column: 25, scope: !543)
+!548 = !DILocation(line: 148, column: 109, scope: !549)
+!549 = !DILexicalBlockFile(scope: !537, file: !1, discriminator: 2)
+!550 = !DILocation(line: 148, column: 120, scope: !549)
+!551 = !DILocation(line: 148, column: 103, scope: !549)
+!552 = !DILocation(line: 148, column: 25, scope: !549)
+!553 = !DILocation(line: 148, column: 25, scope: !554)
+!554 = !DILexicalBlockFile(scope: !537, file: !1, discriminator: 3)
+!555 = !DILocation(line: 148, column: 14, scope: !554)
+!556 = !DILocation(line: 149, column: 9, scope: !537)
+!557 = !DILocation(line: 149, column: 20, scope: !537)
+!558 = !DILocation(line: 149, column: 34, scope: !537)
+!559 = !DILocalVariable(name: "endOfFileIndicator", scope: !537, file: !1, line: 150, type: !14)
+!560 = !DILocation(line: 150, column: 13, scope: !537)
+!561 = !DILocation(line: 151, column: 13, scope: !562)
+!562 = distinct !DILexicalBlock(scope: !537, file: !1, line: 151, column: 13)
+!563 = !DILocation(line: 151, column: 24, scope: !562)
+!564 = !DILocation(line: 151, column: 13, scope: !537)
+!565 = !DILocation(line: 152, column: 35, scope: !566)
+!566 = distinct !DILexicalBlock(scope: !562, file: !1, line: 151, column: 37)
+!567 = !DILocation(line: 152, column: 44, scope: !566)
+!568 = !DILocation(line: 152, column: 32, scope: !566)
+!569 = !DILocation(line: 153, column: 9, scope: !566)
+!570 = !DILocation(line: 154, column: 39, scope: !571)
+!571 = distinct !DILexicalBlock(scope: !562, file: !1, line: 153, column: 16)
+!572 = !DILocation(line: 154, column: 50, scope: !571)
+!573 = !DILocation(line: 154, column: 34, scope: !571)
+!574 = !DILocation(line: 154, column: 32, scope: !571)
+!575 = !DILocation(line: 156, column: 13, scope: !576)
+!576 = distinct !DILexicalBlock(scope: !537, file: !1, line: 156, column: 13)
+!577 = !DILocation(line: 156, column: 13, scope: !537)
+!578 = !DILocation(line: 157, column: 17, scope: !579)
+!579 = distinct !DILexicalBlock(scope: !580, file: !1, line: 157, column: 17)
+!580 = distinct !DILexicalBlock(scope: !576, file: !1, line: 156, column: 33)
+!581 = !DILocation(line: 157, column: 35, scope: !579)
+!582 = !DILocation(line: 157, column: 40, scope: !579)
+!583 = !DILocation(line: 157, column: 43, scope: !584)
+!584 = !DILexicalBlockFile(scope: !579, file: !1, discriminator: 1)
+!585 = !DILocation(line: 157, column: 53, scope: !584)
+!586 = !DILocation(line: 157, column: 17, scope: !587)
+!587 = !DILexicalBlockFile(scope: !580, file: !1, discriminator: 1)
+!588 = !DILocation(line: 158, column: 44, scope: !589)
+!589 = distinct !DILexicalBlock(scope: !579, file: !1, line: 157, column: 59)
+!590 = !DILocation(line: 158, column: 17, scope: !589)
+!591 = !DILocation(line: 159, column: 17, scope: !589)
+!592 = !DILocation(line: 161, column: 22, scope: !580)
+!593 = !DILocation(line: 162, column: 25, scope: !580)
+!594 = !DILocation(line: 163, column: 9, scope: !580)
+!595 = !DILocation(line: 164, column: 13, scope: !596)
+!596 = distinct !DILexicalBlock(scope: !537, file: !1, line: 164, column: 13)
+!597 = !DILocation(line: 164, column: 22, scope: !596)
+!598 = !DILocation(line: 164, column: 13, scope: !537)
+!599 = !DILocation(line: 165, column: 13, scope: !600)
+!600 = distinct !DILexicalBlock(scope: !596, file: !1, line: 164, column: 31)
+!601 = distinct !{!601, !535, !602}
+!602 = !DILocation(line: 209, column: 5, scope: !408)
+!603 = !DILocation(line: 167, column: 13, scope: !604)
+!604 = distinct !DILexicalBlock(scope: !537, file: !1, line: 167, column: 13)
+!605 = !DILocation(line: 167, column: 31, scope: !604)
+!606 = !DILocation(line: 167, column: 37, scope: !604)
+!607 = !DILocation(line: 167, column: 42, scope: !608)
+!608 = !DILexicalBlockFile(scope: !604, file: !1, discriminator: 1)
+!609 = !DILocation(line: 167, column: 13, scope: !543)
+!610 = !DILocation(line: 168, column: 17, scope: !611)
+!611 = distinct !DILexicalBlock(scope: !612, file: !1, line: 168, column: 17)
+!612 = distinct !DILexicalBlock(scope: !604, file: !1, line: 167, column: 59)
+!613 = !DILocation(line: 168, column: 26, scope: !611)
+!614 = !DILocation(line: 168, column: 17, scope: !612)
+!615 = !DILocation(line: 169, column: 38, scope: !616)
+!616 = distinct !DILexicalBlock(scope: !611, file: !1, line: 168, column: 35)
+!617 = !DILocation(line: 170, column: 33, scope: !616)
+!618 = !DILocation(line: 171, column: 17, scope: !616)
+!619 = !DILocation(line: 173, column: 9, scope: !612)
+!620 = !DILocation(line: 173, column: 20, scope: !621)
+!621 = !DILexicalBlockFile(scope: !622, file: !1, discriminator: 1)
+!622 = distinct !DILexicalBlock(scope: !604, file: !1, line: 173, column: 20)
+!623 = !DILocation(line: 173, column: 29, scope: !621)
+!624 = !DILocation(line: 173, column: 20, scope: !608)
+!625 = !DILocation(line: 174, column: 33, scope: !626)
+!626 = distinct !DILexicalBlock(scope: !622, file: !1, line: 173, column: 38)
+!627 = !DILocation(line: 175, column: 37, scope: !626)
+!628 = !DILocation(line: 175, column: 58, scope: !626)
+!629 = !DILocation(line: 175, column: 62, scope: !626)
+!630 = !DILocation(line: 175, column: 34, scope: !626)
+!631 = !DILocation(line: 176, column: 17, scope: !632)
+!632 = distinct !DILexicalBlock(scope: !626, file: !1, line: 176, column: 17)
+!633 = !DILocation(line: 176, column: 17, scope: !626)
+!634 = !DILocation(line: 177, column: 34, scope: !635)
+!635 = distinct !DILexicalBlock(scope: !632, file: !1, line: 176, column: 39)
+!636 = !DILocation(line: 178, column: 13, scope: !635)
+!637 = !DILocation(line: 179, column: 9, scope: !626)
+!638 = !DILocation(line: 180, column: 34, scope: !639)
+!639 = distinct !DILexicalBlock(scope: !622, file: !1, line: 179, column: 16)
+!640 = !DILocation(line: 182, column: 13, scope: !641)
+!641 = distinct !DILexicalBlock(scope: !537, file: !1, line: 182, column: 13)
+!642 = !DILocation(line: 182, column: 25, scope: !641)
+!643 = !DILocation(line: 182, column: 30, scope: !644)
+!644 = !DILexicalBlockFile(scope: !641, file: !1, discriminator: 1)
+!645 = !DILocation(line: 182, column: 42, scope: !644)
+!646 = !DILocation(line: 182, column: 53, scope: !644)
+!647 = !DILocation(line: 182, column: 39, scope: !644)
+!648 = !DILocation(line: 182, column: 64, scope: !644)
+!649 = !DILocation(line: 182, column: 67, scope: !650)
+!650 = !DILexicalBlockFile(scope: !641, file: !1, discriminator: 2)
+!651 = !DILocation(line: 182, column: 76, scope: !650)
+!652 = !DILocation(line: 182, column: 85, scope: !650)
+!653 = !DILocation(line: 182, column: 90, scope: !654)
+!654 = !DILexicalBlockFile(scope: !641, file: !1, discriminator: 3)
+!655 = !DILocation(line: 182, column: 13, scope: !554)
+!656 = !DILocation(line: 183, column: 13, scope: !657)
+!657 = distinct !DILexicalBlock(scope: !641, file: !1, line: 182, column: 113)
+!658 = !DILocation(line: 183, column: 23, scope: !657)
+!659 = !DILocation(line: 183, column: 41, scope: !660)
+!660 = !DILexicalBlockFile(scope: !657, file: !1, discriminator: 1)
+!661 = !DILocation(line: 183, column: 59, scope: !660)
+!662 = !DILocation(line: 183, column: 23, scope: !660)
+!663 = !DILocation(line: 183, column: 65, scope: !664)
+!664 = !DILexicalBlockFile(scope: !657, file: !1, discriminator: 2)
+!665 = !DILocation(line: 183, column: 23, scope: !664)
+!666 = !DILocation(line: 183, column: 23, scope: !667)
+!667 = !DILexicalBlockFile(scope: !657, file: !1, discriminator: 3)
+!668 = !DILocation(line: 183, column: 13, scope: !667)
+!669 = !DILocation(line: 183, column: 84, scope: !667)
+!670 = !DILocation(line: 184, column: 56, scope: !657)
+!671 = !DILocation(line: 184, column: 74, scope: !657)
+!672 = !DILocation(line: 184, column: 49, scope: !657)
+!673 = !DILocation(line: 184, column: 13, scope: !657)
+!674 = !DILocation(line: 184, column: 21, scope: !657)
+!675 = !DILocation(line: 184, column: 29, scope: !657)
+!676 = !DILocation(line: 184, column: 40, scope: !657)
+!677 = !DILocation(line: 185, column: 20, scope: !657)
+!678 = !DILocation(line: 185, column: 28, scope: !657)
+!679 = !DILocation(line: 185, column: 36, scope: !657)
+!680 = !DILocation(line: 185, column: 48, scope: !657)
+!681 = !DILocation(line: 185, column: 13, scope: !657)
+!682 = !DILocation(line: 186, column: 18, scope: !657)
+!683 = !DILocation(line: 186, column: 13, scope: !657)
+!684 = !DILocation(line: 187, column: 13, scope: !657)
+!685 = !DILocation(line: 187, column: 21, scope: !657)
+!686 = !DILocation(line: 187, column: 33, scope: !657)
+!687 = !DILocation(line: 188, column: 17, scope: !688)
+!688 = distinct !DILexicalBlock(scope: !657, file: !1, line: 188, column: 17)
+!689 = !DILocation(line: 188, column: 26, scope: !688)
+!690 = !DILocation(line: 188, column: 17, scope: !657)
+!691 = !DILocation(line: 189, column: 24, scope: !692)
+!692 = distinct !DILexicalBlock(scope: !688, file: !1, line: 188, column: 35)
+!693 = !DILocation(line: 189, column: 17, scope: !692)
+!694 = !DILocation(line: 191, column: 17, scope: !695)
+!695 = distinct !DILexicalBlock(scope: !657, file: !1, line: 191, column: 17)
+!696 = !DILocation(line: 191, column: 25, scope: !695)
+!697 = !DILocation(line: 191, column: 38, scope: !695)
+!698 = !DILocation(line: 191, column: 43, scope: !695)
+!699 = !DILocation(line: 191, column: 46, scope: !700)
+!700 = !DILexicalBlockFile(scope: !695, file: !1, discriminator: 1)
+!701 = !DILocation(line: 191, column: 54, scope: !700)
+!702 = !DILocation(line: 191, column: 69, scope: !700)
+!703 = !DILocation(line: 191, column: 67, scope: !700)
+!704 = !DILocation(line: 191, column: 84, scope: !700)
+!705 = !DILocation(line: 191, column: 17, scope: !660)
+!706 = !DILocation(line: 192, column: 51, scope: !707)
+!707 = distinct !DILexicalBlock(scope: !695, file: !1, line: 191, column: 90)
+!708 = !DILocation(line: 192, column: 59, scope: !707)
+!709 = !DILocation(line: 192, column: 70, scope: !707)
+!710 = !DILocation(line: 192, column: 84, scope: !707)
+!711 = !DILocation(line: 192, column: 91, scope: !707)
+!712 = !DILocation(line: 192, column: 89, scope: !707)
+!713 = !DILocation(line: 192, column: 68, scope: !707)
+!714 = !DILocation(line: 192, column: 107, scope: !707)
+!715 = !DILocation(line: 192, column: 43, scope: !707)
+!716 = !DILocation(line: 192, column: 35, scope: !707)
+!717 = !DILocation(line: 192, column: 17, scope: !707)
+!718 = !DILocation(line: 192, column: 25, scope: !707)
+!719 = !DILocation(line: 192, column: 33, scope: !707)
+!720 = !DILocation(line: 193, column: 30, scope: !707)
+!721 = !DILocation(line: 194, column: 13, scope: !707)
+!722 = !DILocation(line: 195, column: 34, scope: !657)
+!723 = !DILocation(line: 196, column: 39, scope: !657)
+!724 = !DILocation(line: 196, column: 32, scope: !657)
+!725 = !DILocation(line: 196, column: 23, scope: !657)
+!726 = !DILocation(line: 197, column: 31, scope: !657)
+!727 = !DILocation(line: 198, column: 22, scope: !657)
+!728 = !DILocation(line: 199, column: 34, scope: !657)
+!729 = !DILocation(line: 200, column: 9, scope: !657)
+!730 = !DILocation(line: 201, column: 44, scope: !731)
+!731 = distinct !DILexicalBlock(scope: !641, file: !1, line: 200, column: 16)
+!732 = !DILocation(line: 201, column: 13, scope: !731)
+!733 = !DILocation(line: 201, column: 23, scope: !731)
+!734 = !DILocation(line: 201, column: 42, scope: !731)
+!735 = !DILocation(line: 202, column: 30, scope: !731)
+!736 = !DILocation(line: 203, column: 17, scope: !737)
+!737 = distinct !DILexicalBlock(scope: !731, file: !1, line: 203, column: 17)
+!738 = !DILocation(line: 203, column: 38, scope: !737)
+!739 = !DILocation(line: 203, column: 59, scope: !737)
+!740 = !DILocation(line: 203, column: 35, scope: !737)
+!741 = !DILocation(line: 203, column: 17, scope: !731)
+!742 = !DILocation(line: 204, column: 38, scope: !743)
+!743 = distinct !DILexicalBlock(scope: !737, file: !1, line: 203, column: 64)
+!744 = !DILocation(line: 205, column: 44, scope: !743)
+!745 = !DILocation(line: 205, column: 55, scope: !743)
+!746 = !DILocation(line: 205, column: 36, scope: !743)
+!747 = !DILocation(line: 205, column: 27, scope: !743)
+!748 = !DILocation(line: 206, column: 13, scope: !743)
+!749 = !DILocation(line: 208, column: 28, scope: !537)
+!750 = !DILocation(line: 208, column: 37, scope: !537)
+!751 = !DILocation(line: 208, column: 27, scope: !537)
+!752 = !DILocation(line: 208, column: 25, scope: !537)
+!753 = !DILocation(line: 147, column: 5, scope: !426)
+!754 = !DILocation(line: 210, column: 1, scope: !408)
+!755 = distinct !DISubprogram(name: "CsvParser_getRow", scope: !1, file: !1, line: 91, type: !348, isLocal: false, isDefinition: true, scopeLine: 91, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!756 = !DILocalVariable(name: "csvParser", arg: 1, scope: !755, file: !1, line: 91, type: !4)
+!757 = !DILocation(line: 91, column: 37, scope: !755)
+!758 = !DILocation(line: 92, column: 9, scope: !759)
+!759 = distinct !DILexicalBlock(scope: !755, file: !1, line: 92, column: 9)
+!760 = !DILocation(line: 92, column: 20, scope: !759)
+!761 = !DILocation(line: 92, column: 39, scope: !759)
+!762 = !DILocation(line: 92, column: 42, scope: !763)
+!763 = !DILexicalBlockFile(scope: !759, file: !1, discriminator: 1)
+!764 = !DILocation(line: 92, column: 53, scope: !763)
+!765 = !DILocation(line: 92, column: 61, scope: !763)
+!766 = !DILocation(line: 92, column: 9, scope: !767)
+!767 = !DILexicalBlockFile(scope: !755, file: !1, discriminator: 1)
+!768 = !DILocation(line: 93, column: 48, scope: !769)
+!769 = distinct !DILexicalBlock(scope: !759, file: !1, line: 92, column: 70)
+!770 = !DILocation(line: 93, column: 30, scope: !769)
+!771 = !DILocation(line: 93, column: 9, scope: !769)
+!772 = !DILocation(line: 93, column: 20, scope: !769)
+!773 = !DILocation(line: 93, column: 28, scope: !769)
+!774 = !DILocation(line: 94, column: 5, scope: !769)
+!775 = !DILocation(line: 95, column: 30, scope: !755)
+!776 = !DILocation(line: 95, column: 12, scope: !755)
+!777 = !DILocation(line: 95, column: 5, scope: !755)
+!778 = distinct !DISubprogram(name: "CsvParser_getNumFields", scope: !1, file: !1, line: 98, type: !779, isLocal: false, isDefinition: true, scopeLine: 98, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!779 = !DISubroutineType(types: !780)
+!780 = !{!14, !17}
+!781 = !DILocalVariable(name: "csvRow", arg: 1, scope: !778, file: !1, line: 98, type: !17)
+!782 = !DILocation(line: 98, column: 36, scope: !778)
+!783 = !DILocation(line: 99, column: 12, scope: !778)
+!784 = !DILocation(line: 99, column: 20, scope: !778)
+!785 = !DILocation(line: 99, column: 5, scope: !778)
+!786 = distinct !DISubprogram(name: "CsvParser_getFields", scope: !1, file: !1, line: 102, type: !787, isLocal: false, isDefinition: true, scopeLine: 102, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!787 = !DISubroutineType(types: !788)
+!788 = !{!22, !17}
+!789 = !DILocalVariable(name: "csvRow", arg: 1, scope: !786, file: !1, line: 102, type: !17)
+!790 = !DILocation(line: 102, column: 36, scope: !786)
+!791 = !DILocation(line: 103, column: 12, scope: !786)
+!792 = !DILocation(line: 103, column: 20, scope: !786)
+!793 = !DILocation(line: 103, column: 5, scope: !786)
+!794 = distinct !DISubprogram(name: "CsvParser_getErrorMessage", scope: !1, file: !1, line: 230, type: !795, isLocal: false, isDefinition: true, scopeLine: 230, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!795 = !DISubroutineType(types: !796)
+!796 = !{!94, !4}
+!797 = !DILocalVariable(name: "csvParser", arg: 1, scope: !794, file: !1, line: 230, type: !4)
+!798 = !DILocation(line: 230, column: 50, scope: !794)
+!799 = !DILocation(line: 231, column: 12, scope: !794)
+!800 = !DILocation(line: 231, column: 23, scope: !794)
+!801 = !DILocation(line: 231, column: 5, scope: !794)
+!802 = distinct !DISubprogram(name: "read_input", scope: !1, file: !1, line: 236, type: !803, isLocal: false, isDefinition: true, scopeLine: 236, isOptimized: false, unit: !0, variables: !2)
+!803 = !DISubroutineType(types: !804)
+!804 = !{!10}
+!805 = !DILocalVariable(name: "counter", scope: !802, file: !1, line: 237, type: !14)
+!806 = !DILocation(line: 237, column: 9, scope: !802)
+!807 = !DILocalVariable(name: "chars", scope: !802, file: !1, line: 238, type: !10)
+!808 = !DILocation(line: 238, column: 11, scope: !802)
+!809 = !DILocation(line: 238, column: 19, scope: !802)
+!810 = !DILocalVariable(name: "c", scope: !802, file: !1, line: 239, type: !11)
+!811 = !DILocation(line: 239, column: 10, scope: !802)
+!812 = !DILocation(line: 240, column: 5, scope: !802)
+!813 = !DILocation(line: 240, column: 22, scope: !814)
+!814 = !DILexicalBlockFile(scope: !802, file: !1, discriminator: 1)
+!815 = !DILocation(line: 240, column: 16, scope: !814)
+!816 = !DILocation(line: 240, column: 14, scope: !814)
+!817 = !DILocation(line: 240, column: 11, scope: !814)
+!818 = !DILocation(line: 240, column: 30, scope: !814)
+!819 = !DILocation(line: 240, column: 5, scope: !814)
+!820 = !DILocation(line: 241, column: 13, scope: !821)
+!821 = distinct !DILexicalBlock(scope: !822, file: !1, line: 241, column: 13)
+!822 = distinct !DILexicalBlock(scope: !802, file: !1, line: 240, column: 37)
+!823 = !DILocation(line: 241, column: 21, scope: !821)
+!824 = !DILocation(line: 241, column: 13, scope: !822)
+!825 = !DILocation(line: 242, column: 13, scope: !826)
+!826 = distinct !DILexicalBlock(scope: !821, file: !1, line: 241, column: 30)
+!827 = !DILocation(line: 244, column: 28, scope: !822)
+!828 = !DILocation(line: 244, column: 9, scope: !822)
+!829 = !DILocation(line: 244, column: 22, scope: !822)
+!830 = !DILocation(line: 244, column: 26, scope: !822)
+!831 = !DILocation(line: 240, column: 5, scope: !832)
+!832 = !DILexicalBlockFile(scope: !802, file: !1, discriminator: 2)
+!833 = distinct !{!833, !812, !834}
+!834 = !DILocation(line: 245, column: 5, scope: !802)
+!835 = !DILocation(line: 246, column: 5, scope: !802)
+!836 = !DILocation(line: 246, column: 11, scope: !802)
+!837 = !DILocation(line: 246, column: 20, scope: !802)
+!838 = !DILocation(line: 247, column: 12, scope: !802)
+!839 = !DILocation(line: 247, column: 5, scope: !802)
+!840 = distinct !DISubprogram(name: "main", scope: !1, file: !1, line: 251, type: !841, isLocal: false, isDefinition: true, scopeLine: 251, flags: DIFlagPrototyped, isOptimized: false, unit: !0, variables: !2)
+!841 = !DISubroutineType(types: !842)
+!842 = !{!14, !14, !22}
+!843 = !DILocalVariable(name: "argc", arg: 1, scope: !840, file: !1, line: 251, type: !14)
+!844 = !DILocation(line: 251, column: 14, scope: !840)
+!845 = !DILocalVariable(name: "argv", arg: 2, scope: !840, file: !1, line: 251, type: !22)
+!846 = !DILocation(line: 251, column: 27, scope: !840)
+!847 = !DILocalVariable(name: "string", scope: !840, file: !1, line: 252, type: !10)
+!848 = !DILocation(line: 252, column: 11, scope: !840)
+!849 = !DILocation(line: 252, column: 20, scope: !840)
+!850 = !DILocation(line: 253, column: 12, scope: !840)
+!851 = !DILocation(line: 253, column: 5, scope: !840)
+!852 = !DILocalVariable(name: "i", scope: !840, file: !1, line: 254, type: !14)
+!853 = !DILocation(line: 254, column: 9, scope: !840)
+!854 = !DILocalVariable(name: "csvparser", scope: !840, file: !1, line: 256, type: !4)
+!855 = !DILocation(line: 256, column: 16, scope: !840)
+!856 = !DILocation(line: 256, column: 54, scope: !840)
+!857 = !DILocation(line: 256, column: 28, scope: !840)
+!858 = !DILocalVariable(name: "header", scope: !840, file: !1, line: 257, type: !17)
+!859 = !DILocation(line: 257, column: 13, scope: !840)
+!860 = !DILocalVariable(name: "row", scope: !840, file: !1, line: 258, type: !17)
+!861 = !DILocation(line: 258, column: 13, scope: !840)
+!862 = !DILocation(line: 260, column: 34, scope: !840)
+!863 = !DILocation(line: 260, column: 14, scope: !840)
+!864 = !DILocation(line: 260, column: 12, scope: !840)
+!865 = !DILocation(line: 261, column: 9, scope: !866)
+!866 = distinct !DILexicalBlock(scope: !840, file: !1, line: 261, column: 9)
+!867 = !DILocation(line: 261, column: 16, scope: !866)
+!868 = !DILocation(line: 261, column: 9, scope: !840)
+!869 = !DILocation(line: 262, column: 50, scope: !870)
+!870 = distinct !DILexicalBlock(scope: !866, file: !1, line: 261, column: 25)
+!871 = !DILocation(line: 262, column: 24, scope: !870)
+!872 = !DILocation(line: 262, column: 9, scope: !873)
+!873 = !DILexicalBlockFile(scope: !870, file: !1, discriminator: 1)
+!874 = !DILocation(line: 263, column: 9, scope: !870)
+!875 = !DILocalVariable(name: "headerFields", scope: !840, file: !1, line: 265, type: !22)
+!876 = !DILocation(line: 265, column: 12, scope: !840)
+!877 = !DILocation(line: 265, column: 47, scope: !840)
+!878 = !DILocation(line: 265, column: 27, scope: !840)
+!879 = !DILocation(line: 266, column: 12, scope: !880)
+!880 = distinct !DILexicalBlock(scope: !840, file: !1, line: 266, column: 5)
+!881 = !DILocation(line: 266, column: 10, scope: !880)
+!882 = !DILocation(line: 266, column: 18, scope: !883)
+!883 = !DILexicalBlockFile(scope: !884, file: !1, discriminator: 1)
+!884 = distinct !DILexicalBlock(scope: !880, file: !1, line: 266, column: 5)
+!885 = !DILocation(line: 266, column: 45, scope: !883)
+!886 = !DILocation(line: 266, column: 22, scope: !883)
+!887 = !DILocation(line: 266, column: 20, scope: !883)
+!888 = !DILocation(line: 266, column: 5, scope: !889)
+!889 = !DILexicalBlockFile(scope: !880, file: !1, discriminator: 1)
+!890 = !DILocation(line: 267, column: 31, scope: !891)
+!891 = distinct !DILexicalBlock(scope: !884, file: !1, line: 266, column: 60)
+!892 = !DILocation(line: 267, column: 44, scope: !891)
+!893 = !DILocation(line: 267, column: 9, scope: !891)
+!894 = !DILocation(line: 268, column: 5, scope: !891)
+!895 = !DILocation(line: 266, column: 56, scope: !896)
+!896 = !DILexicalBlockFile(scope: !884, file: !1, discriminator: 2)
+!897 = !DILocation(line: 266, column: 5, scope: !896)
+!898 = distinct !{!898, !899, !900}
+!899 = !DILocation(line: 266, column: 5, scope: !880)
+!900 = !DILocation(line: 268, column: 5, scope: !880)
+!901 = !DILocation(line: 270, column: 5, scope: !840)
+!902 = !DILocation(line: 270, column: 36, scope: !903)
+!903 = !DILexicalBlockFile(scope: !840, file: !1, discriminator: 1)
+!904 = !DILocation(line: 270, column: 19, scope: !903)
+!905 = !DILocation(line: 270, column: 17, scope: !903)
+!906 = !DILocation(line: 270, column: 5, scope: !903)
+!907 = !DILocation(line: 271, column: 9, scope: !908)
+!908 = distinct !DILexicalBlock(scope: !840, file: !1, line: 270, column: 50)
+!909 = !DILocalVariable(name: "rowFields", scope: !908, file: !1, line: 272, type: !22)
+!910 = !DILocation(line: 272, column: 16, scope: !908)
+!911 = !DILocation(line: 272, column: 48, scope: !908)
+!912 = !DILocation(line: 272, column: 28, scope: !908)
+!913 = !DILocation(line: 273, column: 16, scope: !914)
+!914 = distinct !DILexicalBlock(scope: !908, file: !1, line: 273, column: 9)
+!915 = !DILocation(line: 273, column: 14, scope: !914)
+!916 = !DILocation(line: 273, column: 22, scope: !917)
+!917 = !DILexicalBlockFile(scope: !918, file: !1, discriminator: 1)
+!918 = distinct !DILexicalBlock(scope: !914, file: !1, line: 273, column: 9)
+!919 = !DILocation(line: 273, column: 49, scope: !917)
+!920 = !DILocation(line: 273, column: 26, scope: !917)
+!921 = !DILocation(line: 273, column: 24, scope: !917)
+!922 = !DILocation(line: 273, column: 9, scope: !923)
+!923 = !DILexicalBlockFile(scope: !914, file: !1, discriminator: 1)
+!924 = !DILocation(line: 274, column: 35, scope: !925)
+!925 = distinct !DILexicalBlock(scope: !918, file: !1, line: 273, column: 61)
+!926 = !DILocation(line: 274, column: 45, scope: !925)
+!927 = !DILocation(line: 274, column: 13, scope: !925)
+!928 = !DILocation(line: 275, column: 9, scope: !925)
+!929 = !DILocation(line: 273, column: 57, scope: !930)
+!930 = !DILexicalBlockFile(scope: !918, file: !1, discriminator: 2)
+!931 = !DILocation(line: 273, column: 9, scope: !930)
+!932 = distinct !{!932, !933, !934}
+!933 = !DILocation(line: 273, column: 9, scope: !914)
+!934 = !DILocation(line: 275, column: 9, scope: !914)
+!935 = !DILocation(line: 276, column: 31, scope: !908)
+!936 = !DILocation(line: 276, column: 9, scope: !908)
+!937 = !DILocation(line: 270, column: 5, scope: !938)
+!938 = !DILexicalBlockFile(scope: !840, file: !1, discriminator: 2)
+!939 = distinct !{!939, !901, !940}
+!940 = !DILocation(line: 277, column: 5, scope: !840)
+!941 = !DILocation(line: 278, column: 23, scope: !840)
+!942 = !DILocation(line: 278, column: 5, scope: !840)
+!943 = !DILocation(line: 279, column: 5, scope: !840)
+!944 = !DILocation(line: 280, column: 1, scope: !840)

@@ -1,0 +1,21 @@
+{"sn":"_IO_FILE","s":1728,"el":[{"e":"_flags"},{"e":"_IO_read_ptr"},{"e":"_IO_read_end"},{"e":"_IO_read_base"},{"e":"_IO_write_base"},{"e":"_IO_write_ptr"},{"e":"_IO_write_end"},{"e":"_IO_buf_base"},{"e":"_IO_buf_end"},{"e":"_IO_save_base"},{"e":"_IO_backup_base"},{"e":"_IO_save_end"},{"e":"_markers"},{"e":"_chain"},{"e":"_fileno"},{"e":"_flags2"},{"e":"_old_offset"},{"e":"_cur_column"},{"e":"_vtable_offset"},{"e":"_shortbuf"},{"e":"_lock"},{"e":"_offset"},{"e":"__pad1"},{"e":"__pad2"},{"e":"__pad3"},{"e":"__pad4"},{"e":"__pad5"},{"e":"_mode"},{"e":"_unused2"}]}
+{"sn":"_IO_marker","s":192,"el":[{"e":"_next"},{"e":"_sbuf"},{"e":"_pos"}]}
+{"sn":"ini_parse_string_ctx","s":128,"el":[{"e":"ini_parse_string_ctxElement0"},{"e":"ini_parse_string_ctxElement1"}]}
+{"sn":"configuration","s":32,"el":[{"e":"configurationElement0"}]}
+{"f":"ini_parse_stream","ar":[{"a":"reader", "t":"i32*"},{"a":"stream", "t":"i8*"},{"a":"handler", "t":"i32*"},{"a":"user", "t":"i8*"}]}
+{"f":"lskip","ar":[{"a":"s", "t":"i8*"}]}
+{"f":"rstrip","ar":[{"a":"s", "t":"i8*"}]}
+{"f":"find_chars_or_comment","ar":[{"a":"s", "t":"i8*"},{"a":"chars", "t":"i8*"}]}
+{"f":"strncpy0","ar":[{"a":"dest", "t":"i8*"},{"a":"src", "t":"i8*"},{"a":"size", "t":"i64"}]}
+{"f":"ini_parse_file","ar":[{"a":"file", "t":"_IO_FILE*"},{"a":"handler", "t":"i32*"},{"a":"user", "t":"i8*"}]}
+{"f":"ini_parse","ar":[{"a":"filename", "t":"i8*"},{"a":"handler", "t":"i32*"},{"a":"user", "t":"i8*"}]}
+{"f":"ini_parse_string","ar":[{"a":"string", "t":"i8*"},{"a":"handler", "t":"i32*"},{"a":"user", "t":"i8*"}]}
+{"f":"ini_reader_string","ar":[{"a":"str", "t":"i8*"},{"a":"num", "t":"i32"},{"a":"stream", "t":"i8*"}]}
+{"f":"read_input","ar":[]}
+{"f":"main","ar":[{"a":"argc", "t":"i32"},{"a":"argv", "t":"i8**"}]}
+{"gv":".str","t":"[3 x i8]"}
+{"gv":".str.1","t":"[2 x i8]"}
+{"gv":".str.2","t":"[3 x i8]"}
+{"gv":".str.3","t":"[2 x i8]"}
+{"gv":"stdin","t":"%struct._IO_FILE*, "}
+{"gv":".str.4","t":"[2 x i8]"}

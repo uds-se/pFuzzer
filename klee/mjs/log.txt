@@ -1,0 +1,235 @@
+KLEE: NOTE: Using klee-uclibc : /home/klee/klee_build/klee/Release+Debug+Asserts/lib/klee-uclibc.bca
+KLEE: NOTE: Using model: /home/klee/klee_build/klee/Release+Debug+Asserts/lib/libkleeRuntimePOSIX.bca
+KLEE: output directory is "/home/klee/dockermount/klee/mjs/klee-out-0"
+KLEE: Using STP solver backend
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: dlsym
+KLEE: WARNING: undefined reference to function: modf
+KLEE: WARNING: undefined reference to function: puts
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 81530368) at /home/klee/klee_src/runtime/POSIX/fd.c:980
+KLEE: WARNING ONCE: Alignment of memory from call "malloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: Alignment of memory from call "calloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: Alignment of memory from call "realloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: silently concretizing (reason: floating point) expression (Add w32 4294967248
+          (SExt w32 (Extract w8 0 (ZExt w32 (Read w8 0 stdin))))) to value 1 (/home/klee/klee_build/klee-uclibc/libc/stdlib/_strtod.c:297)
+KLEE: WARNING ONCE: calling external: modf(0, 84270432) at /home/klee/dockermount/klee/mjs/mjs.c:13293
+KLEE: WARNING ONCE: calling external: __isnan(18443084899012313088) at /home/klee/dockermount/klee/mjs/mjs.c:14089
+undefined
+KLEE: WARNING ONCE: calling external: vprintf(62285248, 128862352) at /home/klee/klee_build/klee-uclibc/libc/stdio/fprintf.c:36
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+undefined
+undefined
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [лл]
+
+0
+1
+
+KLEE: WARNING ONCE: calling external: __ctype_b_loc() at /home/klee/dockermount/klee/mjs/mjs.c:14688
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+undefined
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [ллл]
+MJS error: parse error at line 1: [лл]
+undefined
+MJS error: parse error at line 1: []
+undefined
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+undefined
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+undefined
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+undefined
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 1: [ллл]
+MJS error: parse error at line 1: [лллл]
+MJS error: parse error at line 1: [л]
+undefined
+undefinedundefined
+
+undefined
+
+MJS error: parse error at line 2: [лл]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [лл]
+010
+
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [лл]
+
+
+
+01
+
+1
+0
+undefined
+MJS error: parse error at line 1: [ллл]
+1
+
+
+
+KLEE: ERROR: /home/klee/dockermount/klee/mjs/mjs.c:14089: external call with symbolic argument: __isnan
+KLEE: NOTE: now ignoring this error at this location
+MJS error: parse error at line 1: [лллл]
+лMJS error: parse error at line 1: [ллллл]
+
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+undefined
+undefined
+
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+00
+
+1
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [ллл]
+undefined
+MJS error: parse error at line 1: [лл]
+undefined
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [ллл]
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: []
+undefined
+undefined
+MJS error: parse error at line 1: [л]
+
+undefined
+л
+MJS error: parse error at line 1: []
+MJS error: parse error at line 2: []
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 1: [ллл]
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 2: [ллл]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [лл]
+undefined
+KLEE: WARNING ONCE: skipping fork (memory cap exceeded)
+undefined
+undefined
+undefined
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 3: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 3: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 2: []
+undefined
+undefinedMJS error: parse error at line 1: [л]
+
+MJS error: parse error at line 1: [ллл]
+MJS error: parse error at line 2: [л]
+undefined
+MJS error: parse error at line 1: []
+MJS error: parse error at line 2: []
+undefined
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [лл]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+undefined
+undefined
+undefined
+undefined
+MJS error: parse error at line 1: [лллл]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+undefined
+MJS error: parse error at line 1: []
+MJS error: parse error at line 2: []
+undefined
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+1
+1
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: []
+MJS error: parse error at line 2: []
+MJS error: parse error at line 1: []
+MJS error: parse error at line 1: []
+MJS error: parse error at line 2: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+KLEE: WARNING: killing 3069 states (over memory cap)
+MJS error: parse error at line 1: [ллллл]
+MJS error: parse error at line 1: [лллллл]
+MJS error: parse error at line 1: []
+
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: []
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+MJS error: parse error at line 1: [л]
+
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+undefined
+MJS error: parse error at line 1: []
+MJS error: [лл] is not implemented
+MJS error: parse error at line 2: [л]
+MJS error: parse error at line 1: [л]
+
+00
+
+KLEE: WARNING: killing 2904 states (over memory cap)
+KLEE: ctrl-c detected, requesting interpreter to halt.
+Command terminated by signal 9
+0.00user 0.00system 48:00:02elapsed 0%CPU (0avgtext+0avgdata 1628maxresident)k
+0inputs+0outputs (0major+93minor)pagefaults 0swaps

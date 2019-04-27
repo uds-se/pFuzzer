@@ -1,0 +1,234 @@
+Time used until input was generated: 3.443897
+'N'
+
+Time used until input was generated: 6.530371
+'\n'
+
+Time used until input was generated: 9.520570
+'6'
+
+Time used until input was generated: 12.854740
+'$'
+
+Time used until input was generated: 19.747955
+'HD'
+
+Time used until input was generated: 26.749384
+'5E'
+
+Time used until input was generated: 30.099156
+'j'
+
+Time used until input was generated: 33.144066
+"'"
+
+Time used until input was generated: 42.932724
+'aaaaaaaaaa'
+
+Time used until input was generated: 94.550723
+'R+N'
+
+Time used until input was generated: 98.041158
+'_'
+
+Time used until input was generated: 101.065151
+'"'
+
+Time used until input was generated: 118.318902
+' '
+
+Time used until input was generated: 129.799782
+'R<y'
+
+Time used until input was generated: 132.330251
+'R%D'
+
+Time used until input was generated: 134.796026
+'5/D'
+
+Time used until input was generated: 137.273057
+'5/-0XAB'
+
+Time used until input was generated: 139.719929
+'5/-0x1F'
+
+Time used until input was generated: 151.338677
+'R*V'
+
+Time used until input was generated: 1106.802095
+'if (5|1=5>--4.5e2^"5")==={}}'
+
+Time used until input was generated: 32590.587019
+'if (5|1=5>--4.5e2^(!~[$ $ ={\n}]^_&"H"<<_\n==$)[5(-1$)])q'
+
+Time used until input was generated: 32731.445789
+'do'
+
+Time used until input was generated: 32909.456701
+'R5\t'
+
+Time used until input was generated: 33081.344140
+'R;'
+
+Time used until input was generated: 33351.846830
+'5B0x1F\x0c'
+
+Time used until input was generated: 33596.758226
+'R \r'
+
+Time used until input was generated: 34169.209854
+'5"\x0c'
+
+Time used until input was generated: 35073.803991
+'new'
+
+Time used until input was generated: 35444.946083
+'with'
+
+Time used until input was generated: 35583.930197
+'this'
+
+Time used until input was generated: 35726.194255
+'case'
+
+Time used until input was generated: 35859.382425
+'null'
+
+Time used until input was generated: 35999.196939
+'void'
+
+Time used until input was generated: 36135.670939
+'true'
+
+Time used until input was generated: 36304.509013
+'forM,"'
+
+Time used until input was generated: 36470.394138
+'var'
+
+Time used until input was generated: 36601.496955
+'try'
+
+Time used until input was generated: 36803.227124
+'break'
+
+Time used until input was generated: 36963.506164
+'throw'
+
+Time used until input was generated: 37150.633557
+'catch'
+
+Time used until input was generated: 37282.297495
+'false'
+
+Time used until input was generated: 39850.393402
+'for$?5&5 ---1.0:_'
+
+Time used until input was generated: 40773.927795
+"for$?$ ---4.5e2-'':q"
+
+Time used until input was generated: 41519.188396
+'5let\nk'
+
+Time used until input was generated: 41816.313108
+'RH$.Y'
+
+Time used until input was generated: 43721.154619
+'5switch'
+
+Time used until input was generated: 43916.578318
+'5delete'
+
+Time used until input was generated: 44183.514078
+"5return\n'"
+
+Time used until input was generated: 44505.180507
+'R"\\'
+
+Time used until input was generated: 45512.118782
+'R7{;}'
+
+Time used until input was generated: 45978.980921
+'return{}'
+
+Time used until input was generated: 48757.308721
+"5null'#"
+
+Time used until input was generated: 49100.049338
+"for0%='"
+
+Time used until input was generated: 51342.664812
+'R{""H^=_}'
+
+Time used until input was generated: 53862.974291
+"if (5/'\\u'^$_ )$"
+
+Time used until input was generated: 55858.440489
+'if (5/\'\\"\\\\\'*-H>>~_)\''
+
+Time used until input was generated: 59600.829983
+'if (5/\'\\"\\\\\'*-H>>=+\n($))\''
+
+Time used until input was generated: 62733.822898
+'5for$//'
+
+Time used until input was generated: 64021.654802
+"R|+'\\\r"
+
+Time used until input was generated: 66494.509139
+'R&$/*'
+
+Time used until input was generated: 75819.123066
+"5typeof'"
+
+Time used until input was generated: 80882.461170
+'continue'
+
+Time used until input was generated: 82469.513301
+'undefined'
+
+Time used until input was generated: 86737.145353
+'5instanceof'
+
+Time used until input was generated: 87489.726382
+"RH\n$!='"
+
+Time used until input was generated: 89879.545009
+'fory_8 /*\x0b'
+
+Time used until input was generated: 93403.015589
+'5Bt/=H'
+
+Time used until input was generated: 94618.266611
+'R++'
+
+Time used until input was generated: 107494.172941
+'5break_{H>= 5}'
+
+Time used until input was generated: 109014.458989
+"R|j'\\\n"
+
+Time used until input was generated: 116139.036095
+"R7<'\\f"
+
+Time used until input was generated: 129302.525393
+'for0\n<=V'
+
+Time used until input was generated: 131445.601277
+'5BO$ *="'
+
+Time used until input was generated: 133341.478082
+'R*p|\nf &=5'
+
+Time used until input was generated: 133853.236541
+'5false|5'
+
+Time used until input was generated: 139746.219901
+'R&-f&&H'
+
+Time used until input was generated: 140620.119246
+"5true5+='"
+
+Time used until input was generated: 145980.751551
+'R""!++H'
+

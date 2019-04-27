@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+
+<ruleset name="Sopra 2018 PMD Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+  <description>
+    This rule set includes the PMD rules for Sopra 2018.
+  </description>
+
+  <!-- Best Practices -->
+  <rule ref="category/java/bestpractices.xml">
+    <!-- Too much work -->
+    <exclude name="GuardLogStatement"/>
+    <!-- Two or three is still okay, I think -->
+    <exclude name="JUnitTestContainsTooManyAsserts"/>
+    <!-- Sometimes a test is annotated with @Test(expected=Exception.class) -->
+    <exclude name="JUnitTestsShouldIncludeAssert"/>
+    <!-- Sometimes there are exhaustive matches -->
+    <exclude name="SwitchStmtsShouldHaveDefault"/>
+    <!-- Sometimes this is due to overriding -->
+    <exclude name="UnusedFormalParameter"/>
+    <!-- Not always applicable, and there is heap pollution with generics -->
+    <exclude name="UseVarargs"/>
+    <!-- Falsely flags implementors of the java.util.Predicate interface -->
+    <!-- Remove when https://github.com/pmd/pmd/issues/572 is resolved -->
+    <exclude name="JUnit4TestShouldUseTestAnnotation"/>
+    <!-- Currently unused private methods are not correctly recognized (used private methods are sometimes falsely marked as unused)-->
+    <exclude name="UnusedPrivateMethod"/>
+    <!-- Better to fail fast if comparison against null. Yoda-style comparisons are disturbing. -->
+    <exclude name="PositionLiteralsFirstInComparisons"/>
+    <exclude name="PositionLiteralsFirstInCaseInsensitiveComparisons"/>
+  </rule>
+
+  <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
+    <properties>
+      <property name="maximumAsserts" value="3"/>
+    </properties>
+  </rule>
+
+  <!-- Code Style -->
+  <rule ref="category/java/codestyle.xml">
+    <exclude name="AbstractNaming"/>
+    <exclude name="AtLeastOneConstructor"/>
+    <exclude name="AvoidPrefixingMethodParameters"/>
+    <!-- Sometimes this makes sense though -->
+    <exclude name="BooleanGetMethodName"/>
+    <exclude name="CommentDefaultAccessModifier"/>
+    <!-- Style preference -->
+    <exclude name="ForLoopShouldBeWhileLoop"/>
+    <!-- Meaningful names are clearer (like in Scala) -->
+    <exclude name="GenericsNaming"/>
+    <!-- That's what effectively final is for -->
+    <exclude name="LocalVariableCouldBeFinal"/>
+    <exclude name="MethodArgumentCouldBeFinal"/>
+    <exclude name="OnlyOneReturn"/>
+    <!-- Three letters are sometimes enough -->
+    <exclude name="ShortClassName"/>
+    <!-- Only because I like logger to be named logger -->
+    <exclude name="VariableNamingConventions"/>
+    <!-- Java be Java -->
+    <exclude name="LongVariable"/>
+    <!--Util classes do not have to be called *Util-->
+    <exclude name="ClassNamingConventions"/>
+    <!--Calling the super constructor explicitly is not necessary in most cases.-->
+    <exclude name="CallSuperInConstructor"/>
+  </rule>
+
+  <rule ref="category/java/codestyle.xml/ClassNamingConventions">
+    <properties>
+      <property name="utilityClassPattern" value="[A-Z][a-zA-Z]+"/>
+    </properties>
+  </rule>
+
+  <rule ref="category/java/codestyle.xml/ShortClassName">
+    <properties>
+      <property name="minimum" value="3"/>
+    </properties>
+  </rule>
+
+  <!-- Design -->
+  <rule ref="category/java/design.xml">
+    <!-- Sometimes you might need 4 -->
+    <exclude name="AvoidDeeplyNestedIfStmts"/>
+    <!-- Sometimes used for clarity -->
+    <exclude name="CollapsibleIfStatements"/>
+    <!-- Sometimes a necessary evil -->
+    <exclude name="DataClass"/>
+    <!-- Sometimes you want to use a lot of API methods -->
+    <exclude name="ExcessiveImports"/>
+    <!-- Sometimes you want to expose a lot of API methods -->
+    <exclude name="ExcessivePublicCount"/>
+    <!-- Sometimes a lot of fields are needed when using dependency injection -->
+    <exclude name="TooManyFields"/>
+    <exclude name="TooManyMethods"/>
+    <!-- The rule falsely flags fluent interfaces -->
+    <exclude name="LawOfDemeter"/>
+    <!-- Let us not be too harsh here -->
+    <exclude name="NcssCount"/>
+    <!-- Unfortunately, the configuration is not flexible enough to ignore visitors -->
+    <exclude name="GodClass"/>
+    <!-- TODO might want to configure and use this -->
+    <exclude name="LoosePackageCoupling"/>
+  </rule>
+
+  <rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts">
+    <properties>
+      <property name="problemDepth" value="4"/>
+    </properties>
+  </rule>
+
+  <!-- Documentation -->
+  <rule ref="category/java/documentation.xml">
+    <exclude name="CommentRequired"/>
+    <exclude name="CommentSize"/>
+  </rule>
+
+  <rule ref="category/java/documentation.xml/CommentSize">
+    <properties>
+      <property name="maxLineLength" value="150"/>
+      <property name="maxLines" value="10"/>
+    </properties>
+  </rule>
+
+  <!-- Error Prone -->
+  <rule ref="category/java/errorprone.xml">
+    <!-- One and two are magic numbers, too -->
+    <exclude name="AvoidLiteralsInIfCondition"/>
+    <exclude name="CloneThrowsCloneNotSupportedException"/>
+    <exclude name="ProperLogger"/>
+    <exclude name="BeanMembersShouldSerialize"/>
+    <!-- Too many false positives in my experience -->
+    <exclude name="DataflowAnomalyAnalysis"/>
+    <!-- In some cases null assignments are necessary -->
+    <exclude name="NullAssignment"/>
+  </rule>
+
+  <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
+    <properties>
+      <property name="ignoreMagicNumbers" value="-1,0,1,2"/>
+    </properties>
+  </rule>
+
+
+  <!-- Multi Threading -->
+  <rule ref="category/java/multithreading.xml">
+    <!-- Sometimes necessary -->
+    <exclude name="DoNotUseThreads"/>
+    <!-- The project is single threaded, no need for concurrent HashMaps -->
+    <exclude name="UseConcurrentHashMap"/>
+  </rule>
+
+  <!-- Performance -->
+  <rule ref="category/java/performance.xml">
+    <!-- Sometimes necessary -->
+    <exclude name="AvoidInstantiatingObjectsInLoops"/>
+    <!-- Clarity always wins -->
+    <exclude name="SimplifyStartsWith"/>
+    <!-- meaningless in most cases -->
+    <exclude name="AppendCharacterWithChar"/>
+  </rule>
+
+</ruleset>

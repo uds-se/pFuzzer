@@ -1,0 +1,51 @@
+
+=H=[]:H:R = 
+[]
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+=/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+H=/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+[]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+:/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+H:R/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+ =/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+ 
+[]/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcno:version '505*', prefer '408*'
+/home/klee/dockermount/backup_new_metric.13.11.18.2d61b2e499437e975318565a0521f7bfebe9efb4/checksum-repair/samples/ini/ini.gcda:version '505*', prefer version '408*'
+
+Valid inputs that increase coverage: 8
+
+#################
+Tokenlist:
+
+	=
+
+	]
+
+	ident
+
+	:
+
+	[
+
+
+Toklength: 1
+TokCount: 5
+
+Two token size: 4
+######################
+
+
+	ident = : 1
+
+	[ ] : 2
+
+	ident : : 1
+
+	: ident : 1

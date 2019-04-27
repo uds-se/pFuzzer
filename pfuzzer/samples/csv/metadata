@@ -1,0 +1,32 @@
+{"sn":"CsvParser","s":512,"el":[{"e":"filePath_"},{"e":"delimiter_"},{"e":"firstLineIsHeader_"},{"e":"errMsg_"},{"e":"header_"},{"e":"fileHandler_"},{"e":"fromString_"},{"e":"csvString_"},{"e":"csvStringIter_"}]}
+{"sn":"CsvRow","s":128,"el":[{"e":"fields_"},{"e":"numOfFields_"}]}
+{"sn":"_IO_FILE","s":1728,"el":[{"e":"_flags"},{"e":"_IO_read_ptr"},{"e":"_IO_read_end"},{"e":"_IO_read_base"},{"e":"_IO_write_base"},{"e":"_IO_write_ptr"},{"e":"_IO_write_end"},{"e":"_IO_buf_base"},{"e":"_IO_buf_end"},{"e":"_IO_save_base"},{"e":"_IO_backup_base"},{"e":"_IO_save_end"},{"e":"_markers"},{"e":"_chain"},{"e":"_fileno"},{"e":"_flags2"},{"e":"_old_offset"},{"e":"_cur_column"},{"e":"_vtable_offset"},{"e":"_shortbuf"},{"e":"_lock"},{"e":"_offset"},{"e":"__pad1"},{"e":"__pad2"},{"e":"__pad3"},{"e":"__pad4"},{"e":"__pad5"},{"e":"_mode"},{"e":"_unused2"}]}
+{"sn":"_IO_marker","s":192,"el":[{"e":"_next"},{"e":"_sbuf"},{"e":"_pos"}]}
+{"f":"CsvParser_new","ar":[{"a":"filePath", "t":"i8*"},{"a":"delimiter", "t":"i8*"},{"a":"firstLineIsHeader", "t":"i32"}]}
+{"f":"_CsvParser_delimiterIsAccepted","ar":[{"a":"delimiter", "t":"i8*"}]}
+{"f":"CsvParser_new_from_string","ar":[{"a":"csvString", "t":"i8*"},{"a":"delimiter", "t":"i8*"},{"a":"firstLineIsHeader", "t":"i32"}]}
+{"f":"CsvParser_destroy","ar":[{"a":"csvParser", "t":"CsvParser*"}]}
+{"f":"CsvParser_destroy_row","ar":[{"a":"csvRow", "t":"CsvRow*"}]}
+{"f":"CsvParser_getHeader","ar":[{"a":"csvParser", "t":"CsvParser*"}]}
+{"f":"_CsvParser_setErrorMessage","ar":[{"a":"csvParser", "t":"CsvParser*"},{"a":"errorMessage", "t":"i8*"}]}
+{"f":"_CsvParser_getRow","ar":[{"a":"csvParser", "t":"CsvParser*"}]}
+{"f":"CsvParser_getRow","ar":[{"a":"csvParser", "t":"CsvParser*"}]}
+{"f":"CsvParser_getNumFields","ar":[{"a":"csvRow", "t":"CsvRow*"}]}
+{"f":"CsvParser_getFields","ar":[{"a":"csvRow", "t":"CsvRow*"}]}
+{"f":"CsvParser_getErrorMessage","ar":[{"a":"csvParser", "t":"CsvParser*"}]}
+{"f":"read_input","ar":[]}
+{"f":"main","ar":[{"a":"argc", "t":"i32"},{"a":"argv", "t":"i8**"}]}
+{"gv":".str","t":"[74 x i8]"}
+{"gv":".str.1","t":"[31 x i8]"}
+{"gv":".str.2","t":"[28 x i8]"}
+{"gv":".str.3","t":"[36 x i8]"}
+{"gv":".str.4","t":"[2 x i8]"}
+{"gv":".str.5","t":"[1 x i8]"}
+{"gv":".str.6","t":"[44 x i8]"}
+{"gv":".str.7","t":"[12 x i8]"}
+{"gv":"stdin","t":"%struct._IO_FILE*, "}
+{"gv":".str.8","t":"[2 x i8]"}
+{"gv":".str.9","t":"[4 x i8]"}
+{"gv":".str.10","t":"[11 x i8]"}
+{"gv":".str.11","t":"[11 x i8]"}
+{"gv":".str.12","t":"[11 x i8]"}

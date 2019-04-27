@@ -1,0 +1,17 @@
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: dlsym
+KLEE: WARNING: undefined reference to function: modf
+KLEE: WARNING: undefined reference to function: puts
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 81530368) at /home/klee/klee_src/runtime/POSIX/fd.c:980
+KLEE: WARNING ONCE: Alignment of memory from call "malloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: Alignment of memory from call "calloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: Alignment of memory from call "realloc" is not modelled. Using alignment of 8.
+KLEE: WARNING ONCE: silently concretizing (reason: floating point) expression (Add w32 4294967248
+          (SExt w32 (Extract w8 0 (ZExt w32 (Read w8 0 stdin))))) to value 1 (/home/klee/klee_build/klee-uclibc/libc/stdlib/_strtod.c:297)
+KLEE: WARNING ONCE: calling external: modf(0, 84270432) at /home/klee/dockermount/klee/mjs/mjs.c:13293
+KLEE: WARNING ONCE: calling external: __isnan(18443084899012313088) at /home/klee/dockermount/klee/mjs/mjs.c:14089
+KLEE: WARNING ONCE: calling external: vprintf(62285248, 128862352) at /home/klee/klee_build/klee-uclibc/libc/stdio/fprintf.c:36
+KLEE: WARNING ONCE: calling external: __ctype_b_loc() at /home/klee/dockermount/klee/mjs/mjs.c:14688
+KLEE: WARNING ONCE: skipping fork (memory cap exceeded)
+KLEE: WARNING: killing 3069 states (over memory cap)
+KLEE: WARNING: killing 2904 states (over memory cap)

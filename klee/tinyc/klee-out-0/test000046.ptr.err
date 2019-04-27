@@ -1,0 +1,15 @@
+Error: memory error: out of bound pointer
+File: /home/klee/dockermount/klee/tinyc/tiny.c
+Line: 100
+assembly.ll line: 522
+Stack: 
+	#000000522 in next_sym () at /home/klee/dockermount/klee/tinyc/tiny.c:100
+	#100000964 in statement () at /home/klee/dockermount/klee/tinyc/tiny.c:200
+	#200002203 in __user_main (argc=3, argv=42552608) at /home/klee/dockermount/klee/tinyc/tiny.c:212
+	#300003789 in main (=3, =42552608) at /home/klee/klee_build/klee-uclibc/libc/misc/internals/__uClibc_main.c:401
+Info: 
+	address: 30783956
+	next: object at 30827648 of size 4000
+		MO438[4000] allocated at __user_main():  %stack.i = alloca [1000 x i32], align 16
+	prev: object at 30783856 of size 100
+		MO43[100] allocated at global:id_name
