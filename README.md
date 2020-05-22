@@ -50,7 +50,7 @@ Where the command line arguments are defined as follows:
 
 All results are already included in the material. The results are available in raw and processed information:
 
-###Raw information
+### Raw information
 
 For each tool and each subject, a file called "valid\_inputs.txt" exists, containing all inputs that let the program return with a 0 exit code or let the program hang:
     
@@ -64,7 +64,7 @@ We also added the raw output of AFL and KLEE, for pFuzzer the raw output is the 
 * The results for AFL for each subject lie in afl/\*/findings
 * The results for KLEE for each subject lie in klee/\*/klee-out-0
 
-###Processed Information
+### Processed Information
 
 We also included the information about the tokens and coverage we used for creating the graphs and tables in the paper:
 
